@@ -1,3 +1,21 @@
 # 4300-Web-Programming-Project
+Zaharia Selman, Blake Laczynski, Tina Liu, Mary Grace Tippett
 
-Our group’s project will be an interactive, informative website for romantics called MyDateList. Through our website, users will first access a login page. Those with an account will sign in, while those without an account can create an account or continue as a guest. There will be a search bar for the user to search for date ideas by topic. Once a date idea is chosen, the user will be able to see the location of the date, pictures, a list of available activities, a description of the date, a rating, and how pricey the date is. Guests will be able to view all of these aspects, but users with an account will be able to add/delete/edit their own posts and add/delete their own comments. Users with an account can also view a list of all the posts they have made, change their username/password, and delete their account. Administrators for this website will be able to delete other accounts, comments, and date ideas. 
+# What is MyDateList?
+MyDateList is an interactive, informative website for all romantics. Guest users may search for and view various date posts, and 
+registered users may do these things in addition to favoriting a post, creating a post, and commenting. Date posts give the user
+information on how to have the perfect date, such as location, price, food, and more.
+
+# The Index
+
+# Starting MyDateList
+## XAMPP
+## Copying Source Files
+## Setting up MyDateList's Database
+## Opening MyDateList
+
+# Functionality
+
+# Supported Browsers
+
+# Libararies/Frameworks Used
