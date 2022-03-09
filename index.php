@@ -16,6 +16,7 @@
         echo "Cookies are now enabled";
     }
 ?>
+
 <html>
     <?php
         if(!isset($_COOKIE[$cookie_name])) {
@@ -35,6 +36,8 @@
 
             <h1> Welcome to MyDateList. This is the homepage.</h1>
         </section>
+
+        <h4> DATE IDEAS </h4>
     </body>
     <?php
         include_once 'footer.php';
