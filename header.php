@@ -1,29 +1,58 @@
 <?php
-    session_start();
+
+session_start();
+
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="main.css" />
-</head>
-<body>
-    <header>
-        <ul>
-            <h2> MyDateList </h2>
-            <li><a class ="active" href="index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-        
-            <?php
-                if (isset($_SESSION["usersUID"])) {
-                    echo "<li><a href='myProfile.php'>My Profile</a></li>";
-                } else {
-                    echo "<li><a href='login.php'>Login</a></li>";
-                }
-            ?>
+    <head>
+        <title> MyDateList </title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    </head>
+    <body>
+         <header>
+             <div class="navbar" id="myHeader">
+             
+                <div class="left">
+                    <ul>
+                        <li id="home"> <a href ="./home.php"> Home </a></li>
 
-            <li><a href="favorites.php">Favorites</a></li>
-        </ul>
-    </header>
-</body>
-</html>
+                        <li> <a href ="./about.php"> About </a></li>
+                    </ul>
+                </div>
+
+                <div class="center">
+                    <ul>
+                     <li class ="titleImage"><a href ="./home.php"><img src="./images/MyDateList.png" alt="title font image"></a></li>
+                    </ul>
+                </div>
+                   
+                <div class="right">
+                 <ul>
+                     <?php
+                     // check if user is logged in or nah
+                     if(isset($_SESSION["usersUID"])){
+
+                       echo "<li ><a href ='account.php'> Account </a></li>";
+                            
+                       echo "<li id = fav><a href ='favorites.php'> <i class='material-icons'> favorite_border </i></a></li>";
+                        
+                       echo "<li id=post><a href ='post.php'> <i class='material-icons'> add_to_photos </i></a> </li>";
+
+                     } else {
+                        echo" <li id=login> <a href ='login.php'> Login </a></li>";
+
+                        echo" <li id=signup> <a href ='signup.php'> Sign Up </a></li>";
+                          
+                     }
+                    ?>
+                    </ul>
+                </div>
+          
+            </div>
+        </header>

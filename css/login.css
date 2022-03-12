@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  background-color: #fafafa;
+}
+.titleImage {
+  background-color: white;
+  object-fit: contain;
+  width: 500px;
+  text-align: center;
+  padding-top: 30px;
+}
+.titleImage img {
+  height: 80px;
+  width: auto;
+}
+
+.box {
+  background-color: white;
+  margin: auto;
+  margin-top: 10%;
+  width: 500px;
+
+  outline: solid #dcdcdc;
+  outline-width: 1px;
+  text-align: center;
+}
+.login {
+  background-color: white;
+  margin-top: 30px;
+}
+#text {
+  height: 40px;
+  width: 350px;
+  border-radius: 4px;
+  border: solid 1px #dcdcdc;
+  padding: 4px;
+  font-size: 14px;
+}
+
+#loginButton {
+  height: 40px;
+  width: 360px;
+  border-radius: 4px;
+  border: solid 1px #facfd4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+  color: white;
+  background-color: #facfd4;
+  cursor: pointer;
+}
+
+h3 {
+  text-align: center;
+  background-color: white;
+  color: #bac1c5;
+  position: relative;
+}
+
+h3:before {
+  content: "";
+  display: block;
+  margin-left: 70px;
+  width: 155px;
+  height: 2px;
+  background: #bac1c5;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+h3:after {
+  content: "";
+  display: block;
+  margin-right: 70px;
+  width: 155px;
+  height: 2px;
+  background: #bac1c5;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+h4 {
+  background-color: white;
+  padding-bottom: 20px;
+  font-weight: lighter;
+}
+
+a {
+  background-color: white;
+  color: #921925;
+  text-decoration: none;
+}
+
+.box2 {
+  background-color: white;
+  margin: auto;
+  margin-top: 10px;
+  width: 500px;
+
+  outline: solid #dcdcdc;
+  outline-width: 1px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+p {
+  background-color: white;
+}
+
+.box2 a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 15px;
+  color: #ee8591;
+}
+form {
+  background-color: white;
+}
+
+.lockImg {
+  padding-top: 30px;
+  background-color: white;
+}
+
+.lockImg h2 {
+  background-color: white;
+}
+.forgot {
+  background-color: white;
+  margin-top: 10px;
+}
+.forgot p {
+  color: #a09c9c;
+}
