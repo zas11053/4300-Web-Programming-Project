@@ -57,6 +57,37 @@ a {
 .right li {
   background-color: white;
 }
+/**these are styling to make the dropdown menu on the profile pic*/
+.right ul li {
+  position: relative; /**NEW */
+}
+
+.right ul li ul {
+  display: none;
+  position: absolute;
+}
+.right ul li:hover ul {
+  display: block;
+}
+
+/**makes it wide enough so all text can fit in one line*/
+.right ul li ul li {
+  width: 60px;
+  background-color: #f79e9e; /**bg for dropdown*/
+  border-style: solid #dcdcdc;
+}
+
+.right ul li ul li a {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
+.right ul li ul li a:hover {
+  background-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+/**-------DROP DOWN MENY=U----------------*/
 
 #home {
   margin-left: 15%;
@@ -94,6 +125,16 @@ a {
 }
 .navbar li {
   display: inline-block;
+}
+
+.nav_avatar {
+  width: 27px;
+  height: 27px;
+  object-fit: fill;
+  border-radius: 50%;
+  border: 2px solid #dcdcdc;
+  padding: 2px;
+  vertical-align: text-bottom;
 }
 
 /**EVERYTHING ABOVE IS FOR THE HEADER!*/

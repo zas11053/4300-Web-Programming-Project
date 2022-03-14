@@ -37,8 +37,23 @@ session_start();
                      <?php
                      // check if user is logged in or nah
                      if(isset($_SESSION["usersUID"])){
+                        require_once('includes/dbh.inc.php');
+                        $username=$_SESSION["usersUID"];
+                        $sql = "SELECT pfp_img_dir FROM users WHERE usersUID='$username'";
+                        $result = mysqli_query($conn, $sql);
+                        $image_dir = mysqli_fetch_assoc($result);
+                        
+                        $img=$image_dir['pfp_img_dir'];
+                       // echo "<img src= '$img'>";
 
-                       echo "<li ><a href ='account.php'> Account </a></li>";
+                       echo "<li ><a href ='#'> <img class='nav_avatar' src= '$img' alt ='profile_pic'> </a>
+                                <ul>
+                                <li> <a href ='mypage.php'> My Page </a></li>
+                                <li> <a href ='settings.php'> Settings </a></li>
+                                <li> <a href = 'includes/logout.inc.php'> Log Out </a></li>
+                                </ul>
+                       
+                            </li>";
                             
                        echo "<li id = fav><a href ='favorites.php'> <i class='material-icons'> favorite_border </i></a></li>";
                         

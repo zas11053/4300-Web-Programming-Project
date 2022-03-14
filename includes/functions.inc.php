@@ -85,7 +85,7 @@ function uidExists($conn, $username){
 
 function createUser($conn,$name, $username, $password, $question1, $question2, $question3){
     //1st ';' is to close off sql statement, 2nd ';' is for php code
-    $sql = "INSERT INTO `users`( `usersName`, `usersUID`, `usersPWD`, `secuirtyQuestion1`, `secuirtyQuestion2`, `secuirtyQuestion3`) VALUES (?,?,?,?,?,?);"; //'?' ARE PLACEHOLDERS FOR DATA 
+    $sql = "INSERT INTO `users`( `usersName`, `usersUID`, `usersPWD`, `secuirtyQuestion1`, `secuirtyQuestion2`, `secuirtyQuestion3`,`pfp_img_dir`) VALUES (?,?,?,?,?,?,?);"; //'?' ARE PLACEHOLDERS FOR DATA 
     //our prepared statement 
     $stmt = mysqli_stmt_init($conn);
 
@@ -98,10 +98,11 @@ function createUser($conn,$name, $username, $password, $question1, $question2, $
 
     // hashs the password to make it more secure 
     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+    $default_img ='./uploads/DEFAULT.jpg';
 
 
     // BINDING = REPLACING THSOE ? WITH VALUES 
-    mysqli_stmt_bind_param($stmt, "ssssss", $name, $username, $hashedPwd, $question1, $question2, $question3);
+    mysqli_stmt_bind_param($stmt, "sssssss", $name, $username, $hashedPwd, $question1, $question2, $question3, $default_img);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
    
