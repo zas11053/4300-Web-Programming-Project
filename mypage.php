@@ -6,7 +6,7 @@ include_once 'header.php';
  
 <h2><a href =includes/logout.inc.php> Log Out </a></h2>
 
-<!-----NEW CODE------------>
+<!-----NEW CODE MONDAY 3/14/2022------------>
 <?php
 require_once('includes/dbh.inc.php');
 $username=$_SESSION["usersUID"];
@@ -22,7 +22,7 @@ echo "<img src= '$img'>";
 
 ?>
 
-<form action ="uploadProfile.php?user= <?php echo $_SESSION["usersUID"];; ?> " method ="POST" enctype="multipart/form-data">
+<form action ="uploadProfile.php" method ="POST" enctype="multipart/form-data">
     <input type ="file" name="file">
     <button type="submit" name="submit"> UPLOAD </button>
 </form>

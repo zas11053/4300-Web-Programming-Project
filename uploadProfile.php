@@ -50,7 +50,7 @@ if(in_array($fileActualExt,$allowed)){
                 echo $username;
                 mysqli_stmt_bind_param($stmt, "ss", $fileDestination,$username);
                 mysqli_stmt_execute($stmt);
-                header("Location: account.php?uploadsuccess");
+                header("Location: mypage.php?uploadsuccess");
                 
                 exit();
             }
