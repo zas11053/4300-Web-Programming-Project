@@ -98,7 +98,7 @@ function createUser($conn,$name, $username, $password, $question1, $question2, $
 
     // hashs the password to make it more secure 
     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-    $default_img ='./uploads/DEFAULT.jpg';
+    $default_img ='./images/DEFAULT.jpg';
 
 
     // BINDING = REPLACING THSOE ? WITH VALUES 
