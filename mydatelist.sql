@@ -44,8 +44,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`usersID`, `usersName`, `usersUID`, `usersPWD`, `secuirtyQuestion1`, `secuirtyQuestion2`, `secuirtyQuestion3`, `pfp_img_dir`) VALUES
 (1, 'Tina Liu', 'tinybear101', '$2y$10$1nsOWhL.oXL19uu4WY7kB.vr40WZyIHj.Zmaa2N9B6MUy0CzZ2cFG', '123', '123', '123', './uploads/622f05c7466353.58478069.png'),
-(2, 'Tina Liu', 'tinybear102', '$2y$10$5BNVH4GxgilHu26Znfd/8eax5W5bikrfg5b2DaGBUkH0DT3htFi0i', '123', '123', '123', './uploads/DEFAULT.jpg'),
-(3, 'tina liu', 'cutecutebear', '$2y$10$F1tq60HgA0gSqpqp6k7awOw2jGgcn1tgb96KUhf9QDb.DDtORkt7S', '123', '123', '123', './uploads/DEFAULT.jpg');
+(2, 'Tina Liu', 'tinybear102', '$2y$10$5BNVH4GxgilHu26Znfd/8eax5W5bikrfg5b2DaGBUkH0DT3htFi0i', '123', '123', '123', './images/DEFAULT.jpg'),
+(3, 'tina liu', 'cutecutebear', '$2y$10$F1tq60HgA0gSqpqp6k7awOw2jGgcn1tgb96KUhf9QDb.DDtORkt7S', '123', '123', '123', './images/DEFAULT.jpg');
 
 --
 -- Indexes for dumped tables
