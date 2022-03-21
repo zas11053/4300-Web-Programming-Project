@@ -32,9 +32,9 @@ CREATE TABLE `users` (
   `usersName` varchar(255) NOT NULL,
   `usersUID` varchar(255) NOT NULL,
   `usersPWD` varchar(255) NOT NULL,
-  `secuirtyQuestion1` varchar(255) DEFAULT NULL,
-  `secuirtyQuestion2` varchar(255) DEFAULT NULL,
-  `secuirtyQuestion3` varchar(255) DEFAULT NULL,
+  `securityQuestion1` varchar(255) DEFAULT NULL,
+  `securityQuestion2` varchar(255) DEFAULT NULL,
+  `securityQuestion3` varchar(255) DEFAULT NULL,
   `pfp_img_dir` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
