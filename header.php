@@ -48,13 +48,13 @@ session_start();
 
                        //Set cookie for user
                        $cookie_name = "user";
-                       $cookie_value = "user ID";
+                       $cookie_value = "userID";
                        if(count($_COOKIE) > 0) {
-                           echo "Cookies are enabled.";
+                           //echo "Cookies are enabled.";
                        } else {
-                           echo "Cookies are disabled";
+                           //echo "Cookies are disabled";
                            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); //30 days
-                           echo "Cookies are now enabled";
+                           //echo "Cookies are now enabled";
                        }
                        echo "<li ><a href ='#'> <img class='nav_avatar' src= '$img' alt ='profile_pic'> </a>
                                 <ul>
