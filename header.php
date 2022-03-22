@@ -35,7 +35,7 @@ session_start();
                 <div class="right">
                  <ul>
                      <?php
-                     // check if user is logged in or nah
+                     // check if user is logged in or not
                      if(isset($_SESSION["usersUID"])){
                         require_once('includes/dbh.inc.php');
                         $username=$_SESSION["usersUID"];
@@ -46,13 +46,15 @@ session_start();
                         $img=$image_dir['pfp_img_dir'];
                        // echo "<img src= '$img'>";
 
-                       //Set cookie for user
+                       //Make cookie for 30 days for each user {Z.S | 3.22.2022}
                        $cookie_name = "user";
                        $cookie_value = "userID";
+                       // Check if Cookie is set for user so multiple are not set {Z.S | 3.22.2022}
                        if(count($_COOKIE) > 0) {
                            //echo "Cookies are enabled.";
                        } else {
                            //echo "Cookies are disabled";
+                           // Create cookie {Z.S | 3.22.2022}
                            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); //30 days
                            //echo "Cookies are now enabled";
                        }
