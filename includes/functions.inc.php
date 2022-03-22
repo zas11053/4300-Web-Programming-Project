@@ -161,9 +161,9 @@ function verifyAnswers($conn, $username, $question1,$question2, $question3){
     // can use username twice as param cuz itll either be username
     $uidExists = uidExists($conn, $username, $username);
 
-    $q1 = $uidExists["secuirtyQuestion1"];
-    $q2 = $uidExists["secuirtyQuestion2"];
-    $q3 = $uidExists["secuirtyQuestion3"];
+    $q1 = $uidExists["securityQuestion1"];
+    $q2 = $uidExists["securityQuestion2"];
+    $q3 = $uidExists["securityQuestion3"];
 
     if ($q1 === $question1 &&$q2 === $question2 &&$q3 === $question3  ){
         header("location: ../newPassword.php?user=" . $username); 
