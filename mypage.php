@@ -17,7 +17,7 @@ $image_dir = mysqli_fetch_assoc($result);
 print_r($image_dir);
 echo $image_dir['pfp_img_dir'];
 $img=$image_dir['pfp_img_dir'];
-echo "<img src= '$img'>";
+echo "<img style='width:100px; height: 100px' src= '$img'>";
 
 
 ?>

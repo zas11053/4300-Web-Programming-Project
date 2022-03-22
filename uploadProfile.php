@@ -35,8 +35,33 @@ if(in_array($fileActualExt,$allowed)){
             //use file a unique code (won't repeat) so each image file name is different and wont have cases where 2 images have same name 
             $fileNameNew = uniqid('',true).".".$fileActualExt;
             $fileDestination = './uploads/'.$fileNameNew;
-            //copies/movies over the image and store in the uploads folder
-            move_uploaded_file($fileTmpName,$fileDestination);
+            $username=$_SESSION["usersUID"];
+            
+            //GET THE CURRENT PROFILE PICTURE IF IT'S NOT DEFAULT SO IT CAN BE DELETED FROM THE FOLDER 
+            $oldImgDir;
+           $sql = "SELECT `pfp_img_dir` FROM `users` WHERE usersUID =?";
+           $stmt = mysqli_stmt_init($conn);
+           if(!mysqli_stmt_prepare($stmt,$sql)){
+            echo "SQL FAILED!";
+           // exit();
+           
+        } else {
+            mysqli_stmt_bind_param($stmt, "s",$username);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            $userpfp = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            //echo $userpfp[0]['pfp_img_dir']; // print out 1st available ID
+            $old_pfp_dir = $userpfp[0]['pfp_img_dir'];//gets current pfp 
+
+            // ONLY DELETE IF THE PFP IS NOT THE DEFAULT IMG
+            if($old_pfp_dir !== "./images/DEFAULT.jpg"){
+            if(unlink($old_pfp_dir)){ //delete the current picture from the uploads folder if 
+                echo "file was deleted";
+            }
+        }
+        }
+
+            
             
         
             $sql = "UPDATE users SET pfp_img_dir = ? WHERE usersUID= ?";
@@ -46,10 +71,15 @@ if(in_array($fileActualExt,$allowed)){
                 exit();
         
             } else {
-                $username=$_SESSION["usersUID"];
-                echo $username;
+               
+               // echo $username;
                 mysqli_stmt_bind_param($stmt, "ss", $fileDestination,$username);
                 mysqli_stmt_execute($stmt);
+
+                
+                //copies/movies over the image and store in the uploads folder
+            move_uploaded_file($fileTmpName,$fileDestination);
+
                 header("Location: mypage.php?uploadsuccess"); // can remove the ?uploadsuccess later if want
                 
                 exit();
@@ -66,7 +96,7 @@ if(in_array($fileActualExt,$allowed)){
         }
 
     } else {
-        echo "There was an error uploading your file!";
+        echo "There was an error uploading your file! FILE IS PROB EMPTY";
     }
 
 } else {
