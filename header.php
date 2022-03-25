@@ -1,11 +1,13 @@
 <?php
 
+// Starts the user's session
 session_start();
 
 ?>
 
 <!DOCTYPE html>
 <html>
+    <!-- HEAD TAG CONTAINS ALL THE INFO ABOUT THE WEBSITE -->
     <head>
         <title> MyDateList </title>
         <link rel="stylesheet" href="css/style.css">
@@ -14,8 +16,11 @@ session_start();
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
     </head>
+
+    <!-- BODY CONTAINS ALL THE INFO THE USER SEES -->
     <body>
          <header>
+             <!-- Left side of the navigation bar links -->
              <div class="navbar" id="myHeader">
              
                 <div class="left">
@@ -26,16 +31,18 @@ session_start();
                     </ul>
                 </div>
 
+                <!-- Center 'MyDateList' cursive picture -->
                 <div class="center">
                     <ul>
                      <li class ="titleImage"><a href ="./home.php"><img src="./images/MyDateList.png" alt="title font image"></a></li>
                     </ul>
                 </div>
                    
+                <!-- Right side of the navigation bar links -->
                 <div class="right">
                  <ul>
                      <?php
-                     // check if user is logged in or not
+                     // Checks if user is logged in or not
                      if(isset($_SESSION["usersUID"])){
                         require_once('includes/dbh.inc.php');
                         $username=$_SESSION["usersUID"];
@@ -58,6 +65,8 @@ session_start();
                            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); //30 days
                            //echo "Cookies are now enabled";
                        }
+
+                       // Links that a logged-in user will see
                        echo "<li ><a href ='#'> <img class='nav_avatar' src= '$img' alt ='profile_pic'> </a>
                                 <ul>
                                 <li> <a href ='mypage.php'> My Page </a></li>
@@ -71,6 +80,7 @@ session_start();
                         
                        echo "<li id=post><a href ='post.php'> <i class='material-icons'> add_to_photos </i></a> </li>";
 
+                       // Links that a guest or someone not logged in will see
                      } else {
                         echo" <li id=login> <a href ='login.php'> Login </a></li>";
 

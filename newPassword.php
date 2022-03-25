@@ -1,15 +1,17 @@
 
 <!DOCTYPE html>
 <html>
-    <!--HEAD TAG CONTAINS ALL INFO ABOUT THE WEBSITE -->
+    <!-- HEAD TAG CONTAINS ALL THE INFO ABOUT THE WEBSITE -->
     <head> 
-        <!--Title of website shown in the tab-->
+        <!-- Title of website shown in the tab -->
         <title> MyDateList | New Password</title>
         <link rel ="stylesheet" href ="css/login.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <!---BODY CONTAIN ALL INFO USER SEE -->
+
+    <!-- BODY CONTAINS ALL THE INFO THE USER SEES -->
     <body> 
+        <!-- Image code -->
         <div class="box">
             <div  class="lockImg">
             <i class='material-icons' style="font-size:150px; background-color:white"> lock_reset </i>
@@ -17,10 +19,10 @@
             </div> <!--DIV CLASS=TITLEIMAGE-->
 
             <div class="forgot">
-                
                 <p>Enter new password</p> 
-               
             </div>
+            
+            <!-- Prompts user to enter information -->
             <div class="forgot">
                 <form action ="includes/newPassword.inc.php" method="post">
                 <!--Placeholder is the text in the box you see -->
@@ -31,6 +33,7 @@
                 <br/> <br/>
             </form>
             
+         <!-- Checks for invalid information or empty fields -->
          <?php
          if(isset($_GET["error"])){
              if($_GET["error"] == "emptyInput"){
@@ -41,25 +44,23 @@
         } 
          ?>
           
-
-
-
             </div>
             
+            <!-- Code for the content below the verification questions -->
             <div class="lineOr">
                <h3><span style="background-color:white;">OR </span></h3>
             </div>
 
             <br/>
+
+            <!-- Link to create a new account -->
             <h4><a href ="./signup.php"> Create New Account</a></h4>
 
          </div> <!--DIV CLASS=BOX--->
 
+         <!-- Link to go back to login page -->
          <div class="box2">
              <a href ="./login.php"> Back To Login  </a> 
          </div>
-   
-
-
     </body>
 </html>

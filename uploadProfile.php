@@ -55,30 +55,25 @@ if(in_array($fileActualExt,$allowed)){
 
             // ONLY DELETE IF THE PFP IS NOT THE DEFAULT IMG
             if($old_pfp_dir !== "./images/DEFAULT.jpg"){
-            if(unlink($old_pfp_dir)){ //delete the current picture from the uploads folder if 
-                echo "file was deleted";
+                if(unlink($old_pfp_dir)){ //delete the current picture from the uploads folder if 
+                    echo "file was deleted";
+                }
             }
         }
-        }
 
-            
-            
-        
             $sql = "UPDATE users SET pfp_img_dir = ? WHERE usersUID= ?";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 echo "There was an error!";
                 exit();
-        
+
             } else {
-               
-               // echo $username;
+                // echo $username;
                 mysqli_stmt_bind_param($stmt, "ss", $fileDestination,$username);
                 mysqli_stmt_execute($stmt);
-
                 
                 //copies/movies over the image and store in the uploads folder
-            move_uploaded_file($fileTmpName,$fileDestination);
+                move_uploaded_file($fileTmpName,$fileDestination);
 
                 header("Location: mypage.php?uploadsuccess"); // can remove the ?uploadsuccess later if want
                 

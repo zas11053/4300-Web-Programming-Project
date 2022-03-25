@@ -1,20 +1,22 @@
 
 <!DOCTYPE html>
 <html>
-    <!--HEAD TAG CONTAINS ALL INFO ABOUT THE WEBSITE -->
+    <!-- HEAD TAG CONTAINS ALL THE INFO ABOUT THE WEBSITE -->
     <head> 
-        <!--Title of website shown in the tab-->
+        <!-- Title of website shown in the tab -->
         <title> MyDateList | Sign Up </title>
         <link rel ="stylesheet" href ="css/login.css">
     </head>
-    <!---BODY CONTAIN ALL INFO USER SEE -->
+
+    <!-- BODY CONTAINS ALL THE INFO THE USER SEES -->
     <body> 
+        <!-- Image code -->
         <div class="box">
             <div class="titleImage">
                 <img src="./images/MyDateList.png" alt="title font image">
             </div> <!--DIV CLASS=TITLEIMAGE-->
 
-
+            <!-- Prompts user to enter information -->
             <div class="login">
                 <form action ="includes/signup.inc.php" method="post">
                 <!--Placeholder is the text in the box you see -->
@@ -29,6 +31,7 @@
                 <br/> <br/>
             </form>
             
+         <!-- Checks for invalid information or empty fields -->   
          <?php
          if(isset($_GET["error"])){
              if($_GET["error"] == "emptyInput"){
@@ -43,20 +46,13 @@
          }
          ?>
 
-
-            </div>
+        </div>
             
-            
-         </div> <!--DIV CLASS=BOX--->
+        </div> <!--DIV CLASS=BOX--->
 
-
+         <!-- Link to go to log in page -->
          <div class="box2">
              <p> Have an account? <a href ="./login.php"> Log In </a> </p>
          </div>
-   
-
-    
-
-
     </body>
 </html>
