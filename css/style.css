@@ -152,3 +152,46 @@ footer p {
   background-color: white;
   padding-top: 5px;
 }
+/**===============================================*/
+/**=POSTPHP==============================================*/
+/**postBox contains imgBox and textBox*/
+
+.postBox {
+  background-color: #f79e9e;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  gap: 20px;
+}
+
+.imgBox {
+  width: 60%;
+  height: 550px;
+  background-color: aquamarine;
+  border-radius: 20px;
+}
+
+.textBox {
+  height: auto;
+  width: 100%;
+  background-color: rgb(170, 131, 170);
+}
+
+.image-preview {
+  width: 100%;
+  min-height: 100px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #dddddd;
+
+  /*DEFAULT TEXT */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #cccccc;
+}
+/**by default, the image gonna be hidden cuz did display:none*/
+.image-preview-img {
+  display: none;
+  width: 100%;
+}
