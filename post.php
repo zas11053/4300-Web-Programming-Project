@@ -18,7 +18,7 @@ include_once 'header.php';
         </div>
      </div>
 
-     <script src="./includes/imagePost.js"></script>
+     <script src="./js/imagePost.js"></script>
 <?php
 include_once 'footer.php';
 ?>
