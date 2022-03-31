@@ -8,15 +8,17 @@ include_once 'header.php';
          <div class="carousel__item carousel__item--selected">
 
             <div class="imgDropZone" id="imgDropZone">
-               <span class="drop_prompt"> Drop file here or click to upload</span>
+              <!-- <span class="drop_prompt"> Drop file here or click to upload</span>-->
+              <div class="drop_prompt">
+              <span> Drop file here or click to upload</span> <br>
+              <i class='material-icons'style="font-size: 100px;"> add_photo_alternate </i>
+
+              </div>
                <!--<div class="drop-zone-thumb" data-label="myFile.txt"> </div>-created by js-->
                <input type ="file" name="imgFile" id="imgFile" class="drop-zone-input" multiple>
             </div> 
 
          </div>
-
-         
-         
 
          <!---BELOW WILL BE PROVIDED BY JS
          <div class="carousel__nav">
@@ -27,12 +29,51 @@ include_once 'header.php';
       </div> 
 
       <div class="textBox">
-         <h1> in text </h1>
+        
+                      
+         <form action ="includes/post-upload.inc.php" method ="POST" enctype="multipart/form-data">
+                <input type="hidden" name ="username" value = "<?php echo $_SESSION["usersUID"];?>" >
+                <input type ="text" name="postTitle" id="postTitle" placeholder = "Post Title">
+                <input type ="text" name="postLocation" placeholder = "Location">
+                <select name ="type">
+                    <option value="0">Date type:</option>
+                    <option value="casual"> Casual</option>
+                    <option value="fancy"> Fancy</option>
+                    <option value="home"> Home</option>
+
+                </select>        
+                <textarea name="description" id="description" placeholder="Write something.." ></textarea>
+                
+
+                
+                
+                <button type="submit" name="submit"> POST </button>
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
    </div>
-<!--
-     <script src="./js/imagePost.js" ></script>
--->
+   <script src="./ckeditor/build/ckeditor.js"></script>
+
+<script>
+    ClassicEditor.create(document.getElementById('description'));
+ </script>
      <script src="./js/postImgPreview.js" defer></script>
 
 
