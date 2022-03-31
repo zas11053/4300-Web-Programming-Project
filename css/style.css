@@ -253,6 +253,7 @@ footer p {
   width: 100%;
   padding: 20px 0;
   /**take up entire bottom section */
+  position: absolute;
   bottom: 0;
   left: 0;
   background-color: red;
