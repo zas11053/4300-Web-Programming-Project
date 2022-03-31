@@ -153,7 +153,7 @@ footer p {
   padding-top: 5px;
 }
 /**===============================================*/
-/**=POSTPHP==============================================*/
+/**=[POSTPHP]==================================================================================================*/
 /**postBox contains imgBox and textBox*/
 
 .postBox {
@@ -165,10 +165,11 @@ footer p {
 }
 
 .imgBox {
-  width: 60%;
+  width: 80%;
   height: 550px;
   background-color: aquamarine;
   border-radius: 20px;
+  position: relative;
 }
 
 .textBox {
@@ -195,11 +196,11 @@ footer p {
   display: none;
   width: 100%;
 }
-/**DROP ZONE========================================================*/
+/**DROP/CLICK ZONE to add IMGS ========================================================*/
 
 .imgDropZone {
-  max-width: 200px;
-  height: 200px;
+  max-width: 400px;
+  aspect-ratio: 3/4;
   display: flex;
 
   /*allow it to be horizontally and vertically centered */
@@ -228,7 +229,8 @@ footer p {
   border-radius: 10px;
   overflow: hidden; /*that way border radius will alway be visible*/
   background-color: #cccccc;
-  background-size: cover; /*makes it so image will take up entire space if the thumbnail cover*/
+  background-size: cover; /*makes it so image will take up entire space if the thumbnail cover(should i change this to contain instead?)*/
+  background-position: center; /*center of bg img*/
   position: relative;
 }
 /**help show the bottom label on the image box*/
@@ -243,4 +245,38 @@ footer p {
   background-color: rgba(0, 0, 0, 0.75);
   font-size: 14px;
   text-align: center;
+}
+/**END OF DROP/CLICK IMG=============================================================================================*/
+
+/**FOR CAROUSEL ============================================================*/
+.carousel__nav {
+  width: 100%;
+  padding: 20px 0;
+  /**take up entire bottom section */
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  text-align: center;
+}
+
+.carousel__button {
+  width: 10px;
+  height: 10px;
+  display: inline-block; /**in-line gives ability to use height */
+  background-color: rgb(255, 255, 255, 0.2);
+  border-radius: 50%; /**makes a circle*/
+  margin: 0 5px; /**5px of margin left and right*/
+  cursor: pointer;
+}
+/*if lighter=selected*/
+.carousel__button--selected {
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+.carousel__item {
+  display: none;
+}
+
+.carousel__item--selected {
+  display: block;
 }
