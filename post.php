@@ -9,8 +9,6 @@ include_once 'header.php';
            <span class="drop_prompt"> Drop file here or click to upload</span>
           <!--<div class="drop-zone-thumb" data-label="myFile.txt"> </div>-created by js-->
           <input type ="file" name="imgFile" class="drop-zone-input" multiple>
-        
-
         </div> 
     </div> 
         <div class="textBox">
