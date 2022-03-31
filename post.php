@@ -70,7 +70,7 @@ include_once 'header.php';
       </div>
    </div>
 
- <!--CKEDITOR is an WYSIWYG rich text editor fraeworj connected to textarea-->
+ <!--CKEDITOR is an WYSIWYG rich text editor framework connected to textarea-->
 <script src="./ckeditor/build/ckeditor.js"></script>
 <script>
     ClassicEditor.create(document.getElementById('description'));
