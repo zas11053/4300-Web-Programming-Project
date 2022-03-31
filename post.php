@@ -69,8 +69,9 @@ include_once 'header.php';
 
       </div>
    </div>
-   <script src="./ckeditor/build/ckeditor.js"></script>
 
+ <!--CKEDITOR is an WYSIWYG rich text editor fraeworj connected to textarea-->
+<script src="./ckeditor/build/ckeditor.js"></script>
 <script>
     ClassicEditor.create(document.getElementById('description'));
  </script>
