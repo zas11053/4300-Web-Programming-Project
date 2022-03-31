@@ -165,9 +165,9 @@ footer p {
 }
 
 .imgBox {
-  width: 80%;
+  width: 50%;
   height: 550px;
-  background-color: aquamarine;
+  background-color: rgb(123, 196, 94);
   border-radius: 20px;
   position: relative;
 }
@@ -275,6 +275,7 @@ footer p {
 }
 
 .carousel__item {
+  margin-left: 10%;
   display: none;
 }
 
