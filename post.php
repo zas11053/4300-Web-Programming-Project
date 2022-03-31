@@ -33,7 +33,7 @@ include_once 'header.php';
 <!--
      <script src="./js/imagePost.js" ></script>
 -->
-     <script src="./js/carousel.js" defer></script>
+     <script src="./js/postImgPreview.js" defer></script>
 
 
 <?php
