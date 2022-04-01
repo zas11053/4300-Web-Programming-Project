@@ -283,7 +283,7 @@ footer p {
 
 /**TEXT SECTION IN POST.PHP==============================*/
 .textBox {
-  height: auto;
+  height: 540px;
   width: 100%;
   background-color: rgb(238, 148, 238);
   background-color: #fafafa;
@@ -295,5 +295,24 @@ footer p {
   font-weight: bolder;
   font-size: 30px;
   width: 99%;
-  margin-bottom: 5px;
+}
+
+.editor__editable,
+/* Classic build. */
+main .ck-editor[role='application'] .ck.ck-content,
+/* Decoupled document build. */
+.ck.editor__editable[role='textbox'],
+.ck.ck-editor__editable[role='textbox'],
+/* Inline & Balloon build. */
+.ck.editor[role='textbox'] {
+  height: 370px;
+}
+
+main .ck-editor[role="application"] {
+  overflow: auto;
+}
+.post-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

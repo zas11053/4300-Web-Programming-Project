@@ -33,7 +33,9 @@ include_once 'header.php';
                       
          <form action ="includes/post-upload.inc.php" method ="POST" enctype="multipart/form-data">
                 <input type="hidden" name ="username" value = "<?php echo $_SESSION["usersUID"];?>" >
+                <div class="post-desc">
                 <input type ="text" name="postTitle" id="postTitle" placeholder = "Post Title">
+               
                 <input type ="text" name="postLocation" placeholder = "Location">
                 <select name ="type">
                     <option value="0">Date type:</option>
@@ -41,28 +43,15 @@ include_once 'header.php';
                     <option value="fancy"> Fancy</option>
                     <option value="home"> Home</option>
 
-                </select>        
-                <textarea name="description" id="description" placeholder="Write something.." ></textarea>
-                
+                </select>   
+                  
+                <div id="editor" placeholder="write something"></div> <!--placeholdee for the ckeditor-->
+                </div>   
 
                 
                 
                 <button type="submit" name="submit"> POST </button>
             </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -73,7 +62,19 @@ include_once 'header.php';
  <!--CKEDITOR is an WYSIWYG rich text editor framework connected to textarea-->
 <script src="./ckeditor/build/ckeditor.js"></script>
 <script>
-    ClassicEditor.create(document.getElementById('description'));
+ ClassicEditor
+	.create( document.querySelector( '#editor' ), {
+		placeholder: 'Type information here....'
+     
+	} )
+	.then( editor => {
+		console.log( 'Editor was initialized', editor );
+	} )
+	.catch( err => {
+		console.error( err.stack );
+	} );
+
+  
  </script>
      <script src="./js/postImgPreview.js" defer></script>
 
