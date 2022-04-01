@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: #fafafa;
+  /**background-color: #57f38693;*/
+}
+header {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid #dcdcdc;
+  /*THE FOLLOWING FOR A STICKY HEADER!*/
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Old Standard TT", serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: black;
+}
+
+.center {
+  object-fit: contain;
+  text-align: center;
+  width: 20%;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+}
+
+.center img {
+  padding-top: 4px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /*
+  top: 50%;
+  transform: translate(-10%, 10%);
+  */
+}
+.right {
+  width: 40%;
+  background-color: rgb(255, 255, 255);
+}
+
+.left {
+  width: 40%;
+  background-color: rgb(255, 255, 255);
+}
+
+.left li,
+.right li {
+  background-color: white;
+}
+/**these are styling to make the dropdown menu on the profile pic*/
+.right ul li {
+  position: relative; /**NEW */
+}
+
+.right ul li ul {
+  display: none;
+  position: absolute;
+}
+.right ul li:hover ul {
+  display: block;
+}
+
+/**makes it wide enough so all text can fit in one line*/
+.right ul li ul li {
+  width: 60px;
+  background-color: #f79e9e; /**bg for dropdown*/
+  border-style: solid #dcdcdc;
+}
+
+.right ul li ul li a {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
+.right ul li ul li a:hover {
+  background-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+/**-------DROP DOWN MENY=U----------------*/
+
+#home {
+  margin-left: 15%;
+  margin-right: 20%;
+  padding-right: 2%;
+}
+
+#signup {
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-left: 2%;
+}
+
+#post {
+  margin-right: 30%;
+  padding-left: 2%;
+}
+#fav {
+  margin-right: 2%;
+  margin-left: 2%;
+  padding-left: 2%;
+}
+.navbar {
+  display: flex;
+  background-color: white;
+
+  align-items: center;
+  justify-content: center;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.navbar li {
+  display: inline-block;
+}
+
+.nav_avatar {
+  width: 27px;
+  height: 27px;
+  object-fit: fill;
+  border-radius: 50%;
+  border: 2px solid #dcdcdc;
+  padding: 2px;
+  vertical-align: text-bottom;
+}
+
+/**EVERYTHING ABOVE IS FOR THE HEADER!*/
+/*=================================================================================================**/
+
+/* Footer */
+footer p {
+  position: fixed;
+  text-align: right;
+  border-top: solid #dcdcdc;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+  background-color: white;
+  padding-top: 5px;
+}
+/**===============================================*/

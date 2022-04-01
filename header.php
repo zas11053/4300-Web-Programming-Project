@@ -10,7 +10,8 @@ session_start();
     <!-- HEAD TAG CONTAINS ALL THE INFO ABOUT THE WEBSITE -->
     <head>
         <title> MyDateList </title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/post.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
