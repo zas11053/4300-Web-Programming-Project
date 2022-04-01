@@ -21,6 +21,8 @@ document.querySelectorAll(".imgBox").forEach((carousel) => {
   inputElement.addEventListener("change", (e) => {
     if (inputElement.files.length) {
       updateThumbnail(dropZoneElement, inputElement.files[0]);
+      document.getElementById("imgDropZone").style.border = "none"; // removed the border once there's a file in
+      document.getElementById("imgDropZone").style.cursor = "default"; //changes cursor back to default
     }
 
     if (inputElement.files.length > 1) {
@@ -29,11 +31,15 @@ document.querySelectorAll(".imgBox").forEach((carousel) => {
       for (let i = 1; i < inputElement.files.length; i++) {
         var divC = document.createElement("div"); //create a new div
         divC.className = "carousel__item"; // give new div class name
-        imgBox.appendChild(divC); //NEW
+        imgBox.appendChild(divC); //new div is now a child of imgBox div
 
         var div = document.createElement("div"); //create a new div
         div.className = "imgDropZone"; // give new div class name
+
         divC.appendChild(div); // add new div to the imgBox class div
+
+        div.style.border = "none"; // removed the border once there's a file in
+        div.style.cursor = "default"; //changes cursor back to default
 
         updateThumbnail(div, inputElement.files[i]); //getthumbnail for [i] file
       }
@@ -79,7 +85,7 @@ document.querySelectorAll(".imgBox").forEach((carousel) => {
     } // if(e.dataTransfer.files.length > 1)
   });
 
-  //runs whenever a user drags over an image or file
+  //runs whenever a user drags over an image or file to change the outline look
   dropZoneElement.addEventListener("dragover", (e) => {
     e.preventDefault();
     //adding a drop over zone class-- this it to change the border when there a dragging over from dashed to solid
@@ -112,18 +118,22 @@ document.querySelectorAll(".imgBox").forEach((carousel) => {
 
         updateThumbnail(dropZoneElement, e.dataTransfer.files[0]); //getthumbnail for first img
 
+        document.getElementById("imgDropZone").style.border = "none"; // removed the border once there's a file in
+        document.getElementById("imgDropZone").style.cursor = "default"; //changes cursor back to default
         if (e.dataTransfer.files.length > 1) {
           length = e.dataTransfer.files.length;
           for (let i = 1; i < e.dataTransfer.files.length; i++) {
             var divC = document.createElement("div"); //create a new div
             divC.className = "carousel__item"; // give new div class name
-            imgBox.appendChild(divC); //NEW
+            imgBox.appendChild(divC); //make new div a child of imgBox div
 
             var div = document.createElement("div"); //create a new div
             div.className = "imgDropZone"; // give new div class name
             divC.appendChild(div); // add new div to the imgBox class div
 
             updateThumbnail(div, e.dataTransfer.files[i]); //getthumbnail for [i] file
+            div.style.border = "none"; // removed the border once there's a file in
+            div.style.cursor = "default"; //changes cursor back to default
           }
         } // if(e.dataTransfer.files.length > 1)
 

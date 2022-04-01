@@ -210,7 +210,7 @@ footer p {
   cursor: pointer;
   color: #1f1a1a;
   border: 4px dashed rgb(145, 134, 134);
-  background-color: lawngreen;
+
   background-color: rgba(243, 203, 203, 0.1);
 }
 
@@ -285,16 +285,16 @@ footer p {
 .textBox {
   height: 540px;
   width: 100%;
-  background-color: rgb(238, 148, 238);
+
   background-color: #fafafa;
   border: solid 1px black;
   margin-right: 30px;
 }
+
 #postTitle {
   font-family: "Satisfy", cursive;
   font-weight: bolder;
   font-size: 30px;
-  width: 99%;
 }
 
 .editor__editable,
@@ -312,7 +312,22 @@ main .ck-editor[role="application"] {
   overflow: auto;
 }
 .post-desc {
+  /**the one tha contains post title, location,date type*/
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.textBox button {
+  width: 100%;
+  margin-top: 1px;
+  height: 23px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  background-color: #ffe1e1;
+}
+.textBox button:hover {
+  background-color: rgba(253, 184, 184);
 }

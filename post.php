@@ -34,23 +34,22 @@ include_once 'header.php';
          <form action ="includes/post-upload.inc.php" method ="POST" enctype="multipart/form-data">
                 <input type="hidden" name ="username" value = "<?php echo $_SESSION["usersUID"];?>" >
                 <div class="post-desc">
-                <input type ="text" name="postTitle" id="postTitle" placeholder = "Post Title">
-               
-                <input type ="text" name="postLocation" placeholder = "Location">
-                <select name ="type">
-                    <option value="0">Date type:</option>
-                    <option value="casual"> Casual</option>
-                    <option value="fancy"> Fancy</option>
-                    <option value="home"> Home</option>
+                     <input type ="text" name="postTitle" id="postTitle" placeholder = "Post Title">
+                     
+                     <input type ="text" name="postLocation" placeholder = "Location">
+                     <select name ="type">
+                        <option value="0">Date type:</option>
+                        <option value="casual"> Casual</option>
+                        <option value="fancy"> Fancy</option>
+                        <option value="home"> Home</option>
 
-                </select>   
-                  
-                <div id="editor" placeholder="write something"></div> <!--placeholdee for the ckeditor-->
-                </div>   
-
+                     </select>   
+                        
+                     <div id="editor" placeholder="write something"></div> <!--placeholdee for the ckeditor-->
                 
-                
-                <button type="submit" name="submit"> POST </button>
+               </div> 
+               <button  type="submit" name="submit"> POST </button>
+                 
             </form>
 
 
