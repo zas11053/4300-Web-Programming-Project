@@ -44,9 +44,36 @@ include_once 'header.php';
                         <option value="home"> Home</option>
 
                      </select>   
-                        
-                     <div id="editor" placeholder="write something"></div> <!--placeholdee for the ckeditor-->
-                
+                      
+                     <textarea name="editor1"></textarea>
+    <script>
+
+       CKEDITOR.replace( 'editor1', {
+    toolbar: [
+    
+    { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Undo', 'Redo' ] },
+    { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Replace', '-', 'Scayt' ] },
+    
+    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+    { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+    { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar' ] },
+    '/',
+    { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+    
+   
+],
+height: 306,
+      resize_dir: 'none',
+      extraPlugins: 'editorplaceholder',
+      editorplaceholder: 'Start typing here...'
+      
+});
+
+  </script>
+   
                </div> 
                <button  type="submit" name="submit"> POST </button>
                  
@@ -58,23 +85,8 @@ include_once 'header.php';
       </div>
    </div>
 
- <!--CKEDITOR is an WYSIWYG rich text editor framework connected to textarea-->
-<script src="./ckeditor/build/ckeditor.js"></script>
-<script>
- ClassicEditor
-	.create( document.querySelector( '#editor' ), {
-		placeholder: 'Type information here....'
-     
-	} )
-	.then( editor => {
-		console.log( 'Editor was initialized', editor );
-	} )
-	.catch( err => {
-		console.error( err.stack );
-	} );
-
   
- </script>
+
      <script src="./js/postImgPreview.js" defer></script>
 
 

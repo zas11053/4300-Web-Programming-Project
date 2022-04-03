@@ -12,6 +12,8 @@ session_start();
         <title> MyDateList </title>
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/post.css">
+        <script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script> <!--script for ckeditor-->
+      
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +22,7 @@ session_start();
     </head>
 
     <!-- BODY CONTAINS ALL THE INFO THE USER SEES -->
-    <body>
+    <body >
          <header>
              <!-- Left side of the navigation bar links -->
              <div class="navbar" id="myHeader">
