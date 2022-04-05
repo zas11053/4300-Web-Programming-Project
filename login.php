@@ -24,7 +24,7 @@
                 <input type ="password" name="password" id="text" placeholder="Password "> <br/> <br/>
                 <input type = "submit" name="submit" id ="loginButton" value="Log In">
                 <br/> <br/>
-            </form>
+                </form>
 
          <!-- Checks for invalid information or empty fields -->
          <?php

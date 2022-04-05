@@ -1,0 +1,11 @@
+.myAccount {
+    display: flex;
+    margin: 35px; 
+    gap: 100px;
+}
+
+.settingsBox {
+    display: flex; 
+    gap: 100px;
+    margin-top: 35px;
+}
