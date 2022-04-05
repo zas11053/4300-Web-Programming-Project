@@ -19,6 +19,7 @@ document.querySelectorAll(".imgBox").forEach((carousel) => {
   // if there a change== file added
   inputElement.addEventListener("change", (e) => {
     if (inputElement.files.length) {
+      console.log(inputElement.files);
       hasDropped = true;
       updateThumbnail(dropZoneElement, inputElement.files[0]);
       document.getElementById("imgDropZone").style.border = "none"; // removed the border once there's a file in

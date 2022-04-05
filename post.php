@@ -14,8 +14,11 @@ include_once 'header.php';
               <i class='material-icons'style="font-size: 100px;"> add_photo_alternate </i>
 
               </div>
+              <form action ="includes/post-upload.inc.php" method ="POST" enctype="multipart/form-data">
                <!--<div class="drop-zone-thumb" data-label="myFile.txt"> </div>-created by js-->
-               <input type ="file" name="imgFile" id="imgFile" class="drop-zone-input" multiple>
+               
+               <!--the name is technically "imgFile ; [] is used to store array of images else it'll only post 1 file-->
+               <input type ="file" name="imgFile[]" id="imgFile" class="drop-zone-input" multiple>
             </div> 
 
          </div>
@@ -26,23 +29,18 @@ include_once 'header.php';
 
          </div>
          --->
-         <button onclick="clearImages()">Clear Images</button>
-      <script>
-         function clearImages(){
-            document.querySelector('')
-         }
-         </script>
-      </div> 
-
+         
+      </div>
       <div class="textBox">
-        
-                      
-         <form action ="includes/post-upload.inc.php" method ="POST" enctype="multipart/form-data">
+     
+              <!---        
+         <form action ="includes/post-upload.inc.php" method ="POST" enctype="multipart/form-data"> -->
                   <input type="hidden" name ="username" value = "<?php echo $_SESSION["usersUID"];?>" >
                   <div class="post-desc">
                         <input type ="text" name="postTitle" id="postTitle" placeholder = "Post Title">
                         
-                        <input type ="text" name="postLocation" placeholder = "Location">
+                        <input type ="text"  name="postLocation" placeholder = "Location">
+                        
                         <select name ="type">
                            <option value="0">Date type:</option>
                            <option value="casual"> Casual</option>
@@ -51,7 +49,7 @@ include_once 'header.php';
 
                         </select>   
                         
-                        <textarea name="editor1"></textarea>
+                     <textarea name="editor1"></textarea>
                    <script>
 
                         CKEDITOR.replace( 'editor1', {
@@ -82,14 +80,12 @@ include_once 'header.php';
       
                   </div> 
                   <button  type="submit" name="submit"> POST </button>
-                 
-            </form>
+                  </form>
       </div> <!--"textBox div-->
+      
      
    </div> <!--"postBox div--> 
-     <script src="./js/postImgPreview.js" defer></script>
-
-
+   <script src="./js/postImgPreview.js" defer></script>
 <?php
 include_once 'footer.php';
 ?>
