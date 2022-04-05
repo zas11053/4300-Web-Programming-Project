@@ -13,13 +13,13 @@ document.querySelectorAll(".imgBox").forEach((carousel) => {
   dropZoneElement.addEventListener("click", (e) => {
     if (hasDropped == false) {
       inputElement.click();
-      hasDropped = true;
     }
   });
 
   // if there a change== file added
   inputElement.addEventListener("change", (e) => {
     if (inputElement.files.length) {
+      hasDropped = true;
       updateThumbnail(dropZoneElement, inputElement.files[0]);
       document.getElementById("imgDropZone").style.border = "none"; // removed the border once there's a file in
       document.getElementById("imgDropZone").style.cursor = "default"; //changes cursor back to default

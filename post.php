@@ -26,67 +26,67 @@ include_once 'header.php';
 
          </div>
          --->
+         <button onclick="clearImages()">Clear Images</button>
+      <script>
+         function clearImages(){
+            document.querySelector('')
+         }
+         </script>
       </div> 
 
       <div class="textBox">
         
                       
          <form action ="includes/post-upload.inc.php" method ="POST" enctype="multipart/form-data">
-                <input type="hidden" name ="username" value = "<?php echo $_SESSION["usersUID"];?>" >
-                <div class="post-desc">
-                     <input type ="text" name="postTitle" id="postTitle" placeholder = "Post Title">
-                     
-                     <input type ="text" name="postLocation" placeholder = "Location">
-                     <select name ="type">
-                        <option value="0">Date type:</option>
-                        <option value="casual"> Casual</option>
-                        <option value="fancy"> Fancy</option>
-                        <option value="home"> Home</option>
+                  <input type="hidden" name ="username" value = "<?php echo $_SESSION["usersUID"];?>" >
+                  <div class="post-desc">
+                        <input type ="text" name="postTitle" id="postTitle" placeholder = "Post Title">
+                        
+                        <input type ="text" name="postLocation" placeholder = "Location">
+                        <select name ="type">
+                           <option value="0">Date type:</option>
+                           <option value="casual"> Casual</option>
+                           <option value="fancy"> Fancy</option>
+                           <option value="home"> Home</option>
 
-                     </select>   
-                      
-                     <textarea name="editor1"></textarea>
-    <script>
+                        </select>   
+                        
+                        <textarea name="editor1"></textarea>
+                   <script>
 
-       CKEDITOR.replace( 'editor1', {
-    toolbar: [
-    
-    { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Undo', 'Redo' ] },
-    { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Replace', '-', 'Scayt' ] },
-    
-    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-    { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-    { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar' ] },
-    '/',
-    { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
-    
-   
-],
-height: 306,
-      resize_dir: 'none',
-      extraPlugins: 'editorplaceholder',
-      editorplaceholder: 'Start typing here...'
+                        CKEDITOR.replace( 'editor1', {
+                        toolbar: [
+                        
+                        { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Undo', 'Redo' ] },
+                        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Replace', '-', 'Scayt' ] },
+                        
+                        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+                        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+                        { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+                        { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar' ] },
+                        '/',
+                        { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+                        { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+                        { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+                        
+                        
+                     ],
+                     height: 306,
+                           resize_dir: 'none',
+                           extraPlugins: 'editorplaceholder',
+                           editorplaceholder: 'Start typing here...'
+                           
+                     });
+
+                   </script>
       
-});
-
-  </script>
-   
-               </div> 
-               <button  type="submit" name="submit"> POST </button>
+                  </div> 
+                  <button  type="submit" name="submit"> POST </button>
                  
             </form>
-
-
-
-
-      </div>
-   </div>
-
-  
-
+      </div> <!--"textBox div-->
+     
+   </div> <!--"postBox div--> 
      <script src="./js/postImgPreview.js" defer></script>
 
 
