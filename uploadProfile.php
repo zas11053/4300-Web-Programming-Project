@@ -32,9 +32,14 @@ if(in_array($fileActualExt,$allowed)){
     //no error===0
     if($fileError===0){
         if($fileSize<1000000){ 
+            
             $username=$_SESSION["usersUID"];
-            //profile pic will be labeled [username]_pfp.[fileExtention]
-            $fileNameNew = $username."_"."pfp".".".$fileActualExt;
+            $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
+            $result = mysqli_query($conn, $sql);
+            $usersID = mysqli_fetch_assoc($result);
+            $usersIDNum=$usersID['usersID'];
+            //profile pic will be labeled [userID]_pfp.[fileExtention]
+            $fileNameNew = $usersIDNum."_"."pfp".".".$fileActualExt;
             $fileDestination = './uploads/'.$fileNameNew;
            
             
