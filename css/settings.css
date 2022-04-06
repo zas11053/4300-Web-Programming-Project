@@ -1,11 +1,107 @@
 .myAccount {
-    display: flex;
-    margin: 35px; 
-    gap: 100px;
+  display: flex;
+  margin: auto;
+  margin-top: 25px;
+  width: max-content;
+  gap: 100px;
+  padding: 15px;
+}
+
+.myAccount h1 {
+  background-image: -webkit-linear-gradient(
+    left,
+    rgb(39, 33, 33),
+    rgb(27, 1, 5),
+    rgb(59, 50, 50)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.myAccount #text {
+  height: 20px;
+  width: 350px;
+  border-radius: 2px;
+  border: solid 1px #dcdcdc;
+  padding: 4px;
+  font-size: 14px;
+}
+
+#settingButton {
+  height: 30px;
+  width: 360px;
+  border-radius: 2px;
+  border: solid 1px #dcdcdc;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9e1e1;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    #f9e1e1 50%,
+    #bfe9ff 10%,
+    #ffcbd1 40%
+  );
+  transition: 0.5s;
+}
+
+#settingButton:hover {
+  background-image: linear-gradient(
+    to right,
+    #ff6e7f 0%,
+    #bfe9ff 51%,
+    #ff6e7f 100%
+  );
+
+  background-position: right center; /* change the direction of the change here */
+  color: RIGHT;
+}
+
+#settingButton:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 .settingsBox {
-    display: flex; 
-    gap: 100px;
-    margin-top: 35px;
+  display: flex;
+  gap: 100px;
+  margin-top: 35px;
+}
+.settingLinks ul {
+  padding: 0;
+}
+
+.settingLinks a {
+  font-size: 26px;
+}
+.settingLinks h1 {
+  padding: 0;
+}
+.editProfile {
+  margin-top: 8px;
+}
+.editProfile label {
+  font-size: 10px;
+}
+
+.settingLinks a:hover {
+  background: linear-gradient(to top, #a93b3b, #ec828e);
+  color: transparent;
+  font-weight: bolder;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+#pfpPic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover; /*makes it so image will take up entire space if the thumbnail cover(should i change this to contain instead?)*/
+  background-position: center; /*center of bg img*/
+  border: 3px solid #dcdcdc;
+  padding: 2px;
 }

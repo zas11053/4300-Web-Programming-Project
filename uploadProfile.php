@@ -32,10 +32,11 @@ if(in_array($fileActualExt,$allowed)){
     //no error===0
     if($fileError===0){
         if($fileSize<1000000){ 
-            //use file a unique code (won't repeat) so each image file name is different and wont have cases where 2 images have same name 
-            $fileNameNew = uniqid('',true).".".$fileActualExt;
-            $fileDestination = './uploads/'.$fileNameNew;
             $username=$_SESSION["usersUID"];
+            //profile pic will be labeled [username]_pfp.[fileExtention]
+            $fileNameNew = $username."_"."pfp".".".$fileActualExt;
+            $fileDestination = './uploads/'.$fileNameNew;
+           
             
             //GET THE CURRENT PROFILE PICTURE IF IT'S NOT DEFAULT SO IT CAN BE DELETED FROM THE FOLDER 
             $oldImgDir;
@@ -75,7 +76,7 @@ if(in_array($fileActualExt,$allowed)){
                 //copies/movies over the image and store in the uploads folder
                 move_uploaded_file($fileTmpName,$fileDestination);
 
-                header("Location: mypage.php?uploadsuccess"); // can remove the ?uploadsuccess later if want
+                header("Location: settings.php?uploadsuccess"); // can remove the ?uploadsuccess later if want
                 
                 exit();
             }
