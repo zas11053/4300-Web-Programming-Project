@@ -36,9 +36,17 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
            echo "some fields are empty";
             exit();
         } else { // if input not empty --> insert into database 
-               
+
+            //------------------------gets the usersID from database users table
+            $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
+            $result = mysqli_query($conn, $sql);
+            $usersID = mysqli_fetch_assoc($result);
+            
+            $usersIDNum=$usersID['usersID'];
+            echo($usersIDNum); //print out the user'sID
+            //---------------------------------------
                     
-            $sql = "INSERT INTO `posts`( `usersUID`, `title`, `location`, `type`, `description`) VALUES(?,?,?,?,?);";
+            $sql = "INSERT INTO `posts`( `usersID`, `title`, `location`, `type`, `description`) VALUES(?,?,?,?,?);";
             $stmt = mysqli_stmt_init($conn);
 
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -46,7 +54,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
             // exit();
         
             } else {
-                mysqli_stmt_bind_param($stmt, "sssss",$username,$postTitle, $postLocation, $type,$description);
+                mysqli_stmt_bind_param($stmt, "sssss",$usersIDNum,$postTitle, $postLocation, $type,$description);
                 mysqli_stmt_execute($stmt);
             }
 
@@ -54,7 +62,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
             
             // this selects the latest post# which would == to the same post number just entered to database above for title,location,etc
             $sql = "SELECT postID FROM `posts` 
-            WHERE usersUID =?
+            WHERE usersID =?
             ORDER BY `posts`.`postID`  DESC
             LIMIT 1;";
 
@@ -65,7 +73,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
             } else {
                 echo "sql not failed--on to uploading imgs to database";
                 
-                mysqli_stmt_bind_param($stmt, "s",$username);
+                mysqli_stmt_bind_param($stmt, "s",$usersIDNum);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 $postID = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -81,7 +89,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
                     echo " filename :". $fileName;
 
                      //INSERTING INTO TABLE THAT HOLD ALL IMAGES FOR THE POST
-                     $sql = "INSERT INTO `imgs`( `usersUID`, `postID`, `img_dir`) VALUES (?,?,?);";
+                     $sql = "INSERT INTO `imgs`( `usersID`, `postID`, `img_dir`) VALUES (?,?,?);";
                      //$stmt = mysqli_stmt_init($conn);
 
                      if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -89,7 +97,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
                      // exit();
                      
                     } else {
-                        mysqli_stmt_bind_param($stmt, "sss",$username,$postID[0]['postID'], $fileDestination);
+                        mysqli_stmt_bind_param($stmt, "sss",$usersIDNum,$postID[0]['postID'], $fileDestination);
                         mysqli_stmt_execute($stmt);
                         $fileTmpName = $_FILES['imgFile']['tmp_name'][$i];
                             //copies/movies over the image and store in the uploads folder
