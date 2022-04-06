@@ -151,9 +151,32 @@ function loginUser($conn, $username, $password){
         header("location: ../home.php"); 
         exit(); //stops the script
     }
+}
 
+function setting_checkPWD($conn, $username, $curpassword, $newpassword, $verifypassword) {
+    // can use username twice as param cuz itll either be username
+    $uidExists = uidExists($conn, $username);
 
+    if($uidExists === false){
+        header("location: ../settings.php?error=wrongcurrentpassword"); 
+        exit(); //stops the script
+    }
 
+    $hashedPwd = $uidExists["usersPWD"];
+
+    //if two password matches== ok can login
+    $checkPwd = password_verify($curpassword,$hashedPwd);
+    if ($checkPwd=== false ){
+        header("location: ../settings.php?error=wrongcurrentpassword"); 
+        exit(); //stops the script
+    } else  if ($checkPwd=== true ){
+        if(pwdMatch($newpassword, $verifypassword) === false){ //check if the new password and the verify password are the same
+            settings_newPassword ($conn,$username, $verifypassword);
+        } else {
+            header("location: ../settings.php?error=passwordsdontmatch"); 
+            exit(); //stops the script
+        }
+    }
 }
 
 /**verify the security questions answers */
@@ -207,6 +230,22 @@ function newPassword ($conn,$username, $password){
 
 }
 
+function settings_newPassword ($conn,$username, $password){
+    $sql = "UPDATE `users` SET usersPWD = ? WHERE usersUID= ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        echo "There was an error!";
+        exit();
+
+    } else {
+        $newHashedPWD = password_hash($password, PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmt, "ss", $newHashedPWD,$username);
+        mysqli_stmt_execute($stmt); 
+        header("location: ../settings.php?error=updatedpassword"); 
+        exit(); //stops the script
+    }
+
+}
 
 function updateUsername($conn,$username, $usersID){
     $sql = "UPDATE `users` SET usersUID = ? WHERE usersID= ?";

@@ -71,9 +71,23 @@ require_once('includes/dbh.inc.php');
                 </div>
 
                 <div class="passwordSettings">
+                <div style="margin-bottom: 3px; color: red; font-weight:bold;">
+                    <?php
+                        if(isset($_GET["error"])){
+                            if($_GET["error"] == "empty"){
+                                echo "<p> Fill in all fields! </p>";
+                            } else if ($_GET["error"] == "wrongcurrentpassword"){
+                                echo "<p> Incorrect current password </p>";
+                            } else if ($_GET["error"] =="passwordsdontmatch"){
+                                echo "<p> Unable to change password because passwords don't match.</p>";
+                            }else if ($_GET["error"] == "updatedpassword"){
+                                echo "<p style='color:green;'> You have changed your password :) </p>";
+                            }
+                        }
+                    ?>
+                </div>
                     <form action ="includes/updatePassword.inc.php" method="post">
-                        <label>CURRENT USERNAME*:</label><br>
-                        <input type = "text" name="username" placeholder="CURRENT USERNAME"id ="text"> <br/> <br/>
+                        <input type ="hidden" name="username" value ="<?php echo $username ?>">
                         <label>CURRENT PASSWORD*:</label><br>
                         <input type = "text" name="cpassword" placeholder="CURRENT PASSWORD"id ="text"> <br/> <br/>
                         <label>NEW PASSWORD*:</label><br>
