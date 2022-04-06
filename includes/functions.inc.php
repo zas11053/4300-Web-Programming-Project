@@ -17,13 +17,13 @@ function emptyInputSignup($name, $username, $password , $verify_password, $quest
 } // emptyInputSignup
 
 // checks if the username is correctly formatted 
-function invalidUID( $username) {
+function invalidUID($username) {
     $result;
 
     /** 
      * search algorithm
      *  preg_match is a built in php -- basically we are having it look through the conditons
-     * in the [] , looking to see it it contains letters a-z, A-Z, 0-9 (only accpeting these characters for username)
+     * in the [] , looking to see it it contains letters a-z, A-Z, 0-9 (only accepting these characters for username)
     */
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $result = true;

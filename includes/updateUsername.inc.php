@@ -11,7 +11,7 @@ if(isset($_POST["submit"])) {
     require_once('functions.inc.php');
 
     
-    if( (emptyField($username)!== false)){
+    if((emptyField($username)!== false)){
         header("location: ../settings.php?error=empty"); 
         exit(); //stops the script
     }
