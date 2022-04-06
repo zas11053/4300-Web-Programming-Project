@@ -33,23 +33,21 @@ require_once('includes/dbh.inc.php');
                         $result = mysqli_query($conn, $sql);
                         $image_dir = mysqli_fetch_assoc($result);
                         $img=$image_dir['pfp_img_dir'];
-                        //echo "<img class='pfpPic'style='width:100px; height: 100px; border-radius: 50%;' src= '$img'>";
-                       // echo `<div class='pfpPic' style='background-image: url('$img')'>`;
                     ?>
                     <div id="pfpPic" style="background-image:url('<?php echo $img;?>');"></div>
-                    <div> <!--print out text next to pfp-->
-                        <?php
-                            // prints out the userID
-                            echo $_SESSION["usersUID"];
-                        ?>
-                         
-                        <form action ="uploadProfile.php" method ="POST" enctype="multipart/form-data">
-                            <input type ="file" name="file" id="pfpFile" style="display:none" >
-                           
-                            <button type="submit" id="submitPFP" name="submit" style="display:none"> UPLOAD </button>
-                        </form>
-                        <button id="settingPFPButton" style = "background-color:transparent;border:none; font-weight:bolder;color:#a93b3b;cursor:pointer">Change Profile Photo</button>
-                    </div>
+                        <div class="settings_userPfp" > <!--print out text next to pfp-->
+                            <?php
+                                // prints out the userID
+                                echo $_SESSION["usersUID"];
+                            ?>
+                            <!--This form is to update the profile pic-->
+                            <form action ="uploadProfile.php" method ="POST" enctype="multipart/form-data">
+                                <input type ="file" name="file" id="pfpFile" style="display:none" >
+                            
+                                <button type="submit" id="submitPFP" name="submit" style="display:none"> UPLOAD </button>
+                            </form>
+                            <button id="settingPFPButton" style = "background-color:transparent;border:none; font-weight:bolder;color:#a93b3b;cursor:pointer;padding:0">Change Profile Photo</button>
+                        </div>
              </div>
 
 
@@ -57,7 +55,7 @@ require_once('includes/dbh.inc.php');
                     <form action ="includes/updateUsername.inc.php" method="post">
                         
                         <label> USERNAME*:</label><br>
-                        <input type = "text" name="username" id ="text"> <br/> <br/>
+                        <input type = "text" name="username" id ="text" placeholder="NEW USERNAME"> <br/> <br/>
                         <input type = "submit" name="submit" id="settingButton" value="Update My Username">
                         <br/> <br/>
                     </form>
@@ -67,11 +65,11 @@ require_once('includes/dbh.inc.php');
                     <form action ="includes/updatePassword.inc.php" method="post">
                         
                         <label>CURRENT PASSWORD*:</label><br>
-                        <input type = "text" name="password" id ="text"> <br/> <br/>
+                        <input type = "text" name="password" placeholder="CURRENT PASSWORD"id ="text"> <br/> <br/>
                         <label>NEW PASSWORD*:</label><br>
-                        <input type = "password" name="password" id ="text" > <br/> <br/>
+                        <input type = "password" name="password" placeholder="NEW PASSWORD" id ="text" > <br/> <br/>
                         <label>VERIFY PASSWORD*:</label><br>
-                        <input type = "password" name="password" id ="text" > <br/> <br/>
+                        <input type = "password" name="password" placeholder="VERIFY PASSWORD" id ="text" > <br/> <br/>
                         <input type = "submit" name="submit" id="settingButton" value="Update My Password">
                         <br/> <br/>
                     </form>
@@ -96,15 +94,11 @@ require_once('includes/dbh.inc.php');
   originalButton.addEventListener("change", function(){ //value changes when you choose a file -value =path to chosen file
      if(originalButton.value){
         const submitPFP = document.getElementById("submitPFP"); //submitButton
-        submitPFP.click();
+        submitPFP.click(); //press the submit button
      } else {
         alert("hello, no file");
      }
     });
-
-     
-
-
 
 </script>
 <?php

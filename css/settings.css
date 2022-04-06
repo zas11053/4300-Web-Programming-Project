@@ -105,3 +105,14 @@
   border: 3px solid #dcdcdc;
   padding: 2px;
 }
+
+/**the section where it says username and "change profile picture below*/
+.settings_userPfp {
+  padding-top: 26px;
+  margin-left: 20px;
+  font-size: x-large;
+}
+
+.updatedPfp {
+  margin-bottom: 21.2px;
+}

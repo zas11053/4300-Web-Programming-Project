@@ -1,3 +1,5 @@
+var hasDropped = false;
+
 document.querySelectorAll(".imgBox").forEach((carousel) => {
   //carousel = the <input type="imgBox"> element
   const dropZoneElement = document.getElementById("imgDropZone");
