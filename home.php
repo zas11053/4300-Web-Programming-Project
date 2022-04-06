@@ -19,7 +19,16 @@
             <h1> Welcome to MyDateList. This is the homepage.</h1>
         </section>
 
+        <!-- big sliding picture code -->
+        
+        <!-- search bar code -->
+        <div class="nav">
+            <input type="text" placeholder="Search..">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+
         <h4> DATE IDEAS </h4>
+        <!-- individual sliding posts code -->
     </body>
 </html>      
 <?php
