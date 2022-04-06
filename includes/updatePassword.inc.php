@@ -23,6 +23,8 @@ if(isset($_POST["submit"])) {
         exit(); //stops the script
     }
 
+    //Need to check if current password is the actual current password
+
     //Need to include an error message if the textboxes are left empty or does isset do this?
 
     // Should we make one for if the password exists already??

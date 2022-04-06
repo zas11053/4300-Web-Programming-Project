@@ -72,7 +72,8 @@ require_once('includes/dbh.inc.php');
 
                 <div class="passwordSettings">
                     <form action ="includes/updatePassword.inc.php" method="post">
-                        
+                        <label>CURRENT USERNAME*:</label><br>
+                        <input type = "text" name="username" placeholder="CURRENT USERNAME"id ="text"> <br/> <br/>
                         <label>CURRENT PASSWORD*:</label><br>
                         <input type = "text" name="cpassword" placeholder="CURRENT PASSWORD"id ="text"> <br/> <br/>
                         <label>NEW PASSWORD*:</label><br>
