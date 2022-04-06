@@ -74,11 +74,11 @@ require_once('includes/dbh.inc.php');
                     <form action ="includes/updatePassword.inc.php" method="post">
                         
                         <label>CURRENT PASSWORD*:</label><br>
-                        <input type = "text" name="password" placeholder="CURRENT PASSWORD"id ="text"> <br/> <br/>
+                        <input type = "text" name="cpassword" placeholder="CURRENT PASSWORD"id ="text"> <br/> <br/>
                         <label>NEW PASSWORD*:</label><br>
-                        <input type = "password" name="password" placeholder="NEW PASSWORD" id ="text" > <br/> <br/>
+                        <input type = "password" name="npassword" placeholder="NEW PASSWORD" id ="text" > <br/> <br/>
                         <label>VERIFY PASSWORD*:</label><br>
-                        <input type = "password" name="password" placeholder="VERIFY PASSWORD" id ="text" > <br/> <br/>
+                        <input type = "password" name="vpassword" placeholder="VERIFY PASSWORD" id ="text" > <br/> <br/>
                         <input type = "submit" name="submit" id="settingButton" value="Update My Password">
                         <br/> <br/>
                     </form>

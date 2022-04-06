@@ -11,10 +11,10 @@ if(isset($_POST["submit"])) {
     require_once('functions.inc.php');
 
     
- if( (emptyField($username )!== false)){
-    header("location: ../settings.php?error=empty"); 
-    exit(); //stops the script
- }
+    if( (emptyField($username)!== false)){
+        header("location: ../settings.php?error=empty"); 
+        exit(); //stops the script
+    }
 
     if(invalidUID($username) !== false){
         header("location: ../settings.php?error=invalidUID"); 

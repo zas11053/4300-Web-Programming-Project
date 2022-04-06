@@ -156,7 +156,7 @@ function loginUser($conn, $username, $password){
 
 }
 
-/**verify the security questions answers  */
+/**verify the security questions answers */
 function verifyAnswers($conn, $username, $question1,$question2, $question3){
     // can use username twice as param cuz itll either be username
     $uidExists = uidExists($conn, $username, $username);
@@ -177,11 +177,10 @@ function verifyAnswers($conn, $username, $question1,$question2, $question3){
 
 }
 
-
 function emptyField($username){
     $result; // will return if it true or false
 
-    // check whether there is data or nah isempty()is a built in php 
+    // check whether there is data or nah isempty() is a built in php 
     if(empty($username)) { 
         $result = true;
 
