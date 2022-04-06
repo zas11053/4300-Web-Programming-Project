@@ -14,7 +14,10 @@
     rgb(27, 1, 5),
     rgb(59, 50, 50)
   );
+  background-clip: text;
   -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
