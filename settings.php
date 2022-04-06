@@ -1,6 +1,13 @@
 <?php
 include_once 'header.php';
 require_once('includes/dbh.inc.php');
+
+    $username=$_SESSION["usersUID"];
+    $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
+    $result = mysqli_query($conn, $sql);
+    $usersID = mysqli_fetch_assoc($result);
+    $usersIDNum=$usersID['usersID'];
+
 ?>
 <div class="settingBody">
     <div class="myAccount">
@@ -56,6 +63,8 @@ require_once('includes/dbh.inc.php');
                         
                         <label> USERNAME*:</label><br>
                         <input type = "text" name="username" id ="text" placeholder="NEW USERNAME"> <br/> <br/>
+                        <input type ="hidden" name="userID" value ="<?php echo $usersIDNum ?>">
+
                         <input type = "submit" name="submit" id="settingButton" value="Update My Username">
                         <br/> <br/>
                     </form>

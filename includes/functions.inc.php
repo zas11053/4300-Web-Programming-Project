@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //IN THESE FUNCTIONS, RETURN TRUE MEANS THERE IS AN ERROR !
 
 /**This function is to see if all fields were answered  */
@@ -203,6 +203,24 @@ function newPassword ($conn,$username, $password){
         mysqli_stmt_bind_param($stmt, "ss", $newHashedPWD,$username);
         mysqli_stmt_execute($stmt);
         header("location: ../login.php"); 
+        exit();
+    }
+
+}
+
+
+function updateUsername($conn,$username, $usersID){
+    $sql = "UPDATE `users` SET usersUID = ? WHERE usersID= ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        echo "There was an error!";
+        exit();
+
+    } else {
+        mysqli_stmt_bind_param($stmt, "ss", $username,$usersID);
+        mysqli_stmt_execute($stmt);
+        $_SESSION["usersUID"]=$username; // need to update the sessions array or else will have null array errors
+        header("location: ../settings.php?error=none"); 
         exit();
     }
 
