@@ -108,7 +108,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
 
                 } // for loop of img
                 
-                //header("location: ../mypage.php?uploadsuccess"); // can remove the ?uploadsuccess later if want
+                header("location: ../mypage.php?uploadsuccess"); // can remove the ?uploadsuccess later if want
                                         
                 exit();
                 
