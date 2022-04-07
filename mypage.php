@@ -44,7 +44,7 @@ include_once 'header.php';
 
 <?php
     $user = $_SESSION["usersUID"];
-    $sql1 = "SELECT * FROM posts INNER JOIN users ON users.usersID = posts.usersID WHERE users.usersUID = '$user'"; // select everything from the post table to display on homepage
+    $sql1 = "SELECT * FROM posts INNER JOIN users ON users.usersID = posts.usersID WHERE users.usersUID = '$user'"; // select everything from the post table that have been created by the user who is signed in to display on homepage
     $result1 = mysqli_query($conn, $sql1);
     $resultsCheck = mysqli_num_rows($result1); // error handling to make sure you're selecting something
 
