@@ -51,7 +51,7 @@ include_once 'header.php';
     if ($resultsCheck > 0) {
         while ($row = mysqli_fetch_assoc($result1)) {
             echo "<br> PostID: " . $row['postID'] .  "<br>";
-            echo "UsersID: " . $row['usersID'] . "<br>";
+            echo "UsersName: " . $row['usersUID'] . "<br>";
             echo "Title: " . $row['title'] . "<br>";
             echo "Location: " . $row['location'] . "<br>";
             echo "Type: " . $row['type'] . "<br>";
