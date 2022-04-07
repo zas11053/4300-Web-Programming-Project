@@ -195,9 +195,6 @@ function verifyAnswers($conn, $username, $question1,$question2, $question3){
         header("location: ../login.php?error=Unable_to_verify_account"); 
         exit();
     }
-
-
-
 }
 
 function emptyField($username){

@@ -81,7 +81,7 @@ if(in_array($fileActualExt,$allowed)){
                 //copies/movies over the image and store in the uploads folder
                 move_uploaded_file($fileTmpName,$fileDestination);
 
-                header("Location: settings.php?uploadsuccess"); // can remove the ?uploadsuccess later if want
+                header("Location: mypage.php?error=uploadsuccess"); // can remove the ?uploadsuccess later if want
                 
                 exit();
             }
@@ -93,14 +93,14 @@ if(in_array($fileActualExt,$allowed)){
 
             
         } else {
-            echo "You file is too big!";
+            header("Location: mypage.php?error=toobig");
         }
 
     } else {
-        echo "There was an error uploading your file! FILE IS PROB EMPTY";
+        header("Location: mypage.php?error=empty");
     }
 
 } else {
-    echo "You cannot upload files of this type!";
+    header("Location: mypage.php?error=wrongtype");
 }
 }
