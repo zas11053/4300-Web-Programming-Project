@@ -5,7 +5,7 @@
     <head> 
         <!--Title of website shown in the tab-->
         <title> MyDateList | Log In</title>
-        <link rel ="stylesheet" href ="css/login.css">
+        <link rel ="stylesheet" href ="css/login.css?v1.0">
     </head>
     
     <!-- BODY CONTAINS ALL THE INFO THE USER SEES -->

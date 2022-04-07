@@ -5,8 +5,8 @@ if(isset($_POST["submit"])) {
     $cpassword = $_POST["cpassword"]; // current password
     $npassword = $_POST["npassword"]; // new password
     $vpassword = $_POST["vpassword"]; // verify password
-    echo $cpassword;
-    echo $npassword;
+    //echo $cpassword;
+    //echo $npassword;
     
     
     require_once('dbh.inc.php');

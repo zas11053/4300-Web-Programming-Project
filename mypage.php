@@ -42,6 +42,24 @@ include_once 'header.php';
     <button type="submit" name="submit"> UPLOAD </button>
 </form>
 
+<?php
+    $user = $_SESSION["usersUID"];
+    $sql1 = "SELECT * FROM posts INNER JOIN users ON users.usersID = posts.usersID WHERE users.usersUID = '$user'"; // select everything from the post table to display on homepage
+    $result1 = mysqli_query($conn, $sql1);
+    $resultsCheck = mysqli_num_rows($result1); // error handling to make sure you're selecting something
+
+    if ($resultsCheck > 0) {
+        while ($row = mysqli_fetch_assoc($result1)) {
+            echo "<br> PostID: " . $row['postID'] .  "<br>";
+            echo "UsersID: " . $row['usersID'] . "<br>";
+            echo "Title: " . $row['title'] . "<br>";
+            echo "Location: " . $row['location'] . "<br>";
+            echo "Type: " . $row['type'] . "<br>";
+            echo "Description: " . $row['description'] . "<br>";
+        }
+    }
+?>
+
 <!----------------------------------------------------------------------------------------------->
    
 <?php

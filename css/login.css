@@ -51,7 +51,7 @@
   transition: 0.5s;
   background-size: 200% auto;
   box-shadow: 0 0 20px #eee;
-  display: block;
+  display: center;
   background-image: linear-gradient(
     to right,
     #f9e1e1 50%,

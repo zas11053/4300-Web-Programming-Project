@@ -29,6 +29,24 @@
 
         <h4> DATE IDEAS </h4>
         <!-- individual sliding posts code -->
+        
+        <?php 
+            $sql = "SELECT * FROM posts"; // select everything from the post table to display on homepage
+            $result = mysqli_query($conn, $sql);
+            $resultsCheck = mysqli_num_rows($result); // error handling to make sure you're selecting something
+            
+            echo "<br><br> Printing all the rows from the post table <br> <br>";
+            if ($resultsCheck > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "PostID: " . $row['postID'] .  "<br>";
+                    echo "UsersID: " . $row['usersID'] . "<br>";
+                    echo "Date Idea Title: " . $row['title'] . "<br>";
+                    echo "Location: " . $row['location'] . "<br>";
+                    echo "Type: " . $row['type'] . "<br>";
+                    echo "Description: " . $row['description'] . "<br>";
+                }
+            }
+        ?>
     </body>
 </html>      
 <?php
