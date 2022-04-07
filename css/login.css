@@ -46,8 +46,37 @@
   font-weight: bolder;
   font-size: 18px;
   color: white;
-  background-color: #facfd4;
   cursor: pointer;
+  background-color: #f9e1e1;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    #f9e1e1 50%,
+    #bfe9ff 10%,
+    #ffcbd1 40%
+  );
+  transition: 0.5s;
+}
+
+#loginButton:hover {
+  background-image: linear-gradient(
+    to right,
+    #ff6e7f 0%,
+    #bfe9ff 51%,
+    #ff6e7f 100%
+  );
+
+  background-position: right center; /* change the direction of the change here */
+  color: RIGHT;
+}
+
+#loginButton:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 h3 {
