@@ -1,0 +1,104 @@
+.userProfileHeader {
+  display: flex;
+  width: min-content;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  gap: 50px;
+}
+
+p.postNum {
+  font-weight: bold;
+}
+
+p.postNum::after {
+  content: " posts";
+  font-weight: normal;
+}
+.wrapper-post {
+  margin: 0 20vw;
+}
+
+#post-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /**have 3 column display of post*/
+  grid-template-rows: auto;
+  grid-gap: 20px; /** gap between the post*/
+}
+
+#post-gallery .card {
+  width: 100%;
+  height: 400px;
+  max-height: 400px;
+  background-color: white;
+
+  border: 3px solid grey;
+}
+
+#post-gallery .card .post-img {
+  height: 70%;
+  width: 90%;
+  margin: auto;
+  /* margin-top: 0px; */
+  margin-top: 10px;
+  background-repeat: no-repeat;
+  background-size: cover; /**should cover the entire img frame*/
+  background-position: center; /**centers thee image(crop)*/
+  cursor: pointer;
+  border: solid 2px grey;
+  background-image: url("../images/DEFAULT.jpg");
+}
+#post-gallery .card img {
+  height: 70%;
+  width: 90%;
+  margin: auto;
+}
+
+.caption {
+  text-align: center;
+}
+
+/**DROP DOWN MENU FOR THE VERTICAL DOTS*/
+.card ul {
+  text-align: right;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  height: min-content;
+}
+.card ul li {
+  text-align: center;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  /* height: min-content; */
+  display: inline-block;
+}
+.card ul li ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -12px;
+}
+
+.card ul li:hover ul {
+  display: block;
+}
+
+.card ul li ul li {
+  width: 60px;
+  background-color: #f79292;
+  border-style: solid #dcdcdc;
+}
+
+.card ul li ul li a {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+.card ul li ul li a:hover {
+  background-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+/**END OF CSS FOR DROP DOWN MENU FOR VERTICAL*/
