@@ -85,7 +85,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
 
                     //fileName = postID#_img#(i)_name
                     $fileName = $postID[0]['postID']."_".$i."_".$_FILES['imgFile']['name'][$i];
-                    $fileDestination = '../uploads/'.$fileName;
+                    $fileDestination = './uploads/'.$fileName;
                     echo " filename :". $fileName;
 
                      //INSERTING INTO TABLE THAT HOLD ALL IMAGES FOR THE POST

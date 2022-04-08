@@ -1,53 +1,110 @@
 <?php
+require_once('includes/dbh.inc.php');
 include_once 'header.php';
 ?>
 
-<h1> IN "MY PAGE page" </h1>
- 
-<!-- Link to log out -->
-<h2><a href =includes/logout.inc.php> Log Out </a></h2>
-
-<!----- NEW CODE MONDAY 3/14/2022 ------>
-<!-- Attaches user's profile picture -->
 <?php
-    require_once('includes/dbh.inc.php');
-    $username=$_SESSION["usersUID"];
-    //echo $_SESSION["usersUID"];
-    $sql = "SELECT pfp_img_dir FROM users WHERE usersUID='$username'";
-    $result = mysqli_query($conn, $sql);
-    $image_dir = mysqli_fetch_assoc($result);
-    //print_r($image_dir);
-    //echo $image_dir['pfp_img_dir'];
-    $img=$image_dir['pfp_img_dir'];
-    echo "<img style='width:100px; height: 100px' src= '$img'>";
-?>
+     $username=$_SESSION["usersUID"];
+     //echo $_SESSION["usersUID"];
+     $sql = "SELECT* FROM users WHERE usersUID='$username'";
+     $result = mysqli_query($conn, $sql);
+     $usersTable = mysqli_fetch_assoc($result);
 
-<!-- Code for upload button -->
-<form action ="uploadProfile.php" method ="POST" enctype="multipart/form-data">
-    <input type ="file" name="file">
-    <button type="submit" name="submit"> UPLOAD </button>
-</form>
+     $usersName = $usersTable['usersName'];
 
-<?php
-    $user = $_SESSION["usersUID"];
-    $sql1 = "SELECT * FROM posts INNER JOIN users ON users.usersID = posts.usersID WHERE users.usersUID = '$user'"; // select everything from the post table that have been created by the user who is signed in to display on homepage
-    $result1 = mysqli_query($conn, $sql1);
-    $resultsCheck = mysqli_num_rows($result1); // error handling to make sure you're selecting something
+     // gets the img_dir 
+     $img=$usersTable['pfp_img_dir'];
+   
+   $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
+   $result = mysqli_query($conn, $sql);
+   $usersID = mysqli_fetch_assoc($result);
+   $usersIDNum=$usersID['usersID']; // the userID of the current user 
 
-    if ($resultsCheck > 0) {
-        while ($row = mysqli_fetch_assoc($result1)) {
-            echo "<br> PostID: " . $row['postID'] .  "<br>";
-            echo "UsersName: " . $row['usersUID'] . "<br>";
-            echo "Title: " . $row['title'] . "<br>";
-            echo "Location: " . $row['location'] . "<br>";
-            echo "Type: " . $row['type'] . "<br>";
-            echo "Description: " . $row['description'] . "<br>";
-        }
-    }
+   $sql = "SELECT* FROM posts WHERE usersID='$usersIDNum'";
+   $result = mysqli_query($conn, $sql);
+   $postNum = mysqli_num_rows($result); //gets the amount of rows==NUM OF POST the user has 
+
 ?>
 
 <!----------------------------------------------------------------------------------------------->
    
-<?php
-include_once 'footer.php';
-?>
+<div class="userProfileHeader">
+        
+    <?php //the following to print pfp
+        echo "<img style='width:150px; height: 150px;border-radius:50%; border:solid 2px grey' src= '$img'>";
+    ?>
+
+    <div style="display:flex; flex-direction:column; gap: 25px;"> <!----text next to pfp----------->
+
+        <div class ="profileHeader-userID-edit" style="display:in-line" >
+            <h2 style ="font-weight: lighter;font-size: x-large;"><?php echo $username?></h2>
+            
+        </div>
+
+        <p class="postNum"><?php echo $postNum ?></p>
+        <p style ="font-weight:bold;"><?php echo $usersName ?> </p>
+
+    </div>
+
+</div>
+
+
+<section id="post-gallery" class="wrapper-post">
+
+</section>
+<div id="load_data_message"></div>
+<script>
+
+    $(document).ready(function(){
+    
+    var limit = 7;
+    var start = 0;
+    var action = 'inactive';
+    function load_country_data(limit, start)
+    {
+    $.ajax({
+    url:"./includes/myPagePostData.inc.php",
+    method:"POST",
+    data:{ 
+        limit:limit, 
+        start:start
+    },
+    cache:false,
+    success:function(data)
+    {
+        $('#post-gallery').append(data);
+        if(data == '')
+        {
+        $('#load_data_message').html("<a href='#'> Back to Top </a>");
+        action = 'active';
+        }
+        else
+        {
+        $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
+        action = "inactive";
+        }
+    }
+    });
+    }
+
+    if(action == 'inactive')
+    {
+    action = 'active';
+    load_country_data(limit, start);
+    }
+    $(window).scroll(function(){
+    if($(window).scrollTop() + $(window).height() > $("#post-gallery").height() && action == 'inactive')
+    {
+    action = 'active';
+    start = start + limit;
+    setTimeout(function(){
+        load_country_data(limit, start);
+    }, 1000);
+    }
+    });
+    
+    });
+</script>
+
+
+

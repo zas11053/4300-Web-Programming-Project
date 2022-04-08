@@ -13,6 +13,7 @@ session_start();
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/post.css">
         <link rel="stylesheet" href="css/settings.css">
+        <link rel="stylesheet" href="css/myPage.css">
         <script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script> <!--script for ckeditor-->
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
