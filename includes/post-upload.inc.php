@@ -85,7 +85,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
 
                     //fileName = postID#_img#(i)_name
                     $fileName = $postID[0]['postID']."_".$i."_".$_FILES['imgFile']['name'][$i];
-                    $fileDestination = './uploads/'.$fileName;
+                    $fileDestination = '../uploads/'.$fileName;
                     echo " filename :". $fileName;
 
                      //INSERTING INTO TABLE THAT HOLD ALL IMAGES FOR THE POST
@@ -97,7 +97,8 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
                      // exit();
                      
                     } else {
-                        mysqli_stmt_bind_param($stmt, "sss",$usersIDNum,$postID[0]['postID'], $fileDestination);
+                        $fileDestination2 =  './uploads/'.$fileName; // needs to be different cuz in respect to where we pull from
+                        mysqli_stmt_bind_param($stmt, "sss",$usersIDNum,$postID[0]['postID'], $fileDestination2);
                         mysqli_stmt_execute($stmt);
                         $fileTmpName = $_FILES['imgFile']['tmp_name'][$i];
                             //copies/movies over the image and store in the uploads folder
