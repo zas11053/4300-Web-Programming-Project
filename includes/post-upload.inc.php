@@ -97,7 +97,8 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
                      // exit();
                      
                     } else {
-                        mysqli_stmt_bind_param($stmt, "sss",$usersIDNum,$postID[0]['postID'], $fileDestination);
+                        $fileDestination1 = './uploads/'.$fileName;
+                        mysqli_stmt_bind_param($stmt, "sss",$usersIDNum,$postID[0]['postID'], $fileDestination1);
                         mysqli_stmt_execute($stmt);
                         $fileTmpName = $_FILES['imgFile']['tmp_name'][$i];
                             //copies/movies over the image and store in the uploads folder
