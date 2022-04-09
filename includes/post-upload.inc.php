@@ -32,8 +32,8 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
         
 
         if(empty($postTitle)|| empty($postLocation) || empty($description)|| ($type == 0)){
-           // header("location: ../mypage.php?error=empty"); 
-           echo "some fields are empty";
+            header("location: ../mypage.php?error=empty"); 
+           //echo "some fields are empty";
             exit();
         } else { // if input not empty --> insert into database 
 
