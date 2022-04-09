@@ -33,18 +33,17 @@
                 <br/> <br/>
             </form>
             
-         <!-- Checks for invalid information or empty fields -->
-         <?php
-         if(isset($_GET["error"])){
+        <!-- Checks for invalid information or empty fields -->
+        <?php
+        if(isset($_GET["error"])){
              if($_GET["error"] == "emptyInput"){
                 echo "<p style='color:black'> Fill in all fields!</p>";
             } else if ($_GET["error"] == "passwordsdontmatch"){
                 echo "<p style='color:black'> Passwords need to match! </p>";
-         }
+            }
         } 
-         ?>
-          
-            </div>
+        ?>
+        </div>
             
             <!-- Code for the content below the verification questions -->
             <div class="lineOr">

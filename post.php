@@ -1,6 +1,7 @@
 <?php
 include_once 'header.php';
 ?>
+
 <script>
    let parameters = new URLSearchParams(window.location.search); //gets the url [the stuff after this page's name]
 
@@ -107,6 +108,7 @@ include_once 'header.php';
 });
    </script>
    <script src="./js/postImgPreview.js" defer></script>
+   
 <?php
 include_once 'footer.php';
 ?>

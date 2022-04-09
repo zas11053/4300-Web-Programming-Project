@@ -30,7 +30,7 @@
         <h4> DATE IDEAS </h4>
         <!-- individual sliding posts code -->
         <?php
-            $sql1 = "SELECT * FROM imgs INNER JOIN posts ON posts.postID = imgs.postID"; //  // select everything from the imgs table to display on homepage
+            $sql1 = "SELECT * FROM imgs INNER JOIN posts ON posts.postID = imgs.postID"; // select everything from the imgs table to display on homepage
             $result1 = mysqli_query($conn, $sql1);
             $resultsCheck = mysqli_num_rows($result1); // error handling to make sure you're selecting something
 

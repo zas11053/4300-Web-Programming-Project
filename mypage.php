@@ -105,6 +105,3 @@ include_once 'header.php';
     
     });
 </script>
-
-
-

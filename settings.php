@@ -1,21 +1,22 @@
 <?php
-include_once 'header.php';
-require_once('includes/dbh.inc.php');
+    include_once 'header.php'; // includes the header
+    require_once('includes/dbh.inc.php'); // includes the database
 
-    $username=$_SESSION["usersUID"];
+    // gets the username from phpmyadmin
+    $username=$_SESSION["usersUID"]; 
     $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
     $result = mysqli_query($conn, $sql);
     $usersID = mysqli_fetch_assoc($result);
     $usersIDNum=$usersID['usersID'];
 
 ?>
+
 <div class="settingBody">
     <div class="myAccount">
-
-
         <div class="settingLinks">
-            <h1> MY ACCOUNT </h1><br/>
+            <h1> MY ACCOUNT </h1><br/> <!-- big title -->
             
+            <!-- list of links -->
             <ul style="list-style: none; line-height: 300%;">
             <li><a href =settings.php style =" text-decoration-line: underline;text-decoration-style: solid; text-decoration-thickness: 1px;"> Edit Profile </a></li>
             <li><a href =mypage.php> My Page </a></li>
@@ -57,8 +58,7 @@ require_once('includes/dbh.inc.php');
                         </div>
              </div>
 
-
-
+                    <!-- This form is to update the username -->
                     <form action ="includes/updateUsername.inc.php" method="post">
                         
                         <label> USERNAME*:</label><br>
@@ -70,6 +70,7 @@ require_once('includes/dbh.inc.php');
                     </form>
                 </div>
 
+                <!-- This form is to update the password + error handling -->
                 <div class="passwordSettings">
                 <div style="margin-bottom: 3px; color: red; font-weight:bold;">
                     <?php
@@ -100,9 +101,9 @@ require_once('includes/dbh.inc.php');
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+
 <script type = "text/javascript">
     //original file input
   const originalButton = document.getElementById("pfpFile"); //original
@@ -125,7 +126,7 @@ require_once('includes/dbh.inc.php');
     });
 
 </script>
+
 <?php
 include_once 'footer.php';
 ?>
-

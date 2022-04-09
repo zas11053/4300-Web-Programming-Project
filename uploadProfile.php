@@ -15,57 +15,57 @@ if(isset($_POST['submit'])){
     $fileError = $_FILES['file']['error'];
     $fileType = $_FILES['file']['type'];
 
-//explode is like a string split, split string at '.' (string id the $fileName)
-// gives an associative array where [0]=filename [1]=extention type
-$fileExt = explode('.', $fileName);
-print_r($fileExt);
+    //explode is like a string split, split string at '.' (string id the $fileName)
+    // gives an associative array where [0]=filename [1]=extention type
+    $fileExt = explode('.', $fileName);
+    print_r($fileExt);
 
-/**important to make it lowercase cuz sometimes it uppercase
- end() gets the last pieec of data from array ==>[1]*/
-$fileActualExt = strtolower(end($fileExt));
+    /**important to make it lowercase cuz sometimes it uppercase
+     end() gets the last piece of data from array ==>[1]*/
+    $fileActualExt = strtolower(end($fileExt));
 
-//array of the files that will be accepted 
-$allowed = array('jpg', 'jpeg', 'png');
+    //array of the files that will be accepted 
+    $allowed = array('jpg', 'jpeg', 'png');
 
-//check if our file extension is in our allowed array
-if(in_array($fileActualExt,$allowed)){
-    //no error===0
-    if($fileError===0){
-        if($fileSize<1000000){ 
+    //check if our file extension is in our allowed array
+    if(in_array($fileActualExt,$allowed)){
+        //no error===0
+        if($fileError===0){
+            if($fileSize<1000000){ 
+                
+                $username=$_SESSION["usersUID"];
+                $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
+                $result = mysqli_query($conn, $sql);
+                $usersID = mysqli_fetch_assoc($result);
+                $usersIDNum=$usersID['usersID'];
+                //profile pic will be labeled [userID]_pfp.[fileExtention]
+                $fileNameNew = $usersIDNum."_"."pfp".".".$fileActualExt;
+                $fileDestination = './uploads/'.$fileNameNew;
             
-            $username=$_SESSION["usersUID"];
-            $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
-            $result = mysqli_query($conn, $sql);
-            $usersID = mysqli_fetch_assoc($result);
-            $usersIDNum=$usersID['usersID'];
-            //profile pic will be labeled [userID]_pfp.[fileExtention]
-            $fileNameNew = $usersIDNum."_"."pfp".".".$fileActualExt;
-            $fileDestination = './uploads/'.$fileNameNew;
-           
+                
+                //GET THE CURRENT PROFILE PICTURE IF IT'S NOT DEFAULT SO IT CAN BE DELETED FROM THE FOLDER 
+                $oldImgDir;
+            $sql = "SELECT `pfp_img_dir` FROM `users` WHERE usersUID =?";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+                echo "SQL FAILED!";
+            // exit();
             
-            //GET THE CURRENT PROFILE PICTURE IF IT'S NOT DEFAULT SO IT CAN BE DELETED FROM THE FOLDER 
-            $oldImgDir;
-           $sql = "SELECT `pfp_img_dir` FROM `users` WHERE usersUID =?";
-           $stmt = mysqli_stmt_init($conn);
-           if(!mysqli_stmt_prepare($stmt,$sql)){
-            echo "SQL FAILED!";
-           // exit();
-           
-        } else {
-            mysqli_stmt_bind_param($stmt, "s",$username);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-            $userpfp = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            //echo $userpfp[0]['pfp_img_dir']; // print out 1st available ID
-            $old_pfp_dir = $userpfp[0]['pfp_img_dir'];//gets current pfp 
+            } else {
+                mysqli_stmt_bind_param($stmt, "s",$username);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                $userpfp = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                //echo $userpfp[0]['pfp_img_dir']; // print out 1st available ID
+                $old_pfp_dir = $userpfp[0]['pfp_img_dir'];//gets current pfp 
 
-            // ONLY DELETE IF THE PFP IS NOT THE DEFAULT IMG
-            if($old_pfp_dir !== "./images/DEFAULT.jpg"){
-                if(unlink($old_pfp_dir)){ //delete the current picture from the uploads folder if 
-                    echo "file was deleted";
+                // ONLY DELETE IF THE PFP IS NOT THE DEFAULT IMG
+                if($old_pfp_dir !== "./images/DEFAULT.jpg"){
+                    if(unlink($old_pfp_dir)){ //delete the current picture from the uploads folder if 
+                        echo "file was deleted";
+                    }
                 }
             }
-        }
 
             $sql = "UPDATE users SET pfp_img_dir = ? WHERE usersUID= ?";
             $stmt = mysqli_stmt_init($conn);
@@ -77,30 +77,24 @@ if(in_array($fileActualExt,$allowed)){
                 // echo $username;
                 mysqli_stmt_bind_param($stmt, "ss", $fileDestination,$username);
                 mysqli_stmt_execute($stmt);
-                
+                    
                 //copies/movies over the image and store in the uploads folder
                 move_uploaded_file($fileTmpName,$fileDestination);
 
                 header("Location: mypage.php?error=uploadsuccess"); // can remove the ?uploadsuccess later if want
-                
+                    
                 exit();
             }
             
-           
+            } else {
+                header("Location: mypage.php?error=toobig");
+            }
 
-
-
-
-            
         } else {
-            header("Location: mypage.php?error=toobig");
+            header("Location: mypage.php?error=empty");
         }
 
     } else {
-        header("Location: mypage.php?error=empty");
+        header("Location: mypage.php?error=wrongtype");
     }
-
-} else {
-    header("Location: mypage.php?error=wrongtype");
-}
 }
