@@ -1,7 +1,13 @@
 <?php
 include_once 'header.php';
 ?>
-
+<script>
+   let parameters = new URLSearchParams(window.location.search);
+   if(parameters.get("error")){
+      alert("You need to fill in all fields to post! Re-upload image if you had your image uploaded:)");
+      window.history.go(-1); //go back to previous page === the page you clicked submit button on-therefore, have all ur input saved beside the photo part
+   }
+</script>
 
    <div class="postBox">
       <div class="imgBox" id="imgBox">
@@ -89,10 +95,10 @@ include_once 'header.php';
       //waits for page to load 
       $(document).ready(function(){  
 
+         
          // checks if the input=file field already has a vlue
       var img = $('#imgFile').val();
       if(img){ // means has value 
-      alert(img);
       $('#imgFile').val(""); //clears it 
       } 
 
