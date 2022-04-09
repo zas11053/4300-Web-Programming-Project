@@ -85,6 +85,19 @@ include_once 'header.php';
       
      
    </div> <!--"postBox div--> 
+   <script>
+      //waits for page to load 
+      $(document).ready(function(){  
+
+         // checks if the input=file field already has a vlue
+      var img = $('#imgFile').val();
+      if(img){ // means has value 
+      alert(img);
+      $('#imgFile').val(""); //clears it 
+      } 
+
+});
+   </script>
    <script src="./js/postImgPreview.js" defer></script>
 <?php
 include_once 'footer.php';

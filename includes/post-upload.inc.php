@@ -119,6 +119,6 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
 
     } else {
         echo "There was an error uploading your file!";
-        //header("location: ../post.php?error=file");
+        header("location: ../post.php?error=file");
     }
 }
