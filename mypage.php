@@ -36,9 +36,9 @@ include_once 'header.php';
 
     <div style="display:flex; flex-direction:column; gap: 25px;"> <!----text next to pfp----------->
 
-        <div class ="profileHeader-userID-edit" style="display:in-line" >
+        <div class ="profileHeader-userID-edit" >
             <h2 style ="font-weight: lighter;font-size: x-large;"><?php echo $username?></h2>
-            
+            <a href="./settings.php"><i class="material-icons"> manage_accounts</i></a>
         </div>
 
         <p class="postNum"><?php echo $postNum ?></p>
@@ -57,7 +57,7 @@ include_once 'header.php';
 
     $(document).ready(function(){
     
-    var limit = 7;
+    var limit = 9;
     var start = 0;
     var action = 'inactive';
     function load_country_data(limit, start)

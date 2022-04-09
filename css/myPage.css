@@ -8,6 +8,13 @@
   gap: 50px;
 }
 
+.profileHeader-userID-edit {
+  display: flex;
+  gap: 10px;
+
+  height: 25px;
+}
+
 p.postNum {
   font-weight: bold;
 }
