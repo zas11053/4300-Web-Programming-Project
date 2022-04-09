@@ -2,7 +2,9 @@
 include_once 'header.php';
 ?>
 <script>
-   let parameters = new URLSearchParams(window.location.search);
+   let parameters = new URLSearchParams(window.location.search); //gets the url [the stuff after this page's name]
+
+   //if there is a GET method of error 
    if(parameters.get("error")){
       alert("You need to fill in all fields to post! Re-upload image if you had your image uploaded:)");
       window.history.go(-1); //go back to previous page === the page you clicked submit button on-therefore, have all ur input saved beside the photo part
