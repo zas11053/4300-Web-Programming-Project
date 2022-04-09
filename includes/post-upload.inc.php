@@ -32,7 +32,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
         
 
         if(empty($postTitle)|| empty($postLocation) || empty($description)|| ($type == 0)){
-           header("location: ../post.php?error=empty"); 
+            header("location: ../post.php?error=empty"); 
            //echo "some fields are empty";
             exit();
         } else { // if input not empty --> insert into database 
@@ -97,8 +97,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
                      // exit();
                      
                     } else {
-                        $fileDestination2 =  './uploads/'.$fileName; // needs to be different cuz in respect to where we pull from
-                        mysqli_stmt_bind_param($stmt, "sss",$usersIDNum,$postID[0]['postID'], $fileDestination2);
+                        mysqli_stmt_bind_param($stmt, "sss",$usersIDNum,$postID[0]['postID'], $fileDestination);
                         mysqli_stmt_execute($stmt);
                         $fileTmpName = $_FILES['imgFile']['tmp_name'][$i];
                             //copies/movies over the image and store in the uploads folder
@@ -118,7 +117,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
         } // else in entering stuff into database
 
     } else {
-        echo "There was an error uploading your file!";
+        //echo "There was an error uploading your file!";
         header("location: ../post.php?error=file");
     }
 }

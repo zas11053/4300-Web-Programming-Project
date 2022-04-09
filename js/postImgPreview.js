@@ -221,6 +221,9 @@ function updateThumbnail(dropZoneElement, file) {
   } else {
     // if file is not an image
     thumbnailElement.style.backgroundImage = null;
+    alert("Files have to be images like .png, .jpg, .jpeg");
+    //appends to the current window url part [the window url would be post.php since calling this js script from there]
+    window.location.search += "?error=notImg";
 
     //dropZoneElement.querySelector(".drop-zone-thumb").remove();
   }
