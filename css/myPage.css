@@ -33,13 +33,11 @@ p.postNum::after {
   grid-template-rows: auto;
   grid-gap: 20px; /** gap between the post*/
 }
-
 #post-gallery .card {
-  width: 100%;
+  max-width: 320px;
   height: 400px;
   max-height: 400px;
   background-color: white;
-
   border: 3px solid grey;
 }
 
@@ -64,6 +62,9 @@ p.postNum::after {
 
 .caption {
   text-align: center;
+  white-space: nowrap; /*keeps it in one line*/
+  overflow: hidden;
+  margin: 9px 12px 0px 12px;
 }
 
 /**DROP DOWN MENU FOR THE VERTICAL DOTS*/
@@ -99,13 +100,17 @@ p.postNum::after {
   border-style: solid #dcdcdc;
 }
 
-.card ul li ul li a {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 12px;
+button.myPage-updatePost {
+  background-color: transparent;
+  border: none;
 }
-.card ul li ul li a:hover {
+button.myPage-updatePost:hover {
   background-color: white;
-  padding-left: 3px;
-  padding-right: 3px;
+  width: 100%;
 }
+
+form.myPage-form {
+  display: inline-flex;
+}
+
 /**END OF CSS FOR DROP DOWN MENU FOR VERTICAL*/

@@ -55,9 +55,16 @@ session_start();
                         <li style="writing-mode: vertical-rl">&nbsp... </i> </a>
                                                 <ul style="writing-mode:  horizontal-tb">
                                                 <li>                                              
-                                                    <form action = "./includes/delete.inc.php" method="post"> 
+                                                <form class="myPage-form" action = "./includes/editPost.inc.php" method="post"> 
+                                                  <input type ="hidden" name ="postID" value="'.$post['postID'].'"><br> 
+                                                  <button type = "submit" class="myPage-updatePost" name="submitE"> Edit</button>
+                                                 </form>
+                                            
+                                              </li>
+                                                <li>                                              
+                                                    <form  class="myPage-form" action = "./includes/delete.inc.php" method="post"> 
                                                       <input type ="hidden" name ="postID" value="'.$post['postID'].'"><br> 
-                                                      <input type = "submit" name="submitD" value="Delete">
+                                                      <button type = "submit" class="myPage-updatePost" name="submitD">Delete </button>
                                                      </form>
                                                 
                                                 </li>
@@ -75,9 +82,13 @@ session_start();
                     </div>
                     
                     <div class="caption">
-                        <h2 style="font-size:25px">'.$post['title'].' </h2>
-                        <p style="font-size:10px">'.$post['type'].'</p>
-                        <p style="font-size:10px">'.$post['location'].'</p>
+                        <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
+                        text-overflow: ellipsis;">'.$post['title'].' </h2>
+                        <p style="font-size:20px">'.$post['type'].'</p>
+                        <div style="display: inline-flex">
+                            <i class="material-icons" style="font-size:12px; background-color:white"> place </i>
+                            <p style="font-size:12px">'.$post['location'].'</p>
+                        </div>
                     </div>
                 </a>
         </div>
