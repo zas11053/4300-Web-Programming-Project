@@ -1,5 +1,14 @@
 var hasDropped = false;
 
+/**
+ * purppose it to alter the bool value of hasDropped
+ * called in the post.php
+ * @param {boolean} hasDroppedBool
+ */
+function hasDroppedBoolean(hasDroppedBool) {
+  hasDropped = hasDroppedBool;
+}
+
 document.querySelectorAll(".imgBox").forEach((carousel) => {
   //carousel = the <input type="imgBox"> element
   const dropZoneElement = document.getElementById("imgDropZone");
@@ -221,7 +230,7 @@ function updateThumbnail(dropZoneElement, file) {
   } else {
     // if file is not an image
     thumbnailElement.style.backgroundImage = null;
-    alert("Files have to be images like .png, .jpg, .jpeg");
+    //alert("Files have to be images like .png, .jpg, .jpeg");
     //appends to the current window url part [the window url would be post.php since calling this js script from there]
     window.location.search += "?error=notImg";
 

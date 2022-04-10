@@ -7,7 +7,7 @@ include_once 'header.php';
 
    //if there is a GET method of error 
    if(parameters.get("error")){
-      alert("You need to fill in all fields to post! Re-upload image if you had your image uploaded:)");
+      alert("You need to fill in all fields to post! Can only upload Images!");
       window.history.go(-1); //go back to previous page === the page you clicked submit button on-therefore, have all ur input saved beside the photo part
    }
 </script>
@@ -89,7 +89,7 @@ include_once 'header.php';
       
                   </div> 
                   <button  type="submit" name="submit"> POST </button>
-                  </form>
+                <!---  </form>--------->
       </div> <!--"textBox div-->
       
      
@@ -113,9 +113,11 @@ include_once 'header.php';
             updateThumbnail(dropZoneElement, inputElement.files[0]);
             document.getElementById("imgDropZone").style.border = "none"; // removed the border once there's a file in
            document.getElementById("imgDropZone").style.cursor = "default"; //changes cursor back to default
+           hasDroppedBoolean(true);
+           
          }
 
-            if (inputElement.files.length > 1) {
+            if (inputElement.files.length >= 1) {
                length = inputElement.files.length;
 
                for (let i = 1; i < inputElement.files.length; i++) {
@@ -181,6 +183,7 @@ include_once 'header.php';
      });
 
    </script>
+   </form>
    <script src="./js/postImgPreview.js" defer></script>
    
 <?php
