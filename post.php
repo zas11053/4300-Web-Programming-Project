@@ -102,91 +102,78 @@ include_once 'header.php';
          const inputElement = document.getElementById("imgFile");
          const imgBox = document.getElementById("imgBox");
          // checks if the input=file field already has a vlue
-      var img = $('#imgFile').val();
+       var img = $('#imgFile').val();
       
-      if(img){ // means has value 
+      if(img){ // means has value -- if have value, display the images 
         
-         
-         alert(inputElement.files.length); //print out the total length in alert boc
+         //alert(inputElement.files.length); //print out the total length in alert boc
          if (inputElement.files.length)  {
-            //---------------------------------------------------------
+            //------THE FOLLLOW IS THE SAME PIECE OF CODE USED IN postImgPreview.js---------------------------------------------------
 
             updateThumbnail(dropZoneElement, inputElement.files[0]);
 
-    if (inputElement.files.length > 1) {
-      length = inputElement.files.length;
+            if (inputElement.files.length > 1) {
+               length = inputElement.files.length;
 
-      for (let i = 1; i < inputElement.files.length; i++) {
-        var divC = document.createElement("div"); //create a new div
-        divC.className = "carousel__item"; // give new div class name
-        imgBox.appendChild(divC); //new div is now a child of imgBox div
+               for (let i = 1; i < inputElement.files.length; i++) {
+               var divC = document.createElement("div"); //create a new div
+               divC.className = "carousel__item"; // give new div class name
+               imgBox.appendChild(divC); //new div is now a child of imgBox div
 
-        var div = document.createElement("div"); //create a new div
-        div.className = "imgDropZone"; // give new div class name
+               var div = document.createElement("div"); //create a new div
+               div.className = "imgDropZone"; // give new div class name
 
-        divC.appendChild(div); // add new div to the imgBox class div
+               divC.appendChild(div); // add new div to the imgBox class div
 
-        div.style.border = "none"; // removed the border once there's a file in
-        div.style.cursor = "default"; //changes cursor back to default
+               div.style.border = "none"; // removed the border once there's a file in
+               div.style.cursor = "default"; //changes cursor back to default
 
-        updateThumbnail(div, inputElement.files[i]); //getthumbnail for [i] file
-      }
+               updateThumbnail(div, inputElement.files[i]); //getthumbnail for [i] file
+               }
 
-      //grab all the div that are .carousel__item under the imgBox div
-      const items = imgBox.querySelectorAll(".carousel__item");
-      console.log(items);
+               //grab all the div that are .carousel__item under the imgBox div
+               const items = imgBox.querySelectorAll(".carousel__item");
+               console.log(items);
 
-      //for each item in items list, return a span
-      const buttonsHTML = Array.from(items, () => {
-        return `<span class ="carousel__button"></span>`;
-      });
-      console.log(buttonsHTML);
+               //for each item in items list, return a span
+               const buttonsHTML = Array.from(items, () => {
+               return `<span class ="carousel__button"></span>`;
+               });
+               console.log(buttonsHTML);
 
-      //NOW needa insert the buttons
-      //the .join=>joined all the HTML string (<span class..) together
-      imgBox.insertAdjacentHTML(
-        "beforeend",
-        `
-      <div class ="carousel__nav">
-      ${buttonsHTML.join("")}
-      </div>
-      `
-      );
-      //Now needa activate those buttons
+               //NOW needa insert the buttons
+               //the .join=>joined all the HTML string (<span class..) together
+               imgBox.insertAdjacentHTML(
+               "beforeend",
+               `
+               <div class ="carousel__nav">
+               ${buttonsHTML.join("")}
+               </div>
+               `
+               );
+               //Now needa activate those buttons
 
-      const buttons = imgBox.querySelectorAll(".carousel__button");
+               const buttons = imgBox.querySelectorAll(".carousel__button");
 
-      buttons.forEach((button, i) => {
-        button.addEventListener("click", () => {
-          //(1)unselect all the items if selected (if it exist)
-          items.forEach((item) =>
-            item.classList.remove("carousel__item--selected")
-          );
-          buttons.forEach((button) =>
-            button.classList.remove("carousel__button--selected")
-          );
+               buttons.forEach((button, i) => {
+               button.addEventListener("click", () => {
+                  //(1)unselect all the items if selected (if it exist)
+                  items.forEach((item) =>
+                     item.classList.remove("carousel__item--selected")
+                  );
+                  buttons.forEach((button) =>
+                     button.classList.remove("carousel__button--selected")
+                  );
 
-          items[i].classList.add("carousel__item--selected");
-          button.classList.add("carousel__button--selected");
-        });
-      });
-    } // if(e.dataTransfer.files.length > 1)
-            
-
-
-
-
-
-
-
-
-
-
+                  items[i].classList.add("carousel__item--selected");
+                  button.classList.add("carousel__button--selected");
+               });
+               });
+            } // if(e.dataTransfer.files.length > 1)
+                     
             //----------------------
-             console.log("helloFZOR");
            // alert(inputElement.files[i].name);// this code gets each name of the file
          }
-      //$('#imgFile').val(""); //clears it 
       
       } 
 
