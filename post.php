@@ -89,7 +89,7 @@ include_once 'header.php';
       
                   </div> 
                   <button  type="submit" name="submit"> POST </button>
-                <!---  </form>--------->
+                </form>
       </div> <!--"textBox div-->
       
      
@@ -183,7 +183,7 @@ include_once 'header.php';
      });
 
    </script>
-   </form>
+  
    <script src="./js/postImgPreview.js" defer></script>
    
 <?php

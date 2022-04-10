@@ -43,7 +43,7 @@ session_start();
                //print out the first img related to that post== cover pic
                $coverImg = $img_dir[0]["img_dir"];
                
-                //append to response that HTML element to be displayed back to myPage.php == divs for the posts
+                //append to #post-gallery that HTML element to be displayed back to myPage.php == divs for the posts
             echo'
                 
                
@@ -54,8 +54,14 @@ session_start();
                     <ul style="margin:0;padding:0">
                         <li style="writing-mode: vertical-rl">&nbsp... </i> </a>
                                                 <ul style="writing-mode:  horizontal-tb">
-                                                <li> <a style="width:60px" href ="#"> Edit </a></li>
-                                                <li> <a href ="#"> Delete </a></li>
+                                                <li>                                              
+                                                    <form action = "./includes/delete.inc.php" method="post"> 
+                                                      <input type ="hidden" name ="postID" value="'.$post['postID'].'"><br> 
+                                                      <input type = "submit" name="submitD" value="Delete">
+                                                     </form>
+                                                
+                                                </li>
+                                                
                                                 </ul>
                         </li> 
                     </ul>          
