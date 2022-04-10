@@ -24,7 +24,8 @@
         <!-- search bar code -->
         <div class="nav">
             <input type="text" placeholder="Search..">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            
+            <button type="submit"> <i class='material-icons' style="font-size:12px;"> search </i></button>
         </div>
 
         <h4> DATE IDEAS </h4>
