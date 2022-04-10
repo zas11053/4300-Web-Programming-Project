@@ -104,13 +104,16 @@ include_once 'header.php';
          // checks if the input=file field already has a vlue
        var img = $('#imgFile').val();
       
-      if(img){ // means has value -- if have value, display the images 
+       if(img){ // means has value -- if have value, display the images 
         
          //alert(inputElement.files.length); //print out the total length in alert boc
          if (inputElement.files.length)  {
             //------THE FOLLLOW IS THE SAME PIECE OF CODE USED IN postImgPreview.js---------------------------------------------------
 
             updateThumbnail(dropZoneElement, inputElement.files[0]);
+            document.getElementById("imgDropZone").style.border = "none"; // removed the border once there's a file in
+           document.getElementById("imgDropZone").style.cursor = "default"; //changes cursor back to default
+         }
 
             if (inputElement.files.length > 1) {
                length = inputElement.files.length;
@@ -174,13 +177,8 @@ include_once 'header.php';
             //----------------------
            // alert(inputElement.files[i].name);// this code gets each name of the file
          }
-      
-      } 
 
-});
-
-
-
+     });
 
    </script>
    <script src="./js/postImgPreview.js" defer></script>
