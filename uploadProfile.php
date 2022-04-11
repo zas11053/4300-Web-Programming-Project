@@ -81,20 +81,20 @@ if(isset($_POST['submit'])){
                 //copies/movies over the image and store in the uploads folder
                 move_uploaded_file($fileTmpName,$fileDestination);
 
-                header("Location: mypage.php?error=uploadsuccess"); // can remove the ?uploadsuccess later if want
+                header("Location: settings.php?error=uploadsuccess"); // can remove the ?uploadsuccess later if want
                     
                 exit();
             }
             
             } else {
-                header("Location: mypage.php?error=toobig");
+                header("Location: settings.php?error=toobig");
             }
 
         } else {
-            header("Location: mypage.php?error=empty");
+            header("Location: settings.php?error=empty");
         }
 
     } else {
-        header("Location: mypage.php?error=wrongtype");
+        header("Location: settings.php?error=wrongtype");
     }
 }

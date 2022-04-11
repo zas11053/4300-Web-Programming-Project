@@ -1,5 +1,5 @@
 <?php
- session_start();
+ //session_start();
  require_once('dbh.inc.php'); 
             
     $username=$_SESSION["usersUID"];
