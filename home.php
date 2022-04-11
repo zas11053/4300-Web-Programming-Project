@@ -1,9 +1,6 @@
 <?php
-    require_once 'includes/dbh.inc.php';
+    require_once('includes/dbh.inc.php');
     include_once 'header.php';
-?>
-
-<?php
 ?>
 
         <section class="index-form">
@@ -22,7 +19,6 @@
             $result1 = mysqli_query($conn, $sql1);
             $resultsCheck = mysqli_num_rows($result1); // error handling to make sure you're selecting something
 
-            echo "Printing all the rows from the imgs table <br> <br>";
             if ($resultsCheck > 0) {
                 $slideshowNum = 0;
                 while ($row = mysqli_fetch_assoc($result1)) {

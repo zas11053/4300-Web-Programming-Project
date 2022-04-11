@@ -1,4 +1,5 @@
 <?php
+ session_start();
  require_once('dbh.inc.php'); 
             
     $username=$_SESSION["usersUID"];
@@ -25,7 +26,6 @@
         //loops through each post
         foreach ($posts as $post){
           
-               
                 $sql = "SELECT img_dir FROM imgs WHERE postID='$post[postID]'";
 
                 //make query & get result
@@ -36,6 +36,7 @@
               
                //print out the first img related to that post== cover pic
                $coverImg = $img_dir[0]["img_dir"];
+               echo $coverImg;
                
                 //append to #post-gallery that HTML element to be displayed back to myPage.php == divs for the posts
             echo' 
@@ -43,7 +44,7 @@
             <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
                 <a href="#">
                     <!---div where the img is at--img is set as an background img  -->
-                    <div class="post-img"  style="background-image: url("../images/DEFAULT.jpg");">
+                    <div class="post-img"  style="background-image: url('.$coverImg.');">
                     </div>
                     
                     <div class="caption">
