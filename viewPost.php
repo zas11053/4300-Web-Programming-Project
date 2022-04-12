@@ -62,7 +62,7 @@ if(isset($_GET["ID"])){
       <div class="textBox">
                   <div class="post-desc">
                      <h2 id="postTitle" style="text-decoration: underline;"><?php echo $title; ?></h2>
-                     <a href ="#" id="post-Username"><?php echo $username; ?></a>
+                     <a href ="userPage.php?user=<?php echo $username; ?>" id="post-Username"><?php echo $username; ?></a>
                         
                      <span> <?php echo "Date Type: ". $type; ?></span>
                      <span id="postLocation">Location: <?php echo $location; ?></span>
