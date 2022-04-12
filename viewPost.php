@@ -63,8 +63,14 @@ if(isset($_GET["ID"])){
                   <div class="post-desc">
                      <div style="display:flex; position:relative;">
                      <h2 id="postTitle" style="text-decoration: underline;"><?php echo $title; ?></h2>
+
                      <!-----------STOPPING CHANGE------------>
-                     <span id="heartIcon"><i <?php 
+                     <?php 
+                     // Checks if user is logged in or not
+                     if(isset($_SESSION["usersUID"])){
+                       
+                     
+                     
                         require_once('./includes/dbh.inc.php'); 
                                           
                      $usersUID=$_SESSION["usersUID"];
@@ -76,15 +82,15 @@ if(isset($_GET["ID"])){
                      $sql = "SELECT* FROM fav WHERE postID='$postID' AND usersID='$usersIDNum'";
                      $result = mysqli_query($conn, $sql);
                      $postNum = mysqli_num_rows($result); //gets the amount of rows==NUM OF POST the user has
-                     ?> 
-                     <?php if($postNum === 0): ?>
-                        class="fa-regular fa-heart heart-btn"
-                      <?php else: ?>
-                        class="fa-solid fa-heart heart-btn"
-                     <?php endif ?>
                      
-                     data-id="<?php echo $postID; ?>"></i></span>
-
+                        if($postNum === 0){
+                           echo '<span id="heartIcon"><i  class="fa-regular fa-heart heart-btn" data-id="'. $postID.'"></i></span>';
+                        } else {
+                           echo '<span id="heartIcon"><i  class="fa-solid fa-heart heart-btn" data-id="'. $postID.'"></i></span>';
+                        }
+                     
+                    
+                      } ?>
                      </div>
                      <a href ="userPage.php?user=<?php echo $username; ?>" id="post-Username"><?php echo $username; ?></a>
                         
@@ -143,11 +149,11 @@ if(isset($_GET["ID"])){
 
     $(document).ready(function(){
       const heart_btn = document.querySelector('.heart-btn');
-      var postID=heart_btn.dataset.id;
+
+      //gets the id value from the data attribute in the <i>
+      var postID=heart_btn.dataset.id; 
       //alert(postID); //used to check the postID is recieved
       
-      var limit = 9;
-      var start = 0;
 
     
       $(".heart-btn").on("click", function () {
