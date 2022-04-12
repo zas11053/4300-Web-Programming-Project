@@ -53,17 +53,19 @@
             setTimeout(showSlides, 5000); // Change image every 5 seconds
             }
         </script>
-        
+
         <!-- search bar code -->
-        <form action="./searchPage.php" method="get">
+        <div class="search-container">
+          <form action="./searchPage.php" method="get">
             <div class="searchBar">
             
                 <input type="text"  class ="searchBar_input" name="search" placeholder="Search..">
                 <button type="submit" class="searchBar_button"> <i class='material-icons'> search </i></button>
-           
             </div>
         </form>
+        </div>
         <!-- END of search bar code -->
+
 
 
         <h4> DATE IDEAS </h4>
