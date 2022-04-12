@@ -13,7 +13,8 @@
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   /* position: absolute; */
   top: 50%;
@@ -35,8 +36,9 @@
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Number text (1/3 etc) */
@@ -60,7 +62,8 @@
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -71,6 +74,56 @@
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/**====SEARCH BAR======================================================================================*/
+.searchBar {
+  width: 100%;
+  max-width: 300px;
+  display: inline-flex;
+}
+
+.searchBar_input {
+  flex-grow: 1; /**want the search bar input to take up the remaining horizontal space*/
+  padding: 10px;
+  outline: none;
+  border: 1px solid rgb(250, 135, 154);
+  border-radius: 5px 0 0 5px; /**smooth border on top left and bottom left*/
+  background: rgb(255, 227, 232);
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.searchBar_input:focus {
+  background: white;
+  box-shadow: 0 0 2px rgb(208, 121, 135);
+}
+
+.searchBar_input::placeholder {
+  /*makes the placeholder value same color has the box shadow*/
+  color: rgb(208, 121, 135);
+}
+
+.searchBar_button {
+  width: 40px;
+  background: rgb(250, 135, 154); /*same color as the border of the input*/
+  color: white; /*makes the search icon white*/
+  outline: none;
+  border: none;
+  display: flex;
+  /*center it horizontally and vertically */
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 5px 5px 0; /*top right and bottom right curve*/
+  cursor: pointer;
+  user-select: none;
+}
+
+.searchBar_button:active {
+  box-shadow: inset 0 0 30px rgb(0, 0, 0, 0.25);
 }

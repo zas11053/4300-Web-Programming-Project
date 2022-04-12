@@ -55,11 +55,16 @@
         </script>
         
         <!-- search bar code -->
-        <div class="nav">
-            <input type="text" placeholder="Search..">
+        <form action="#" method="get">
+            <div class="searchBar">
             
-            <button type="submit"> <i class='material-icons' style="font-size:12px;"> search </i></button>
-        </div>
+                <input type="text" class ="searchBar_input" name="search" placeholder="Search..">
+                <button type="submit" class="searchBar_button"> <i class='material-icons'> search </i></button>
+           
+            </div>
+        </form>
+        <!-- END of search bar code -->
+
 
         <h4> DATE IDEAS </h4>
 
