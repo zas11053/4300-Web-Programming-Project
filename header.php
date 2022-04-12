@@ -23,6 +23,7 @@ session_start();
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Satisfy&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/05fc4fce4b.js" crossorigin="anonymous"></script>
     </head>
 
     <!-- BODY CONTAINS ALL THE INFO THE USER SEES -->
