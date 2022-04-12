@@ -36,10 +36,10 @@ session_start();
     
     switch($action) {
         case 'save':
-            $sql = "INSERT INTO `fav`( `postID`, `usersID`) VALUES ($postID,$usersIDNum)";
+            $sql = "INSERT INTO `fav`( `postID`, `usersIDS`) VALUES ($postID,$usersIDNum)";
             break;
         case 'unsave':
-            $sql = "DELETE FROM `fav` WHERE postID=$postID  AND usersID=$usersIDNum";
+            $sql = "DELETE FROM `fav` WHERE postID=$postID  AND usersIDS=$usersIDNum";
             break;
         default:
             break;

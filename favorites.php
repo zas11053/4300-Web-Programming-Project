@@ -10,7 +10,7 @@ include_once 'header.php';
    $usersID = mysqli_fetch_assoc($result);
    $usersIDNum=$usersID['usersID']; // the userID of the current user 
 
-   $sql = "SELECT* FROM fav WHERE usersID='$usersIDNum'";
+   $sql = "SELECT* FROM fav WHERE usersIDS='$usersIDNum'";
    $result = mysqli_query($conn, $sql);
    $favNum = mysqli_num_rows($result); //gets the amount of rows==NUM OF POST the user has 
 

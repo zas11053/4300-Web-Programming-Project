@@ -77,7 +77,7 @@ if(isset($_GET["ID"])){
                         $usersID = mysqli_fetch_assoc($result);
                         $usersIDNum=$usersID['usersID']; // the userID of the current user 
                                              
-                        $sql = "SELECT* FROM fav WHERE postID='$postID' AND usersID='$usersIDNum'";
+                        $sql = "SELECT* FROM fav WHERE postID='$postID' AND usersIDS='$usersIDNum'";
                         $result = mysqli_query($conn, $sql);
                         $postNum = mysqli_num_rows($result); //gets the amount of rows==NUM OF POST the user has
                         
