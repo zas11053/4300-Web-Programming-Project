@@ -64,30 +64,28 @@ if(isset($_GET["ID"])){
                      <div style="display:flex; position:relative;">
                      <h2 id="postTitle" style="text-decoration: underline;"><?php echo $title; ?></h2>
 
-                     <!-----------STOPPING CHANGE------------>
+                    
                      <?php 
                      // Checks if user is logged in or not
                      if(isset($_SESSION["usersUID"])){
-                       
-                     
-                     
+        
                         require_once('./includes/dbh.inc.php'); 
                                           
-                     $usersUID=$_SESSION["usersUID"];
-                     $sql = "SELECT usersID FROM users WHERE usersUID='$usersUID'";
-                     $result = mysqli_query($conn, $sql);
-                     $usersID = mysqli_fetch_assoc($result);
-                     $usersIDNum=$usersID['usersID']; // the userID of the current user 
-                                          
-                     $sql = "SELECT* FROM fav WHERE postID='$postID' AND usersID='$usersIDNum'";
-                     $result = mysqli_query($conn, $sql);
-                     $postNum = mysqli_num_rows($result); //gets the amount of rows==NUM OF POST the user has
-                     
-                        if($postNum === 0){
-                           echo '<span id="heartIcon"><i  class="fa-regular fa-heart heart-btn" data-id="'. $postID.'"></i></span>';
-                        } else {
-                           echo '<span id="heartIcon"><i  class="fa-solid fa-heart heart-btn" data-id="'. $postID.'"></i></span>';
-                        }
+                        $usersUID=$_SESSION["usersUID"];
+                        $sql = "SELECT usersID FROM users WHERE usersUID='$usersUID'";
+                        $result = mysqli_query($conn, $sql);
+                        $usersID = mysqli_fetch_assoc($result);
+                        $usersIDNum=$usersID['usersID']; // the userID of the current user 
+                                             
+                        $sql = "SELECT* FROM fav WHERE postID='$postID' AND usersID='$usersIDNum'";
+                        $result = mysqli_query($conn, $sql);
+                        $postNum = mysqli_num_rows($result); //gets the amount of rows==NUM OF POST the user has
+                        
+                           if($postNum === 0){
+                              echo '<span id="heartIcon"><i  class="fa-regular fa-heart heart-btn" data-id="'. $postID.'"></i></span>';
+                           } else {
+                              echo '<span id="heartIcon"><i  class="fa-solid fa-heart heart-btn" data-id="'. $postID.'"></i></span>';
+                           }
                      
                     
                       } ?>
