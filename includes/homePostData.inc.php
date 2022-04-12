@@ -1,17 +1,10 @@
 <?php
  //session_start();
- require_once('dbh.inc.php'); 
-            
-    $username=$_SESSION["usersUID"];
-    $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
-    $result = mysqli_query($conn, $sql);
-    $usersID = mysqli_fetch_assoc($result);
-    $usersIDNum=$usersID['usersID']; // the userID of the current user 
+ require_once('dbh.inc.php');
 
     
     //SQL: LIMIT #1, #2 == start from index[#1] and get #2 amount of rows 
-    $sql = "SELECT* FROM `posts`WHERE usersID = '$usersIDNum' 
-    ORDER BY `posts`.`postID`";
+    $sql = "SELECT* FROM `posts` ORDER BY `posts`.`postID`";
 
     //make query & get result
     $result = mysqli_query($conn, $sql);
