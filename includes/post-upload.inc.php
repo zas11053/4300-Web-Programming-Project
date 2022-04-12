@@ -6,7 +6,7 @@ require_once('dbh.inc.php');
 
 if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
     $file = $_FILES['imgFile']; //gives an assoc array of info of the file
-    print_r($file);
+    //print_r($file);
     $username = $_POST["username"];
     $postTitle = $_POST["postTitle"];
     $postLocation = $_POST["postLocation"];
@@ -15,13 +15,14 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
 
     // will only have a 4 error (meaning no files) if index [0] has error
     $fileError = $_FILES['imgFile']['error'][0];
+    /*
     echo "fileError[0]:".$fileError;
     echo " username : ".$username;
     echo " Post Title: ".$postTitle;
     echo " post location :".$postLocation;
     echo " post type:" . $type;
     echo " postDescription". $description;
-
+*/
 
     //count how many ["name"] arrays there are in the $FILES['imgFile]
     $fileCount = count ($_FILES['imgFile']['name']);
