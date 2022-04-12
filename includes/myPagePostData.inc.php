@@ -76,7 +76,7 @@ session_start();
 
 
             <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
-                <a href="#">
+            <a href="./viewPost.php?ID='.$post['postID'].'">
                     <!---div where the img is at--img is set as an background img  -->
                     <div class="post-img"  style="background-image: url('.$coverImg.');">
                     </div>
