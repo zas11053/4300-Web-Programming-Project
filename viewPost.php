@@ -61,9 +61,30 @@ if(isset($_GET["ID"])){
 
       <div class="textBox">
                   <div class="post-desc">
-                     <div>
+                     <div style="display:flex; position:relative;">
                      <h2 id="postTitle" style="text-decoration: underline;"><?php echo $title; ?></h2>
+                     <!-----------STOPPING CHANGE------------>
+                     <span id="heartIcon"><i <?php 
+                        require_once('./includes/dbh.inc.php'); 
+                                          
+                     $usersUID=$_SESSION["usersUID"];
+                     $sql = "SELECT usersID FROM users WHERE usersUID='$usersUID'";
+                     $result = mysqli_query($conn, $sql);
+                     $usersID = mysqli_fetch_assoc($result);
+                     $usersIDNum=$usersID['usersID']; // the userID of the current user 
+                                          
+                     $sql = "SELECT* FROM fav WHERE postID='$postID' AND usersID='$usersIDNum'";
+                     $result = mysqli_query($conn, $sql);
+                     $postNum = mysqli_num_rows($result); //gets the amount of rows==NUM OF POST the user has
+                     ?> 
+                     <?php if($postNum === 0): ?>
+                        class="fa-regular fa-heart heart-btn"
+                      <?php else: ?>
+                        class="fa-solid fa-heart heart-btn"
+                     <?php endif ?>
                      
+                     data-id="<?php echo $postID; ?>"></i></span>
+
                      </div>
                      <a href ="userPage.php?user=<?php echo $username; ?>" id="post-Username"><?php echo $username; ?></a>
                         
@@ -81,12 +102,12 @@ if(isset($_GET["ID"])){
                
       </div> <!--"textBox div-->
       
+<div id="load_data_message"></div>
      
    </div> <!--"viewPost-postBox div--> 
 
    <!---THE JS TO MANUALLY SELECT THE BUTTON AND POP UP THE PHOTOS-->
    <script>
-
       document.querySelectorAll(".imgBox").forEach((carousel) => {
          const items = carousel.querySelectorAll(".carousel__item");
          const buttons = carousel.querySelectorAll(".carousel__button");
@@ -113,6 +134,70 @@ if(isset($_GET["ID"])){
       });
 
   </script>
+ 
+<section id="post-gallery" class="wrapper-post">
+
+</section>
+<div id="load_data_message"></div>
+<script>
+
+    $(document).ready(function(){
+      const heart_btn = document.querySelector('.heart-btn');
+      var postID=heart_btn.dataset.id;
+      alert(postID); //used to check the postID is recieved
+      
+      var limit = 9;
+      var start = 0;
+
+    
+      $(".heart-btn").on("click", function () {
+               $clicked_btn = $(this);
+            //  can only either save the post or unsave it
+            if ($clicked_btn.hasClass("fa-regular")) {
+               //if clicked on the outlined heart-
+               action = "save";
+            } else if ($clicked_btn.hasClass("fa-solid")) {
+               // if clicked the solid filled heart
+               action = "unsave";
+            }
+            alert(action);
+
+
+            $.ajax({
+            url:"./includes/fav.inc.php",
+            method:"POST",
+            data:{ 
+               postID:postID, 
+                action:action
+            },
+            cache:false,
+            success:function(data)
+            {
+               $('#post-gallery').append(data);
+               if (action == "save") {
+                  $clicked_btn.removeClass("fa-regular"); // remove the regular outlined heart
+                  $clicked_btn.addClass("fa-solid"); //add in the solid heart
+               } else if (action == "unsave") {
+                  $clicked_btn.removeClass("fa-solid"); // remove the solid filled heart
+                  $clicked_btn.addClass("fa-regular"); //add in the regular outlined  heart
+               }
+               
+            }
+            });
+
+
+
+
+         });
+
+            
+            
+            
+            
+
+    
+    });
+</script>
 <?php
 include_once 'footer.php';
 ?>

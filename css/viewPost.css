@@ -37,3 +37,10 @@
   background-position: center; /*center of bg img*/
   position: relative;
 }
+span#heartIcon {
+  position: absolute;
+  right: 0;
+  font-size: 40px;
+  margin: 5px;
+  cursor: pointer;
+}
