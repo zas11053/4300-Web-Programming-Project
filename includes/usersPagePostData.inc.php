@@ -47,31 +47,6 @@ session_start();
                 
                
             <div class="card" style="position:relative;">
-                <!--top of the card where there the 3 vertical dots to select Edit and Delete post-->
-                <!--need to z-index or else itll be hidden behind adjacent post-->
-                <div style="width:100%;margin:0;padding:0;position:absolute;left:7px;z-index:100;">
-                    <ul style="margin:0;padding:0">
-                        <li style="writing-mode: vertical-rl">&nbsp... </i> </a>
-                                                <ul style="writing-mode:  horizontal-tb">
-                                                <li>                                              
-                                                <form class="myPage-form" action = "./includes/editPost.inc.php" method="post"> 
-                                                  <input type ="hidden" name ="postID" value="'.$post['postID'].'"><br> 
-                                                  <button type = "submit" class="myPage-updatePost" name="submitE"> Edit</button>
-                                                 </form>
-                                            
-                                              </li>
-                                                <li>                                              
-                                                    <form  class="myPage-form" action = "./includes/delete.inc.php" method="post"> 
-                                                      <input type ="hidden" name ="postID" value="'.$post['postID'].'"><br> 
-                                                      <button type = "submit" class="myPage-updatePost" name="submitD">Delete </button>
-                                                     </form>
-                                                
-                                                </li>
-                                                
-                                                </ul>
-                        </li> 
-                    </ul>          
-                </div>
 
 
             <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
