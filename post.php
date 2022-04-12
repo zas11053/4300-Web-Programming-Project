@@ -42,8 +42,6 @@ include_once 'header.php';
       </div>
       <div class="textBox">
      
-              <!---        
-         <form action ="includes/post-upload.inc.php" method ="POST" enctype="multipart/form-data"> -->
                   <input type="hidden" name ="username" value = "<?php echo $_SESSION["usersUID"];?>" >
                   <div class="post-desc">
                         <input type ="text" name="postTitle" id="postTitle" placeholder = "Post Title">

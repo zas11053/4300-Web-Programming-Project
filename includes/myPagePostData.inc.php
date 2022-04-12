@@ -55,7 +55,7 @@ session_start();
                         <li style="writing-mode: vertical-rl">&nbsp... </i> </a>
                                                 <ul style="writing-mode:  horizontal-tb">
                                                 <li>                                              
-                                                <form class="myPage-form" action = "./includes/editPost.inc.php" method="post"> 
+                                                <form class="myPage-form" action = "./editPost.php" method="post"> 
                                                   <input type ="hidden" name ="postID" value="'.$post['postID'].'"><br> 
                                                   <button type = "submit" class="myPage-updatePost" name="submitE"> Edit</button>
                                                  </form>

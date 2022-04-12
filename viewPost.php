@@ -69,7 +69,7 @@ if(isset($_GET["ID"])){
                      // Checks if user is logged in or not
                      if(isset($_SESSION["usersUID"])){
         
-                        require_once('./includes/dbh.inc.php'); 
+                       
                                           
                         $usersUID=$_SESSION["usersUID"];
                         $sql = "SELECT usersID FROM users WHERE usersUID='$usersUID'";
