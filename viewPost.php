@@ -144,7 +144,7 @@ if(isset($_GET["ID"])){
     $(document).ready(function(){
       const heart_btn = document.querySelector('.heart-btn');
       var postID=heart_btn.dataset.id;
-      alert(postID); //used to check the postID is recieved
+      //alert(postID); //used to check the postID is recieved
       
       var limit = 9;
       var start = 0;
@@ -160,7 +160,7 @@ if(isset($_GET["ID"])){
                // if clicked the solid filled heart
                action = "unsave";
             }
-            alert(action);
+            //alert(action);
 
 
             $.ajax({
