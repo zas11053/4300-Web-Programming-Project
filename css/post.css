@@ -73,6 +73,7 @@
   background-position: center; /*center of bg img*/
   position: relative;
 }
+
 /**help show the bottom label on the image box*/
 .drop-zone-thumb::after {
   content: attr(data-label);
