@@ -42,7 +42,7 @@ include_once 'header.php';
         </div>
 
         <p class="postNum"><?php echo $postNum ?></p>
-        <p style ="font-weight:bold;"><?php echo $usersName ?> </p>
+        <p style ="font-weight:bold; white-space: nowrap;"><?php echo $usersName ?> </p>
 
     </div>
 
