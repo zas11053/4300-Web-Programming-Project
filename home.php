@@ -55,10 +55,10 @@
         </script>
         
         <!-- search bar code -->
-        <form action="#" method="get">
+        <form action="./searchPage.php" method="get">
             <div class="searchBar">
             
-                <input type="text" class ="searchBar_input" name="search" placeholder="Search..">
+                <input type="text"  class ="searchBar_input" name="search" placeholder="Search..">
                 <button type="submit" class="searchBar_button"> <i class='material-icons'> search </i></button>
            
             </div>
