@@ -25,11 +25,10 @@
                 $result = mysqli_query($conn, $sql);
 
                 //fetch the resulting rows as an array
-                $img_dir = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                $img_dir = mysqli_fetch_assoc($result);
               
                //print out the first img related to that post== cover pic
-               $coverImg = $img_dir[0]["img_dir"];
-               echo $coverImg;
+               $coverImg = $img_dir['img_dir'];
                
                 //append to #post-gallery that HTML element to be displayed back to myPage.php == divs for the posts
             echo' 
@@ -37,10 +36,12 @@
             <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
                 <a href="#">
                     <!---div where the img is at--img is set as an background img  -->
-                    <div class="post-img"  style="background-image: url('.$coverImg.');">
+                    <div class="post-img"  style="background-image: url("'.$coverImg.'");">
+                        <!--<img src=".$coverImg.">;-->
                     </div>
                     
-                    <div class="caption">
+                    <div class="caption" style="background-image: url("'.$coverImg.'");">
+                        <img style="width:150px; height: 150px; border-radius:50%; border:solid 2px grey;" src="'.$coverImg.'">
                         <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
                         text-overflow: ellipsis;">'.$post['title'].' </h2>
                         <p style="font-size:20px">'.$post['type'].'</p>
