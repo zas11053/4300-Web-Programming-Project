@@ -5,7 +5,7 @@ session_start();
     
     $start = $_POST['start']; //starting value for the SQL LIMIT 
     $limit = $_POST['limit']; // how many Post to load 
-    $search = $_POST['search'];
+    $search = mysqli_real_escape_string($conn,$_POST['search']);
  
 
     
@@ -13,8 +13,8 @@ session_start();
 
 
     //SQL: LIMIT #1, #2 == start from index[#1] and get #2 amount of rows 
-    $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE users.usersUID LIKE '{$search}%' OR posts.title LIKE '{$search}%' 
-    OR posts.location LIKE '{$search}%' OR  posts.type LIKE '{$search}%' OR posts.description LIKE '{$search}%' ORDER BY `postID`  DESC LIMIT ".$start.",".$limit."";
+    $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE users.usersUID LIKE '%{$search}%' OR posts.title LIKE '%{$search}%' 
+    OR posts.location LIKE '%{$search}%' OR  posts.type LIKE '%{$search}%' OR posts.description LIKE '%{$search}%' ORDER BY `postID`  DESC LIMIT ".$start.",".$limit."";
 
     //make query & get result
     $result = mysqli_query($conn, $sql);
