@@ -24,12 +24,12 @@
                 while ($row = mysqli_fetch_assoc($result1)) {
                     $imgLink = $row['img_dir'];
                     $slideshowNum++;
-                    if ($slideshowNum < 7) {
+                    if ($slideshowNum < 4) {
                         ?>
                         <div class="slideshow-container">
                             <div class="mySlides fade">
                                 <div class="numbertext"><?php echo $slideshowNum ?>/ 3</div>
-                                <img src=<?php echo $imgLink;?> alt="imgLink" style="width:50%">
+                                <img src=<?php echo $imgLink;?> alt="imgLink" style="width:1200px; height: 300px; text-align: center;">
                             </div>
                         <?php
                     }

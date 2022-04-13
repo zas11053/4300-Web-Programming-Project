@@ -17,6 +17,7 @@ session_start();
         <link rel ="stylesheet" href ="css/home.css?v1.0">
         <link rel="stylesheet" href="css/viewPost.css">
         <link rel="stylesheet" href="css/fav.css">
+        <link rel="stylesheet" href="css/homePostData.css">
         <script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script> <!--script for ckeditor-->
       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

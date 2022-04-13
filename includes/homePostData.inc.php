@@ -1,6 +1,7 @@
 <?php
  //session_start();
  require_once('dbh.inc.php');
+ //include_once 'header.php';
 
     
     //SQL: LIMIT #1, #2 == start from index[#1] and get #2 amount of rows 
@@ -36,18 +37,21 @@
             <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
                 <a href="#">
                     <!---div where the img is at--img is set as an background img  -->
-                    <div class="post-img"  style="background-image: url("'.$coverImg.'");">
-                        <!--<img src=".$coverImg.">;-->
-                    </div>
                     
-                    <div class="caption" style="background-image: url("'.$coverImg.'");">
-                        <img style="width:150px; height: 150px; border-radius:50%; border:solid 2px grey;" src="'.$coverImg.'">
-                        <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
-                        text-overflow: ellipsis;">'.$post['title'].' </h2>
-                        <p style="font-size:20px">'.$post['type'].'</p>
-                        <div style="display: inline-flex">
-                            <i class="material-icons" style="font-size:12px; background-color:white"> place </i>
-                            <p style="font-size:12px">'.$post['location'].'</p>
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a target="_blank" href="">
+                                <img src="'.$coverImg.'">
+                            </a>
+                            <div class="desc">
+                                <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
+                                text-overflow: ellipsis;">'.$post['title'].' </h2>
+                                <p style="font-size:20px">'.$post['type'].'</p>
+                                <div style="display: inline-flex">
+                                    <i class="material-icons" style="font-size:12px; background-color:white"> place </i>
+                                    <p style="font-size:12px">'.$post['location'].'</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </a>
