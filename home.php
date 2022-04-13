@@ -6,11 +6,9 @@
         <section class="index-form">
             <?php
                 if (isset($_SESSION["usersUID"])) {
-                    echo "<p>Hello there " . $_SESSION["usersUID"] . "!</p>";
+                    echo "<p>Hello there, " . $_SESSION["usersUID"] . "!</p>";
                 }
             ?>
-
-            <h1> Welcome to MyDateList. This is the homepage.</h1>
         </section>
 
         <!-- big sliding picture code -->
@@ -66,9 +64,7 @@
         </div>
         <!-- END of search bar code -->
 
-
-
-        <h4> DATE IDEAS </h4>
+        <br>
 
         <!-- individual sliding posts code -->
         <section id="post-gallery" class="wrapper-post">
