@@ -14,7 +14,7 @@ session_start();
         <link rel="stylesheet" href="css/post.css">
         <link rel="stylesheet" href="css/settings.css">
         <link rel="stylesheet" href="css/myPage.css">
-        <link rel ="stylesheet" href ="css/home.css?v1.0">
+        <link rel ="stylesheet" href ="css/home.css?v1.1">
         <link rel="stylesheet" href="css/viewPost.css">
         <link rel="stylesheet" href="css/fav.css">
         <link rel="stylesheet" href="css/homePostData.css">
