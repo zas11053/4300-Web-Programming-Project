@@ -41,6 +41,7 @@ p.postNum::after {
   margin: auto;
   padding: 0;
 }
+
 #post-gallery .card {
   max-width: 320px;
   height: 400px;

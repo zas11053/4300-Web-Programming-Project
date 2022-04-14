@@ -16,10 +16,11 @@
 }
 
 .mySlides img {
-  width: 900px;
+  /* width: 1400px; */
   aspect-ratio: 16/9;
   padding: 2%;
   margin: auto;
+  height: 700px;
 }
 /*places if below the pic gallery on bottom left corner*/
 .numbertext {
@@ -66,8 +67,55 @@
 }
 
 /**1ST SLIDER SLIDER====================================================================================*/
+
+#post-gallery-home {
+  display: -webkit-inline-box;
+  /* grid-template-columns: 1fr 1fr 1fr; */ /**have 3 column display of post*/
+  /* grid-template-rows: auto; */
+  grid-gap: 100px; /** gap between the post*/
+  position: absolute;
+  left: -280px;
+}
+
+#post-gallery-home .card {
+  max-width: 320px;
+  height: 400px;
+  max-height: 400px;
+  background-color: white;
+  border: 3px solid grey;
+}
+
+#post-gallery-home .card .post-img {
+  height: 70%;
+  width: 90%;
+  margin: auto;
+  /* margin-top: 0px; */
+  margin-top: 10px;
+  background-repeat: no-repeat;
+  background-size: cover; /**should cover the entire img frame*/
+  background-position: center; /**centers thee image(crop)*/
+  cursor: pointer;
+  border: solid 2px grey;
+  background-image: url("../images/DEFAULT.jpg");
+}
+#post-gallery-home.card img {
+  height: 70%;
+  width: 90%;
+  margin: auto;
+}
+
 .top-post-slider {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  overflow: scroll;
+  justify-content: center;
+  margin: auto;
+  overflow-y: hidden;
   position: relative;
+  height: 430px;
+  left: 0;
+  margin-bottom: 10px;
 }
 
 .wrapper-post-home {
