@@ -26,12 +26,20 @@ p.postNum::after {
 .wrapper-post {
   margin: 0 20vw;
 }
-
 #post-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /**have 3 column display of post*/
-  grid-template-rows: auto;
-  grid-gap: 20px; /** gap between the post*/
+  grid-template-columns: repeat(
+    auto-fit,
+    320px
+  ); /*it will auto resize itself and fits the caraccordinly */
+  justify-content: center;
+  column-gap: 20px;
+  max-width: 1000px; /*makes it only 3 card a page [max]*/
+  width: 100%;
+  row-gap: 20px;
+
+  margin: auto;
+  padding: 0;
 }
 #post-gallery .card {
   max-width: 320px;

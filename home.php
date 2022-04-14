@@ -3,31 +3,9 @@
     include_once 'header.php';
 ?>
 
-  <div class="slideshow-container">
-        <!-- big sliding picture code -->
-        <?php
-            $sql1 = "SELECT * FROM imgs INNER JOIN posts ON posts.postID = imgs.postID"; // select everything from the imgs table to display on homepage
-            $result1 = mysqli_query($conn, $sql1);
-            $resultsCheck = mysqli_num_rows($result1); // error handling to make sure you're selecting something
+<div class ="whole-home">
 
-            if ($resultsCheck > 0) {
-                $slideshowNum = 0;
-                while ($row = mysqli_fetch_assoc($result1)) {
-                    $imgLink = $row['img_dir'];
-                    $slideshowNum++;
-                    if ($slideshowNum < 4) {
-                        ?>
-                      
-                            <div class="mySlides fade">
-                                <div class="numbertext"><?php echo $slideshowNum ?>/ 3</div>
-                                <img src=<?php echo $imgLink;?> alt="<?php echo $imgLink;?>">
-                            </div>
-                        <?php
-                    }
-                }
-            }
-        ?>
-</div>
+
        
 
         <!-- search bar code -->
@@ -41,6 +19,35 @@
           </form>
         </div>
         <!-- END of search bar code -->
+
+        <div class ="top-post-slider">
+        
+    <section id="post-gallery" class="wrapper-post">
+    <?php for ($i = 0; $i < 10; $i++){ ?>
+                
+            <div class="card" style="position:relative;">
+
+                <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
+                <a href="#">
+                    <!---div where the img is at--img is set as an background img  -->
+                    <div class="post-img"  style="background-image: url('./uploads/48_0_DSC_0032.JPG');">
+                    </div>
+                    
+                    <div class="caption">
+                        <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
+                        text-overflow: ellipsis;"> Parasailing </h2>
+                        <p style="font-size:20px">Casaul</p>
+                        <div style="display: inline-flex">
+                            <i class="material-icons" style="font-size:12px; background-color:white"> place </i>
+                            <p style="font-size:12px">South Carolina</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <?php
+        }?>
+        </section>
+        </div>
 
         
 
@@ -61,6 +68,7 @@
             setTimeout(showSlides, 5000); // Change image every 5 seconds
             }
         </script>
+</div>
 <?php
 include_once 'footer.php';
 ?>

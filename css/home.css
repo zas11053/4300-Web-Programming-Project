@@ -7,9 +7,7 @@
   width: 100%;
   position: relative;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
-  /* align-content: center; */
 }
 
 /* Hide the images by default */
@@ -22,6 +20,11 @@
   aspect-ratio: 16/9;
   padding: 2%;
   margin: auto;
+}
+/*places if below the pic gallery on bottom left corner*/
+.numbertext {
+  bottom: 0;
+  left: 60px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -62,12 +65,19 @@
   }
 }
 
+/**1ST SLIDER SLIDER====================================================================================*/
+.top-post-slider {
+  position: relative;
+}
+
+.wrapper-post-home {
+  position: absolute;
+}
 /**====SEARCH BAR======================================================================================*/
 .searchBar {
   width: 100%;
   max-width: 300px;
   display: inline-flex;
-  margin-left: 80px;
 }
 
 .searchBar_input {
