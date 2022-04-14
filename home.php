@@ -3,14 +3,7 @@
     include_once 'header.php';
 ?>
 
-        <section class="index-form">
-            <?php
-                if (isset($_SESSION["usersUID"])) {
-                    echo "<p>Hello there, " . $_SESSION["usersUID"] . "!</p>";
-                }
-            ?>
-        </section>
-
+  <div class="slideshow-container">
         <!-- big sliding picture code -->
         <?php
             $sql1 = "SELECT * FROM imgs INNER JOIN posts ON posts.postID = imgs.postID"; // select everything from the imgs table to display on homepage
@@ -24,17 +17,34 @@
                     $slideshowNum++;
                     if ($slideshowNum < 4) {
                         ?>
-                        <div class="slideshow-container">
+                      
                             <div class="mySlides fade">
                                 <div class="numbertext"><?php echo $slideshowNum ?>/ 3</div>
-                                <img src=<?php echo $imgLink;?> alt="imgLink" style="width:1200px; height: 300px; text-align: center;">
+                                <img src=<?php echo $imgLink;?> alt="<?php echo $imgLink;?>">
                             </div>
                         <?php
                     }
                 }
             }
         ?>
+</div>
+       
 
+        <!-- search bar code -->
+        <div class="search-container">
+          <form action="./searchPage.php" method="get">
+            <div class="searchBar">
+            
+                <input type="text"  class ="searchBar_input" name="search" placeholder="Search..">
+                <button type="submit" class="searchBar_button"> <i class='material-icons'> search </i></button>
+            </div>
+          </form>
+        </div>
+        <!-- END of search bar code -->
+
+        
+
+       
         <script type="text/javascript">
             let slideIndex = 0;
             showSlides();
@@ -51,28 +61,6 @@
             setTimeout(showSlides, 5000); // Change image every 5 seconds
             }
         </script>
-
-        <!-- search bar code -->
-        <div class="search-container">
-          <form action="./searchPage.php" method="get">
-            <div class="searchBar">
-            
-                <input type="text"  class ="searchBar_input" name="search" placeholder="Search..">
-                <button type="submit" class="searchBar_button"> <i class='material-icons'> search </i></button>
-            </div>
-        </form>
-        </div>
-        <!-- END of search bar code -->
-
-        <br>
-
-        <!-- individual sliding posts code -->
-        <section id="post-gallery" class="wrapper-post">
-
-        </section>
-        <div id="load_data_message"></div>
-        <?php include './includes/homePostData.inc.php'; ?>
-  
 <?php
 include_once 'footer.php';
 ?>
