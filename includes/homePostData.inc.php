@@ -1,7 +1,6 @@
 <?php
  //session_start();
  require_once('dbh.inc.php');
- //include_once 'header.php';
 
     
     //SQL: LIMIT #1, #2 == start from index[#1] and get #2 amount of rows 
@@ -32,7 +31,7 @@
                $coverImg = $img_dir['img_dir'];
                
                 //append to #post-gallery that HTML element to be displayed back to myPage.php == divs for the posts
-            echo' 
+            /*echo' 
             <div class="card" style="position:relative;">
             <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
                 <a href="#">
@@ -57,7 +56,8 @@
                 </a>
         </div>
         
-            ';
+            ';*/
         } 
 
 ?>
+
