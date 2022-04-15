@@ -42,220 +42,63 @@
             </form>
             </div>
         <!-- END of search bar code -->
+     
+<section id="post-gallery" class="wrapper-post ">
+
+</section>
+<div id="load_data_message"></div>
+<script>
+
+    $(document).ready(function(){
+    
+    var limit = 18;
+    var start = 0;
+    var action = 'inactive';
+    function load_country_data(limit, start)
+    {
+    $.ajax({
+    url:"./includes/HomePostData2.inc.php",
+    method:"POST",
+    data:{ 
+        limit:limit, 
+        start:start
+    },
+    cache:false,
+    success:function(data)
+    {
+        $('#post-gallery').append(data);
+        if(data == '')
+        {
+      
+        action = 'active';
+        }
+        else
+        {
         
-    <div> <!---TOP FAV CATEGORY MULTI SLIDE -->
-        <h2 class="title-category">Top Favorites:</h2>
-            <div class ="top-post-slider">
-                <section id="post-gallery-home" class="wrapper-post">
-                    <?php
+        action = "inactive";
+        }
+    }
+    });
+    }
 
-                    $sql = "SELECT* FROM fav INNER JOIN posts ON posts.postID = fav.postID GROUP BY posts.postID
-                    ORDER BY posts.savedAmount DESC LIMIT 10;";
-                            
-                        //make query & get result
-                        $result = mysqli_query($conn, $sql);
-
-                        //fetch the resulting rows as an array
-                        $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                    
-                    //loops through each post
-                    foreach ($posts as $post){
-                        $sql = "SELECT img_dir FROM imgs WHERE postID='$post[postID]'";
-
-                        //make query & get result
-                        $result = mysqli_query($conn, $sql);
-
-                        //fetch the resulting rows as an array
-                        $img_dir = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                        
-                        //print out the first img related to that post== cover pic
-                        $coverImg = $img_dir[0]["img_dir"]; ?>
-                                    
-                            <div class="card" style="position:relative; width:320px">
-
-                                <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
-                                <a href="./viewPost.php?ID=<?php echo $post['postID']?>">
-                                    <!---div where the img is at--img is set as an background img  -->
-                                    <div class="post-img"  style="background-image: url('<?php echo $coverImg?>');"></div>
-                                    
-                                    <div class="caption">
-                                        <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
-                                        text-overflow: ellipsis;"> <?php echo $post['title']?> </h2>
-                                        <p style="font-size:20px"><?php echo $post['type']?></p>
-                                        <div style="display: inline-flex">
-                                            <i class="material-icons" style="font-size:12px; background-color:white"> place </i>
-                                            <p style="font-size:12px"><?php echo $post['location']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <?php
-                    }?>
-                </section>
-            </div>
-        </div> <!---TOP FAV CATEGORY MULTI SLIDE -->
-
-           
-    <div> <!---casual CATEGORY MULTI SLIDE -->
-
-        <h2 class="title-category">Casual:</h2>
-            <div class ="top-post-slider">
-                <section id="post-gallery-home" class="wrapper-post">
-                    <?php
-
-                    $sql = "SELECT* FROM posts WHERE posts.type='casual'
-                    ORDER BY posts.postID DESC LIMIT 10;";
-                            
-                        //make query & get result
-                        $result = mysqli_query($conn, $sql);
-
-                        //fetch the resulting rows as an array
-                        $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                    
-                    //loops through each post
-                    foreach ($posts as $post){
-                        $sql = "SELECT img_dir FROM imgs WHERE postID='$post[postID]'";
-
-                        //make query & get result
-                        $result = mysqli_query($conn, $sql);
-
-                        //fetch the resulting rows as an array
-                        $img_dir = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                        
-                        //print out the first img related to that post== cover pic
-                        $coverImg = $img_dir[0]["img_dir"]; ?>
-                                    
-                            <div class="card" style="position:relative; width:320px">
-
-                                <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
-                                <a href="./viewPost.php?ID=<?php echo $post['postID']?>">
-                                    <!---div where the img is at--img is set as an background img  -->
-                                    <div class="post-img"  style="background-image: url('<?php echo $coverImg?>');"></div>
-                                    
-                                    <div class="caption">
-                                        <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
-                                        text-overflow: ellipsis;"> <?php echo $post['title']?> </h2>
-                                        <p style="font-size:20px"><?php echo $post['type']?></p>
-                                        <div style="display: inline-flex">
-                                            <i class="material-icons" style="font-size:12px; background-color:white"> place </i>
-                                            <p style="font-size:12px"><?php echo $post['location']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <?php
-                    }?>
-                </section>
-            </div>
-        </div> <!---casual CATEGORY MULTI SLIDE -->
-
-                
-      <div> <!---Fancy CATEGORY MULTI SLIDE -->
-
-         <h2 class="title-category">Fancy:</h2>
-            <div class ="top-post-slider">
-                <section id="post-gallery-home" class="wrapper-post">
-                    <?php
-
-                    $sql = "SELECT* FROM posts WHERE posts.type='fancy'
-                    ORDER BY posts.postID DESC LIMIT 10;";
-                            
-                        //make query & get result
-                        $result = mysqli_query($conn, $sql);
-
-                        //fetch the resulting rows as an array
-                        $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                    
-                    //loops through each post
-                    foreach ($posts as $post){
-                        $sql = "SELECT img_dir FROM imgs WHERE postID='$post[postID]'";
-
-                        //make query & get result
-                        $result = mysqli_query($conn, $sql);
-
-                        //fetch the resulting rows as an array
-                        $img_dir = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                        
-                        //print out the first img related to that post== cover pic
-                        $coverImg = $img_dir[0]["img_dir"]; ?>
-                                    
-                            <div class="card" style="position:relative; width:320px">
-
-                                <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
-                                <a href="./viewPost.php?ID=<?php echo $post['postID']?>">
-                                    <!---div where the img is at--img is set as an background img  -->
-                                    <div class="post-img"  style="background-image: url('<?php echo $coverImg?>');"></div>
-                                    
-                                    <div class="caption">
-                                        <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
-                                        text-overflow: ellipsis;"> <?php echo $post['title']?> </h2>
-                                        <p style="font-size:20px"><?php echo $post['type']?></p>
-                                        <div style="display: inline-flex">
-                                            <i class="material-icons" style="font-size:12px; background-color:white"> place </i>
-                                            <p style="font-size:12px"><?php echo $post['location']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <?php
-                    }?>
-                </section>
-            </div>
-     </div> <!---fancy CATEGORY MULTI SLIDE -->
-
-             
-     <div> <!---Fancy CATEGORY MULTI SLIDE -->
-
-        <h2 class="title-category">Home:</h2>
-            <div class ="top-post-slider">
-                <section id="post-gallery-home" class="wrapper-post">
-                    <?php
-
-                    $sql = "SELECT* FROM posts WHERE posts.type='home'
-                    ORDER BY posts.postID DESC LIMIT 10;";
-                            
-                        //make query & get result
-                        $result = mysqli_query($conn, $sql);
-
-                        //fetch the resulting rows as an array
-                        $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                    
-                    //loops through each post
-                    foreach ($posts as $post){
-                        $sql = "SELECT img_dir FROM imgs WHERE postID='$post[postID]'";
-
-                        //make query & get result
-                        $result = mysqli_query($conn, $sql);
-
-                        //fetch the resulting rows as an array
-                        $img_dir = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                        
-                        //print out the first img related to that post== cover pic
-                        $coverImg = $img_dir[0]["img_dir"]; ?>
-                                    
-                            <div class="card" style="position:relative; width:320px">
-
-                                <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
-                                <a href="./viewPost.php?ID=<?php echo $post['postID']?>">
-                                    <!---div where the img is at--img is set as an background img  -->
-                                    <div class="post-img"  style="background-image: url('<?php echo $coverImg?>');"></div>
-                                    
-                                    <div class="caption">
-                                        <h2 style="font-size:25px;  font-family:satisfy, cursive;overflow: hidden;
-                                        text-overflow: ellipsis;"> <?php echo $post['title']?> </h2>
-                                        <p style="font-size:20px"><?php echo $post['type']?></p>
-                                        <div style="display: inline-flex">
-                                            <i class="material-icons" style="font-size:12px; background-color:white"> place </i>
-                                            <p style="font-size:12px"><?php echo $post['location']?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <?php
-                    }?>
-                </section>
-            </div>
-        </div> <!---fancy CATEGORY MULTI SLIDE -->
+    if(action == 'inactive')
+    {
+    action = 'active';
+    load_country_data(limit, start);
+    }
+    $(window).scroll(function(){
+    if($(window).scrollTop() + $(window).height() > $("#post-gallery").height() && action == 'inactive')
+    {
+    action = 'active';
+    start = start + limit;
+    setTimeout(function(){
+        load_country_data(limit, start);
+    }, 1000);
+    }
+    });
+    
+    });
+</script>
 
         
 

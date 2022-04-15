@@ -28,7 +28,7 @@ include_once 'header.php';
 
     $(document).ready(function(){
     
-    var limit = 9;
+    var limit = 18;
     var start = 0;
     var action = 'inactive';
     function load_country_data(limit, start)
