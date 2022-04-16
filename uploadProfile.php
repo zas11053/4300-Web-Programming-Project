@@ -47,44 +47,44 @@ if(isset($_POST['submit'])){
                 $oldImgDir;
             $sql = "SELECT `pfp_img_dir` FROM `users` WHERE usersUID =?";
             $stmt = mysqli_stmt_init($conn);
-            if(!mysqli_stmt_prepare($stmt,$sql)){
-                echo "SQL FAILED!";
-            // exit();
-            
-            } else {
-                mysqli_stmt_bind_param($stmt, "s",$username);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-                $userpfp = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                //echo $userpfp[0]['pfp_img_dir']; // print out 1st available ID
-                $old_pfp_dir = $userpfp[0]['pfp_img_dir'];//gets current pfp 
+                if(!mysqli_stmt_prepare($stmt,$sql)){
+                    echo "SQL FAILED!";
+                // exit();
+                
+                } else {
+                    mysqli_stmt_bind_param($stmt, "s",$username);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                    $userpfp = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                    //echo $userpfp[0]['pfp_img_dir']; // print out 1st available ID
+                    $old_pfp_dir = $userpfp[0]['pfp_img_dir'];//gets current pfp 
 
-                // ONLY DELETE IF THE PFP IS NOT THE DEFAULT IMG
-                if($old_pfp_dir !== "./images/DEFAULT.jpg"){
-                    if(unlink($old_pfp_dir)){ //delete the current picture from the uploads folder if 
-                        echo "file was deleted";
+                    // ONLY DELETE IF THE PFP IS NOT THE DEFAULT IMG
+                    if($old_pfp_dir !== "./images/DEFAULT.jpg"){
+                        if(unlink($old_pfp_dir)){ //delete the current picture from the uploads folder if 
+                            echo "file was deleted";
+                        }
                     }
                 }
-            }
 
-            $sql = "UPDATE users SET pfp_img_dir = ? WHERE usersUID= ?";
-            $stmt = mysqli_stmt_init($conn);
-            if(!mysqli_stmt_prepare($stmt,$sql)){
-                echo "There was an error!";
-                exit();
+                $sql = "UPDATE users SET pfp_img_dir = ? WHERE usersUID= ?";
+                $stmt = mysqli_stmt_init($conn);
+                if(!mysqli_stmt_prepare($stmt,$sql)){
+                    echo "There was an error!";
+                    exit();
 
-            } else {
-                // echo $username;
-                mysqli_stmt_bind_param($stmt, "ss", $fileDestination,$username);
-                mysqli_stmt_execute($stmt);
-                    
-                //copies/movies over the image and store in the uploads folder
-                move_uploaded_file($fileTmpName,$fileDestination);
+                } else {
+                    // echo $username;
+                    mysqli_stmt_bind_param($stmt, "ss", $fileDestination,$username);
+                    mysqli_stmt_execute($stmt);
+                        
+                    //copies/movies over the image and store in the uploads folder
+                    move_uploaded_file($fileTmpName,$fileDestination);
 
-                header("Location: settings.php?error=uploadsuccess"); // can remove the ?uploadsuccess later if want
-                    
-                exit();
-            }
+                    header("Location: settings.php?error=uploadsuccess"); // can remove the ?uploadsuccess later if want
+                        
+                    exit();
+                }
             
             } else {
                 header("Location: settings.php?error=toobig");
