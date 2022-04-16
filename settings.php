@@ -55,6 +55,7 @@
                                 <button type="submit" id="submitPFP" name="submit" style="display:none"> UPLOAD </button>
                             </form>
                             <button id="settingPFPButton" style = "background-color:transparent;border:none; font-weight:bolder;color:#a93b3b;cursor:pointer;padding:0">Change Profile Photo</button>
+                            <?php echo $img;?>
                         </div>
              </div>
 
