@@ -49,7 +49,7 @@ if(isset($_GET["search"]) ){
    // alert(search);
     $(document).ready(function(){
     
-    var limit = 9;
+    var limit = 18;
     var start = 0;
     var action = 'inactive';
     function load_country_data(limit, start)

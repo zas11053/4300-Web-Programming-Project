@@ -1,9 +1,13 @@
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box;
+}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  width: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 /* Hide the images by default */
@@ -11,19 +15,24 @@
   display: none;
 }
 
+.mySlides img {
+  aspect-ratio: 21/9;
+  padding: 2%;
+  margin: auto;
+  height: 500px;
+  object-fit: cover;
+}
+/*places if below the pic gallery on bottom left corner*/
+.numbertext {
+  bottom: 0;
+  left: 35px;
+  position: absolute;
+}
+
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  /* position: absolute; */
-  top: 0;
 }
 
 /* The dots/bullets/indicators */
@@ -58,12 +67,18 @@
   }
 }
 
+.whole-home {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
 /**====SEARCH BAR======================================================================================*/
 .searchBar {
   width: 100%;
   max-width: 300px;
   display: inline-flex;
-  margin-left: 80px;
 }
 
 .searchBar_input {
@@ -108,4 +123,8 @@
   width: 100%;
   max-width: 300px;
   margin: auto;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }

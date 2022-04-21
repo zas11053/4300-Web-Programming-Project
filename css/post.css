@@ -128,7 +128,7 @@
 .textBox {
   height: 540px;
   width: 100%;
-
+  max-width: 1100px;
   background-color: #fafafa;
   border: solid 1px black;
   margin-right: 30px;
