@@ -179,3 +179,8 @@ main .ck-editor[role="application"] {
 .textBox button:hover {
   background-color: rgba(253, 184, 184);
 }
+
+div#load_data_message {
+  bottom: 0;
+  position: fixed;
+}
