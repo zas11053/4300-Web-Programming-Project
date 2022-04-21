@@ -76,10 +76,11 @@ include_once 'header.php';
                         
                         
                      ],
-                     height: 306,
+                           height: 306,
                            resize_dir: 'none',
                            extraPlugins: 'editorplaceholder',
                            editorplaceholder: 'Start typing here...'
+    
                            
                      });
 

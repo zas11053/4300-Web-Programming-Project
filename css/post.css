@@ -154,6 +154,11 @@
 main .ck-editor[role="application"] {
   overflow: auto;
 }
+
+#cke_1_contents {
+  min-height: 300px !important;
+}
+
 .post-desc {
   /**the one tha contains post title, location,date type*/
   display: flex;
