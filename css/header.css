@@ -143,7 +143,7 @@ a {
 /* Footer */
 footer p {
   margin-top: 10px;
-  position: relative;
+  position: fixed;
   text-align: right;
   border-top: solid #dcdcdc;
   left: 0px;

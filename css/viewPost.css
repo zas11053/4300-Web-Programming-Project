@@ -25,6 +25,12 @@
   overflow: auto;
   height: 400px;
   /**background-color: blue;*/
+  max-width: 1000px;
+}
+
+/**hides the scroll bar */
+#description-Box::-webkit-scrollbar {
+  display: none;
 }
 
 .drop-zone-thumb2 {
