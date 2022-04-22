@@ -86,7 +86,7 @@ if(isset($_GET["user"])){
         }
         else
         {
-        $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
+       $('#load_data_message').html("<a href='#'> Back to Top </a>");
         action = "inactive";
         }
     }

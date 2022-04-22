@@ -52,6 +52,8 @@ if(isset($_GET["search"]) ){
     var limit = 18;
     var start = 0;
     var action = 'inactive';
+    var none = false;
+    var noPost = true;
     function load_country_data(limit, start)
     {
     $.ajax({
@@ -65,15 +67,27 @@ if(isset($_GET["search"]) ){
     cache:false,
     success:function(data)
     {
+        if (data == "none"){
+            none = true;
+        } else {
         $('#post-gallery').append(data);
-        if(data == '')
+        }
+        
+        if (none && noPost){ // if there absolutely no post for this query will print out an message
+            $('#post-gallery').html("<div id='noPost'><p>No post queries. Try a different search! </p> </div>");
+            $('#load_data_message').html("<a href='#'> Back to Top </a>");
+        action = 'active';
+        }
+        else if(data == "none")
         {
         $('#load_data_message').html("<a href='#'> Back to Top </a>");
         action = 'active';
         }
         else
         {
-        $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
+         $('#load_data_message').html("<a href='#'> Back to Top </a>");
+        noPost=false;
+
         action = "inactive";
         }
         

@@ -24,7 +24,7 @@ session_start();
 
     //fetch the resulting rows as an array
     $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
+    if ($postAmount >0){
     
         //loops through each post
         foreach ($posts as $post){
@@ -72,6 +72,9 @@ session_start();
             ';
         }
 
-} 
+    } else {
+        exit('none'); // no post left 
+    }
+    } 
 
 ?>

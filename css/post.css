@@ -184,3 +184,10 @@ div#load_data_message {
   bottom: 0;
   position: fixed;
 }
+
+/*search page when there no search*/
+div#noPost {
+  width: 100%;
+
+  text-align: center;
+}
