@@ -39,7 +39,8 @@ if(isset($_POST['submit'])){
                 $usersID = mysqli_fetch_assoc($result);
                 $usersIDNum=$usersID['usersID'];
                 //profile pic will be labeled [userID]_pfp.[fileExtention]
-                $fileNameNew = $usersIDNum."_"."pfp".".".$fileActualExt;
+               
+                $fileNameNew = $usersIDNum."_"."pfp".uniqid('',true).".".$fileActualExt;
                 $fileDestination = './uploads/'.$fileNameNew;
             
                 

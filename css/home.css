@@ -70,13 +70,6 @@
   }
 }
 
-.whole-home {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-
 /**====SEARCH BAR======================================================================================*/
 .searchBar {
   width: 100%;

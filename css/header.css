@@ -4,6 +4,7 @@
 body {
   background-color: #fafafa;
   /**background-color: #57f38693;*/
+  margin-bottom: 28px;
 }
 header {
   background-color: white;

@@ -53,6 +53,7 @@ include_once 'header.php';
 
 </section>
 <div id="load_data_message"></div>
+
 <script>
 
     $(document).ready(function(){
@@ -105,3 +106,8 @@ include_once 'header.php';
     
     });
 </script>
+
+
+<?php
+include_once 'footer.php';
+?>

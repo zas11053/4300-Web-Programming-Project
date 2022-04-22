@@ -77,3 +77,8 @@ include_once 'header.php';
     
     });
 </script>
+
+
+<?php
+include_once 'footer.php';
+?>

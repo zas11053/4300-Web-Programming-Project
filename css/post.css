@@ -182,7 +182,7 @@ main .ck-editor[role="application"] {
 
 div#load_data_message {
   bottom: 0;
-  position: fixed;
+  position: relative;
 }
 
 /*search page when there no search*/

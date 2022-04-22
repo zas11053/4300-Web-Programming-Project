@@ -3,7 +3,7 @@
     include_once 'header.php';
 ?>
 
-<div class ="whole-home">
+
 
     <div class="slideshow-container">
             <!-- big sliding picture code -->
@@ -69,12 +69,12 @@
         $('#post-gallery').append(data);
         if(data == '')
         {
-      
+        $('#load_data_message').html("<a href='#'> Back to Top </a>");
         action = 'active';
         }
         else
         {
-        
+       $('#load_data_message').html("<a href='#'> Back to Top </a>");
         action = "inactive";
         }
     }
@@ -128,7 +128,7 @@
 
 
 
-</div>
+
 <?php
 include_once 'footer.php';
 ?>
