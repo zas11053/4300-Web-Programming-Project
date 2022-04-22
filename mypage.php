@@ -1,6 +1,10 @@
 <?php
 require_once('includes/dbh.inc.php');
 include_once 'header.php';
+if(!isset($_SESSION["usersUID"])){
+
+    header("Location: ./home.php?notLoggedIn");
+ }
 ?>
 
 <?php

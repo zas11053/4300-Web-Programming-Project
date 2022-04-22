@@ -1,7 +1,12 @@
 <?php
 include_once 'header.php';
 // Checks if user is logged in or not
+if(!isset($_SESSION["usersUID"])){
 
+   header("Location: ./home.php?notLoggedIn");
+}
+
+?>
 
 <script>
    let parameters = new URLSearchParams(window.location.search); //gets the url [the stuff after this page's name]

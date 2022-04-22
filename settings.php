@@ -1,5 +1,9 @@
 <?php
     include_once 'header.php'; // includes the header
+    if(!isset($_SESSION["usersUID"])){
+
+        header("Location: ./home.php?notLoggedIn");
+     }
     require_once('includes/dbh.inc.php'); // includes the database
 
     // gets the username from phpmyadmin

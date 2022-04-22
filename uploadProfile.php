@@ -97,4 +97,6 @@ if(isset($_POST['submit'])){
     } else {
         header("Location: settings.php?error=wrongtype");
     }
+}else {
+    header("Location: home.php");
 }
