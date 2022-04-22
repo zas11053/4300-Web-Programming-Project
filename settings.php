@@ -81,9 +81,19 @@
                             } else if ($_GET["error"] == "wrongcurrentpassword"){
                                 echo "<p> Incorrect current password </p>";
                             } else if ($_GET["error"] =="passwordsdontmatch"){
-                                echo "<p> Unable to change password because passwords don't match.</p>";
+                                echo "<p> Passwords don't match.</p>";
                             }else if ($_GET["error"] == "updatedpassword"){
                                 echo "<p style='color:green;'> You have changed your password :) </p>";
+                            } else if($_GET["error"] == "toobig"){
+                                echo "<p> Your file is too big!</p>";
+                            } else if ($_GET["error"] == "empty"){
+                                echo "<p> There was an error uploading your file! FILE IS PROB EMPTY </p>";
+                            } else if ($_GET["error"] =="wrongtype"){
+                                echo "<p> You cannot upload files of this type!</p>";
+                            } else if ($_GET["error"] == "uploadsuccess"){
+                                echo "<p style='color:green;'> You have changed your picture :) </p>";
+                            }  else if ($_GET["error"] == "usernametaken"){
+                                echo "<p> Username taken. Try Again! </p>";
                             }
                         }
                     ?>

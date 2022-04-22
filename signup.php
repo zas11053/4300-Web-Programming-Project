@@ -18,6 +18,22 @@
 
             <!-- Prompts user to enter information -->
             <div class="login">
+            <div style="margin-bottom: 3px; color: red; font-weight:bold;">
+                    <!-- Checks for invalid information or empty fields -->   
+                    <?php
+                    if(isset($_GET["error"])){
+                        if($_GET["error"] == "emptyInput"){
+                            echo "<p> Fill in all fields! </p>";
+                        } else if ($_GET["error"] == "invalidUID"){
+                            echo "<p>Not a proper username! Only letters and numbers </p>";
+                        }else if ($_GET["error"] == "passwordsdontmatch"){
+                            echo "<p>Passwords need to match! </p>";
+                        } else if ($_GET["error"] == "usernametaken"){
+                            echo "<p>Username taken. Pick a different one! </p>";
+                        } 
+                    }
+                    ?>
+                    </div>
                 <form action ="includes/signup.inc.php" method="post">
                 <!--Placeholder is the text in the box you see -->
                 <input type = "text" name="name" id ="text" placeholder="Full Name"> <br/> <br/>
@@ -30,21 +46,7 @@
                 <input type = "submit" name="submit" id ="loginButton" value="Sign Up">
                 <br/> <br/>
             </form>
-            
-         <!-- Checks for invalid information or empty fields -->   
-         <?php
-         if(isset($_GET["error"])){
-             if($_GET["error"] == "emptyInput"){
-                 echo "<p> Fill in all fields! </p>";
-             } else if ($_GET["error"] == "invalidUID"){
-                echo "<p>Not a proper username! Only letters and numbers </p>";
-             }else if ($_GET["error"] == "passwordsdontmatch"){
-                echo "<p>Passwords need to match! </p>";
-             } else if ($_GET["error"] == "usernametaken"){
-                echo "<p>Username taken. Pick a different one! </p>";
-             } 
-         }
-         ?>
+        
 
         </div>
             

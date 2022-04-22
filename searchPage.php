@@ -75,7 +75,6 @@ if(isset($_GET["search"]) ){
         
         if (none && noPost){ // if there absolutely no post for this query will print out an message
             $('#post-gallery').html("<div id='noPost'><p>No post queries. Try a different search! </p> </div>");
-            $('#load_data_message').html("<a href='#'> Back to Top </a>");
         action = 'active';
         }
         else if(data == "none")
@@ -113,3 +112,8 @@ if(isset($_GET["search"]) ){
     
     });
 </script>
+
+
+<?php
+include_once 'footer.php';
+?>

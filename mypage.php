@@ -31,7 +31,7 @@ include_once 'header.php';
 <div class="userProfileHeader">
         
     <?php //the following to print pfp
-        echo "<img style='width:150px; height: 150px;border-radius:50%; border:solid 2px grey' src= '$img'>";
+        echo "<img style='width:150px; height: 150px;border-radius:50%; border:solid 2px grey; object-fit:cover' src= '$img'>";
     ?>
 
     <div style="display:flex; flex-direction:column; gap: 25px;"> <!----text next to pfp----------->

@@ -16,8 +16,26 @@
                 <img src="./images/MyDateList.png" alt="title font image">
             </div> <!--DIV CLASS=TITLEIMAGE-->
 
+            
             <!-- Prompts user to enter login information -->
             <div class="login">
+                <!-- Checks for invalid information or empty fields -->
+            <div style="margin-bottom: 3px; color: red; font-weight:bold;">
+                <?php
+                
+                if(isset($_GET["error"])){
+                    if($_GET["error"] == "emptyInput"){
+                        echo "<p> Fill in all fields! </p>";
+                    } else if ($_GET["error"] == "wronglogin"){
+                        echo "<p> Incorrect username or password </p>";
+                    } else if ($_GET["error"] =="Unable_to_verify_account"){
+                        echo "<p> Unable to change password.</p>";
+                    }else if ($_GET["error"] == "none"){
+                        echo "<p> You have signed up </p>";
+                    }
+                }
+                ?>
+          </div>
                 <form action ="includes/login.inc.php" method="post">
                 <!-- Placeholder is the text in the box you see -->
                 <input type = "text" name="username" id ="text" placeholder="Username "> <br/> <br/>
@@ -26,20 +44,7 @@
                 <br/> <br/>
                 </form>
 
-         <!-- Checks for invalid information or empty fields -->
-         <?php
-         if(isset($_GET["error"])){
-             if($_GET["error"] == "emptyInput"){
-                 echo "<p> Fill in all fields! </p>";
-             } else if ($_GET["error"] == "wronglogin"){
-                echo "<p> Incorrect username or password </p>";
-             } else if ($_GET["error"] =="Unable_to_verify_account"){
-                echo "<p> Unable to change password.</p>";
-             }else if ($_GET["error"] == "none"){
-                echo "<p> You have signed up </p>";
-             }
-         }
-         ?>
+         
 
             </div>
 

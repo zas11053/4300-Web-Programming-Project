@@ -58,10 +58,13 @@ a {
 }
 
 .right ul {
+  grid-auto-flow: column;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  margin: auto;
 }
+
 /**these are styling to make the dropdown menu on the profile pic*/
 .right ul li {
   position: relative; /**NEW */
@@ -118,7 +121,7 @@ a {
   width: 100%;
   max-width: 32px;
   aspect-ratio: 1/1;
-  object-fit: fill;
+  object-fit: cover;
   border-radius: 50%;
   border: 2px solid #dcdcdc;
   padding: 2px;
