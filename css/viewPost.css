@@ -32,6 +32,11 @@
 #description-Box::-webkit-scrollbar {
   display: none;
 }
+/*for the time/date post was created*/
+span#post_timestamp {
+  font-size: x-small;
+  color: #dcdcdc;
+}
 
 .drop-zone-thumb2 {
   width: 100%;

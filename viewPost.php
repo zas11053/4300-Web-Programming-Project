@@ -94,6 +94,7 @@ if(isset($_GET["ID"])){
                         
                      <span> <?php echo "Date Type: ". $type; ?></span>
                      <span id="postLocation">Location: <?php echo $location; ?></span>
+                     <span id="post_timestamp"> <?php echo $date; ?></span>
                         
                      <hr>
 
