@@ -175,9 +175,6 @@ footer p {
 } /*MAX WIDTH 999 IS WHERE IT SWITCH TO 2 POSR*/
 
 @media only screen and (max-width: 1495px) and (min-width: 1399px) {
-  body {
-    background: red;
-  }
   #cke_1_bottom {
     display: none;
   }
