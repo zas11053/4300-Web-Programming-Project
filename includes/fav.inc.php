@@ -5,10 +5,7 @@ session_start();
     
     $postID = $_POST['postID']; //starting value for the SQL LIMIT 
     $action = $_POST['action']; // how many Post to load 
-    echo $postID;
-    echo $action;
-    echo "hi tina liu";
-
+   
             
     $username=$_SESSION["usersUID"];
     $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
