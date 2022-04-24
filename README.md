@@ -76,7 +76,7 @@ Our website has been tested and works on Chrome and Windows Edge for Windows Ope
 ## Folder Structure
 
 C:.
-│ .DS_Store
+│ .DS_Store <br>
 │ about.php
 │ answer.php
 │ editPost.php
