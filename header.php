@@ -37,7 +37,7 @@ session_start();
                     <ul>
                         <li id="home"> <a href ="./home.php"> Home </a></li>
 
-                        <li> <a href ="./about.php"> About </a></li>
+                        <li id="about_header"> <a href ="./about.php"> About </a></li>
                     </ul>
                 </div>
 

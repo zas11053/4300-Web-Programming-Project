@@ -82,7 +82,7 @@ if(!isset($_SESSION["usersUID"])){
                         
                         
                      ],
-                           height: 306,
+                          height: 320,
                            resize_dir: 'none',
                            extraPlugins: 'editorplaceholder',
                            editorplaceholder: 'Start typing here...'
@@ -191,7 +191,11 @@ if(!isset($_SESSION["usersUID"])){
   
    <script src="./js/postImgPreview.js" defer></script>
    
-<?php
-include_once 'footer.php';
-?>
+</body>
+<footer style="position:relative">
+    <p style="position:relative">&copy; <?php echo date("Y"); ?> MyDateList, Inc.</p>
+</footer>
+
+
+</html>
 

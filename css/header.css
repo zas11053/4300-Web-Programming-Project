@@ -14,7 +14,6 @@ header {
   width: 100%;
   top: 0;
   z-index: 999;
-
   padding-top: 20px;
   padding-bottom: 10px;
 }
@@ -144,3 +143,46 @@ footer p {
   padding-top: 5px;
 }
 /**===============================================*/
+
+@media screen and (max-width: 1000px) {
+  body {
+    color: white;
+  }
+  .left ul {
+    grid-template-columns: 1fr;
+  }
+
+  #about_header {
+    display: none;
+  }
+  #fav {
+    display: none;
+  }
+  #post {
+    display: none;
+  }
+  #signup {
+    display: none;
+  }
+
+  .mySlides img {
+    width: 980px;
+  }
+
+  .right ul {
+    display: block;
+  }
+} /*MAX WIDTH 999 IS WHERE IT SWITCH TO 2 POSR*/
+
+@media only screen and (max-width: 1495px) and (min-width: 1399px) {
+  body {
+    background: red;
+  }
+  #cke_1_bottom {
+    display: none;
+  }
+
+  #cke_1_contents {
+    height: 290px !important;
+  }
+}
