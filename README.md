@@ -75,94 +75,94 @@ Our website has been tested and works on Chrome and Windows Edge for Windows Ope
 
 ## Folder Structure
 
-C:.
+C:.<br>
 │ .DS_Store <br>
-│ about.php
-│ answer.php
-│ editPost.php
-│ favorites.php
-│ footer.php
-│ forgotPassword.php
-│ header.php
-│ home.php
-│ login.php
-│ mydatelist.sql
-│ mypage.php
-│ newPassword.php
-│ post.php
-│ README.md
-│ searchPage.php
-│ settings.php
-│ signup.php
-│ uploadProfile.php
-│ userPage.php
-│ viewPost.php
-│
-├───css
-│ fav.css
-│ header.css
-│ home.css
-│ login.css
-│ myPage.css
-│ post.css
-│ settings.css
-│ viewPost.css
-│
-├───images
-│ DEFAULT.jpg
-│ MyDateList.png
-│ smile.jpg
-│ smile1.jpg
-│
-├───includes
-│ dbh.inc.php
-│ delete.inc.php
-│ fav.inc.php
-│ favPostData.inc.php
-│ functions.inc.php
-│ HomePostData2.inc.php
-│ login.inc.php
-│ logout.inc.php
-│ myPagePostData.inc.php
-│ newPassword.inc.php
-│ post-update.inc.php
-│ post-upload.inc.php
-│ search.inc.php
-│ signup.inc.php
-│ top-fav.inc.php
-│ update.inc.php
-│ updatePassword.inc.php
-│ updateUsername.inc.php
-│ usersPagePostData.inc.php
-│ verifyquestions.inc.php
-│ verifyusername.inc.php
-│
-└───uploads
-19_0_1790.jpg
-1_pfp.jpg
-26_0_mochaBear.jpg
-27_0_color.JPG
-27_1_cryingbear.png
-2_pfp.jpg
-3_0_1790.jpg
-3_pfp.jpg
-47_0_DSC_0032.JPG
-47_1_DSC_0033.JPG
-47_2_DSC_0034.JPG
-47_3_DSC_0035.JPG
-48_0_DSC_0032.JPG
-48_1_DSC_0033.JPG
-48_2_DSC_0034.JPG
-48_3_DSC_0035.JPG
-4_pfp.jpg
-51_0_Scanner_issue_project1.JPG
-54_0**DSC0651.JPG
-5_0_Chastain-Park.jpg
-6_0_last resort.jpg
-6_0**DSC0651.JPG
-7_0_last resort.jpg
-8_0_last resort.jpg
-9_0_test.jpg
+│ about.php<br>
+│ answer.php<br>
+│ editPost.php<br>
+│ favorites.php<br>
+│ footer.php<br>
+│ forgotPassword.php<br>
+│ header.php<br>
+│ home.php<br>
+│ login.php<br>
+│ mydatelist.sql<br>
+│ mypage.php<br>
+│ newPassword.php<br>
+│ post.php<br>
+│ README.md<br>
+│ searchPage.php<br>
+│ settings.php<br>
+│ signup.php<br>
+│ uploadProfile.php<br>
+│ userPage.php<br>
+│ viewPost.php<br>
+│<br>
+├───css<br>
+│ fav.css<br>
+│ header.css<br>
+│ home.css<br>
+│ login.css<br>
+│ myPage.css<br>
+│ post.css<br>
+│ settings.css<br>
+│ viewPost.css<br>
+│<br>
+├───images<br>
+│ DEFAULT.jpg<br>
+│ MyDateList.png<br>
+│ group.jpg<br>
+│<br>
+├───includes<br>
+│ dbh.inc.php<br>
+│ delete.inc.php<br>
+│ fav.inc.php<br>
+│ favPostData.inc.php<br>
+│ functions.inc.php<br>
+│ HomePostData2.inc.php<br>
+│ login.inc.php<br>
+│ logout.inc.php<br>
+│ myPagePostData.inc.php<br>
+│ newPassword.inc.php<br>
+│ post-update.inc.php<br>
+│ post-upload.inc.php<br>
+│ search.inc.php<br>
+│ signup.inc.php<br>
+│ top-fav.inc.php<br>
+│ update.inc.php<br>
+│ updatePassword.inc.php<br>
+│ updateUsername.inc.php<br>
+│ usersPagePostData.inc.php<br>
+│ verifyquestions.inc.php<br>
+│ verifyusername.inc.php<br>
+│<br>
+└───uploads<br>
+19_0_1790.jpg<br>
+1_pfp.jpg<br>
+26_0_mochaBear.jpg<br>
+27_0_color.JPG<br>
+27_1_cryingbear.png<br>
+2_pfp.jpg<br>
+3_0_1790.jpg<br>
+3_pfp.jpg<br>
+47_0_DSC_0032.JPG<br>
+47_1_DSC_0033.JPG<br>
+47_2_DSC_0034.JPG<br>
+47_3_DSC_0035.JPG<br>
+48_0_DSC_0032.JPG<br>
+48_1_DSC_0033.JPG<br>
+48_2_DSC_0034.JPG<br>
+48_3_DSC_0035.JPG<br>
+4_pfp.jpg<br>
+51_0_Scanner_issue_project1.JPG<br>
+54_0**DSC0651.JPG<br>
+5_0_Chastain-Park.jpg<br>
+6_0_last resort.jpg<br>
+6_0**DSC0651.JPG<br>
+7_0_last resort.jpg<br>
+8_0_last resort.jpg<br>
+9_0_test.jpg<br>
+<br>
 
 ## Code
 
