@@ -2,9 +2,7 @@
 Zaharia Selman, Blake Laczynski, Tina Liu, Mary Grace Tippett
 
 ## What is MyDateList?
-MyDateList is an interactive, informative website for all romantics. Guest users may search for and view various date posts, and 
-registered users may do these things in addition to favoriting a post, creating a post, and commenting. Date posts give the user
-information on how to have the perfect date, such as location, price, food, pictures, and much more.
+MyDateList is an interactive, informative website for all romantics. Guest users may search for and view various date posts, and registered users may do these things in addition to favoriting and creating a post. Date posts give the user information on how to have the perfect date, such as location, price, food, pictures, and much more.
 
 ## The Starting Point
 Once you follow the instructions below on downloading the source code, importing the SQL data into your mySQL database, and navigating to our website on your localhost, you will find yourself on the MyDateList homepage, called home.php. This PHP file is our website's version of a traditional index.html file, as it is the starting point and the central page for any guest on our website. It displays all kinds of date ideas from other users.
@@ -33,9 +31,9 @@ All work to create and update MyDateList was done on GitHub. You can download th
 
 ### Setting up MyDateList's Database
 As mentioned above, all SQL needed to run MyDateList can be found in the mydatelist.sql file that is provided. To import this data, first enter the following command to create your database.
-'''sql
+
 CREATE TABLE mydatelist;
-'''
+
 Then, import the mydatelist.sql file. The rest will be done automatically!
 
 ### Opening MyDateList
@@ -43,24 +41,24 @@ To open MyDateList, go to your chosen web browser and type the following URL: ''
 
 ## Functionality
 MyDateList has functions including but not limited to:
-<ol>
+<ul>
     <li>Account Functionality</li>
-    1. Creating a new account
-    2. Logging in to an existing account
-    3. Logging out from the website
-    4. Saving login sessions
-    5. Updating username and password from settings
+    1. Creating a new account</br>
+    2. Logging in to an existing account</br>
+    3. Logging out from the website</br>
+    4. Saving login sessions</br>
+    5. Updating username and password from settings</br>
     <li>Profile/Post Management</li>
-    1. Creating a new profile
-    2. Editing an existing profile
-    3. Adding a profile picture
-    4. Creating a new post
-    5. Favoriting an existing post
-    6. Commenting on an existing post
+    1. Creating a new profile</br>
+    2. Editing an existing profile</br>
+    3. Adding a profile picture</br>
+    4. Creating a new post</br>
+    5. Favoriting an existing post</br>
+    6. Commenting on an existing post</br>
     <li>Application Security</li>
-    1. Input validation of all fields
-    2. Error handling of all fields
-</ol>
+    1. Input validation of all fields</br>
+    2. Error handling of all fields</br>
+</ul>
 
 ## Libararies/Frameworks Used
 MyDateList was built using HTML, CSS, MySQL, PHP, and JavaScript.
