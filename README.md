@@ -108,6 +108,9 @@ C:.<br>
 │ settings.css<br>
 │ viewPost.css<br>
 │<br>
+├───documentation<br>
+│ USER GUIDE.pdf<br>
+| FINAL DELIVERABLE.pdf <br>
 ├───images<br>
 │ DEFAULT.jpg<br>
 │ MyDateList.png<br>
