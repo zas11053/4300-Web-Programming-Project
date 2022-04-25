@@ -143,11 +143,9 @@ footer p {
   padding-top: 5px;
 }
 /**===============================================*/
+/**MEDIA QUERIES TO MAKE RESPONSIVE===============================================*/
 
 @media screen and (max-width: 1000px) {
-  body {
-    color: white;
-  }
   .left ul {
     grid-template-columns: 1fr;
   }
@@ -174,9 +172,166 @@ footer p {
   }
 } /*MAX WIDTH 999 IS WHERE IT SWITCH TO 2 POSR*/
 
-@media only screen and (max-width: 1495px) and (min-width: 1399px) {
-  #cke_1_bottom {
-    display: none;
+@media only screen and (max-width: 1164px) {
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1164px) and (max-width: 1184px) {
+  #cke_1_contents {
+    height: 205px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+@media only screen and (min-width: 1184px) and (max-width: 1204px) {
+  #cke_1_contents {
+    height: 210px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1204px) and (max-width: 1214px) {
+  #cke_1_contents {
+    height: 215px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+@media only screen and (min-width: 1214px) and (max-width: 1224px) {
+  #cke_1_contents {
+    height: 220px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1224px) and (max-width: 1244px) {
+  #cke_1_contents {
+    height: 230px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1244px) and (max-width: 1264px) {
+  #cke_1_contents {
+    height: 240px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1264px) and (max-width: 1284px) {
+  #cke_1_contents {
+    height: 245px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1284px) and (max-width: 1304px) {
+  #cke_1_contents {
+    height: 250px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1304px) and (max-width: 1324px) {
+  #cke_1_contents {
+    height: 255px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1324px) and (max-width: 1344px) {
+  #cke_1_contents {
+    height: 260px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1344px) and (max-width: 1364px) {
+  #cke_1_contents {
+    height: 270px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1384px) and (max-width: 1399px) {
+  #cke_1_contents {
+    height: 290px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (min-width: 1364px) and (max-width: 1384px) {
+  #cke_1_contents {
+    height: 280px !important;
+  }
+
+  .postBox {
+    gap: 1%;
+  }
+}
+
+@media only screen and (max-width: 1405px) and (min-width: 1399px) {
+  body {
+    background: #d0d0a7;
+  }
+  .postBox {
+    gap: 1%;
+  }
+
+  #cke_1_contents {
+    min-height: 294px !important;
+  }
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 1405px) {
+  .postBox {
+    gap: 1%;
+  }
+
+  #cke_1_contents {
+    min-height: 294px !important;
+  }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1508px) {
+  .postBox {
+    gap: 1%;
   }
 
   #cke_1_contents {
@@ -184,6 +339,25 @@ footer p {
   }
 }
 
+@media only screen and (min-width: 1508px) and (max-width: 1530px) {
+  .postBox {
+    gap: 1%;
+  }
+
+  #cke_1_contents {
+    height: 324px !important;
+  }
+}
+
+@media only screen and (min-width: 1528px) {
+  .postBox {
+    gap: 1%;
+  }
+
+  #cke_1_contents {
+    height: 328px !important;
+  }
+}
 /*ABOUT PAGE CSS*/
 .aboutUsInfo {
   display: flex;

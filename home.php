@@ -8,7 +8,7 @@
     <div class="slideshow-container">
             <!-- big sliding picture code -->
             <?php
-                $sql1 = "SELECT * FROM imgs INNER JOIN posts ON posts.postID = imgs.postID"; // select everything from the imgs table to display on homepage
+                $sql1 = "SELECT * FROM imgs INNER JOIN posts ON posts.postID = imgs.postID GROUP BY posts.postID"; // select everything from the imgs table to display on homepage
                 $result1 = mysqli_query($conn, $sql1);
                 $resultsCheck = mysqli_num_rows($result1); // error handling to make sure you're selecting something
 
@@ -17,11 +17,11 @@
                     while ($row = mysqli_fetch_assoc($result1)) {
                         $imgLink = $row['img_dir'];
                         $slideshowNum++;
-                        if ($slideshowNum < 4) {
+                        if ($slideshowNum < 11) {
                             ?>
                         
                                 <div class="mySlides fade">
-                                    <div class="numbertext"><?php echo $slideshowNum ?>/ 3</div>
+                                    <div class="numbertext"><?php echo $slideshowNum ?>/ 10</div>
                                     <img src=<?php echo $imgLink;?> alt="<?php echo $imgLink;?>">
                                 </div>
                             <?php

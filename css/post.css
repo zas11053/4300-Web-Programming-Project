@@ -6,11 +6,14 @@
   background-color: #fafafa;
   display: flex;
   margin: 10px;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
 }
 
 .imgBox {
   width: 50%;
-  height: 550px;
+  height: fit-content;
   background-color: rgb(123, 196, 94);
   background-color: #fafafa;
   border-radius: 20px;
@@ -92,7 +95,7 @@
 /**FOR CAROUSEL ============================================================*/
 .carousel__nav {
   width: 100%;
-  padding: 20px 0;
+  padding: 5px 0;
   /**take up entire bottom section */
   position: absolute;
   bottom: 0;
