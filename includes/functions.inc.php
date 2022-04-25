@@ -106,7 +106,7 @@ function createUser($conn,$name, $username, $password, $question1, $question2, $
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
    
-    header("location: ../login.php?error=none"); 
+    header("location: ../home.php?createdAccount"); 
     exit(); //stops the script
     
     
