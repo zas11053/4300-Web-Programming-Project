@@ -41,6 +41,19 @@ session_start();
                     </ul>
                 </div>
 
+                <div class="left2">
+                <ul>
+                <li ><i class="fa-solid fa-house-user"></i>
+                                <ul>
+                                <li> <a href ='home.php'> Home </a></li>
+                                <li> <a href ='about.php'> About  </a></li>
+                                </ul>
+                       
+                            </li>
+                </ul>
+
+                </div>
+
                 <!-- Center 'MyDateList' cursive picture -->
                 <div class="center">
                     <ul>

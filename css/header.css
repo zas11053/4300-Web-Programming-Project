@@ -48,7 +48,12 @@ a {
   background-color: rgb(255 238 238);
   margin: auto;
 }
-
+.left2 {
+  display: none;
+}
+i.fa-solid.fa-house-user {
+  font-size: 30px;
+}
 .left ul {
   width: 100%;
   display: grid;
@@ -94,6 +99,38 @@ a {
   padding-left: 3px;
   padding-right: 3px;
 }
+
+/*left side drop down when screen does small**/
+.left2 ul li {
+  position: relative; /**NEW */
+}
+
+.left2 ul li ul {
+  display: none;
+  position: absolute;
+}
+.left2 ul li:hover ul {
+  display: block;
+}
+
+/**makes it wide enough so all text can fit in one line*/
+.left2 ul li ul li {
+  width: 100px;
+  background-color: #f79e9e; /**bg for dropdown*/
+  border-style: solid #dcdcdc;
+}
+
+.left2 ul li ul li a {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
+.left2 ul li ul li a:hover {
+  background-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
 /**-------DROP DOWN MENY=U----------------*/
 .navbar {
   display: grid;
@@ -146,19 +183,32 @@ footer p {
 /**MEDIA QUERIES TO MAKE RESPONSIVE===============================================*/
 
 @media screen and (max-width: 1000px) {
-  .left ul {
+  .left2 {
+    display: block;
+  }
+  .left2 ul {
+    width: 100%;
+    display: grid;
+    background: white;
     grid-template-columns: 1fr;
+  }
+
+  .left {
+    display: none;
   }
 
   #about_header {
     display: none;
   }
+
   #fav {
     display: none;
   }
+
   #post {
     display: none;
   }
+
   #signup {
     display: none;
   }
@@ -175,6 +225,7 @@ footer p {
 @media only screen and (max-width: 1164px) {
   .postBox {
     gap: 1%;
+    align-items: center !important;
   }
 }
 
