@@ -2,7 +2,7 @@
 
 $serverName = "localhost"; // because using xxamp
 //$dBUsername = 'root'; //default
-$dBUsername = 'mydatelist'; //default
+$dBUsername = 'mydatelist'; //myaccount 
 //$dBPassword = "";
 $dBPassword = "Date123456!!";
 $dBName = "mydatelist"; // depend on what we call our database in mysql
