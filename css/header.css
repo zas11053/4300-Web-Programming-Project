@@ -358,9 +358,6 @@ footer p {
 }
 
 @media only screen and (max-width: 1405px) and (min-width: 1399px) {
-  body {
-    background: #d0d0a7;
-  }
   .postBox {
     gap: 1%;
   }
