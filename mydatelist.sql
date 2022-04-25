@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2022 at 02:14 AM
+-- Generation Time: Apr 25, 2022 at 03:19 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -83,7 +83,13 @@ INSERT INTO `imgs` (`imgID`, `usersID`, `postID`, `img_dir`) VALUES
 (146, 8, 68, './uploads/68_3_pizza3.jpg'),
 (147, 8, 69, './uploads/69_0_beach2.webp'),
 (148, 8, 69, './uploads/69_1_beach3.jpg'),
-(149, 8, 69, './uploads/69_2_picnic1.jpg');
+(149, 8, 69, './uploads/69_2_picnic1.jpg'),
+(150, 5, 70, './uploads/70_0_A5EE4CC2-0300-4ED4-91F1-A110B60D09C8_1_105_c.jpeg'),
+(151, 5, 70, './uploads/70_1_C15C6AAF-D782-4369-9444-6FED92EA2DC3_1_105_c.jpeg'),
+(152, 5, 71, './uploads/71_0_656C7C0B-C82D-4987-AE92-48326CCFBE85_1_105_c.jpeg'),
+(153, 5, 72, './uploads/72_0_B93D32C9-88DB-4A57-BE5C-681035D99938_1_105_c.jpeg'),
+(154, 5, 73, './uploads/73_0_55C7C396-3B5A-4939-9185-90415268138D_1_105_c.jpeg'),
+(155, 5, 74, './uploads/74_0_E71AD28F-D068-4C8C-8AA9-A8C67326F54D_1_105_c.jpeg');
 
 -- --------------------------------------------------------
 
@@ -120,7 +126,12 @@ INSERT INTO `posts` (`postID`, `usersID`, `title`, `location`, `type`, `descript
 (66, 8, 'Harry Potter Movie Marathon ', 'Home', 'home', '<p>Felt like rewatching Harry Potter movies.</p>\r\n\r\n<p>Spent the whole 2 days rewatching all the Harry Potter Movies !!</p>\r\n\r\n<p>GO&nbsp;<strong>Gryffindor!!!!!</strong></p>\r\n', '2022-04-24 23:57:38', 0),
 (67, 8, 'Cafe Hopping ', 'Seoul, South Korea', 'casual', '<p>Just felt like eating sweets.</p>\r\n\r\n<p>Jumped from cafe to cafe.</p>\r\n', '2022-04-25 00:00:12', 0),
 (68, 8, 'Mellow Mushroom Splurge', 'Athens, GA', 'casual', '<ul>\r\n	<li>ordered a bunch of different pizza and food from mellow mushroom</li>\r\n	<li>never tried it before&nbsp;</li>\r\n	<li>the price was okay</li>\r\n	<li>it was pretty good</li>\r\n	<li>I ate a whole bunch.&nbsp;</li>\r\n	<li>the crust &nbsp;so thin, my pizza was gonna slide off. Cry Cry<img alt=\"crying\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/cry_smile.png\" style=\"height:23px; width:23px\" title=\"crying\" /></li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n', '2022-04-25 00:05:17', 0),
-(69, 8, 'Beach time Picnic ', 'Gangwon-do, South Korea', 'casual', '<p>Vaca in South Korea and decided to hit up the Beach in Sampo.</p>\r\n\r\n<p>Had a picnic and then some friends joined afterward .</p>\r\n\r\n<p>Got to see some purple sky. It was so pretty.<img alt=\"heart\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/heart.png\" style=\"height:23px; width:23px\" title=\"heart\" /></p>\r\n\r\n<p>It was some nice memories.</p>\r\n', '2022-04-25 00:11:07', 0);
+(69, 8, 'Beach time Picnic ', 'Gangwon-do, South Korea', 'casual', '<p>Vaca in South Korea and decided to hit up the Beach in Sampo.</p>\r\n\r\n<p>Had a picnic and then some friends joined afterward .</p>\r\n\r\n<p>Got to see some purple sky. It was so pretty.<img alt=\"heart\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/heart.png\" style=\"height:23px; width:23px\" title=\"heart\" /></p>\r\n\r\n<p>It was some nice memories.</p>\r\n', '2022-04-25 00:11:07', 0),
+(70, 5, 'SkyView Ferris Wheel', 'Atlanta, GA', 'casual', '<p>This was a great first date location and super fun to see downtown ATL! Would recommend to anyone. It&#39;s about $15 per person to go on the ferris wheel. If you want to make it even better, you can go to a concert at The Tabernacle in the same night, which is located right next to the ferris wheel.</p>\r\n', '2022-04-25 01:15:43', 0),
+(71, 5, 'Cloudland Canyon Hike', 'Rising Fawn, GA', 'casual', '<p>An easy hike, and easy to talk with your date without having to make tons of eye contact (which is a plus). The hike is a&nbsp;6 mile loop, or&nbsp;you can just walk down the stairs to the waterfalls. Parking is free, and the views are amazing! Can&#39;t believe this is located in Georgia.</p>\r\n', '2022-04-25 01:16:57', 0),
+(72, 5, 'High Museum of Art', 'Atlanta, GA', 'casual', '<p>I went for the Obama portraits exhibit, which was so cool! Very fun to walk around and see all the original art they have on display. I wouldn&#39;t recommend to anyone too chatty because the museum is pretty quiet, but it&#39;s a great way to learn about history while on your date.</p>\r\n', '2022-04-25 01:17:39', 0),
+(73, 5, 'Beach day', 'Any beach!', 'casual', '<p>These pictures are from Turks and Caicos, but any beach will do for this date! If you&#39;re looking for a super casual and easy-going date, this one is it. The only downside I can think of is if weather turns bad or if you get sunburnt. So don&#39;t forget to put some sunscreen on before you go!</p>\r\n', '2022-04-25 01:18:16', 0),
+(74, 5, 'Cali N Tito\'s Dinner', 'Athens, GA', 'casual', '<p>Cali N Tito&#39;s has the best vibe for a first date. I went on a Friday night, and it was super crowded, but the line moved fast and our food came out quickly. There were lots of other couples there for dinner too. Overall, one of my favorite restaurants in Athens just because of great atmosphere it creates.</p>\r\n', '2022-04-25 01:19:00', 0);
 
 -- --------------------------------------------------------
 
@@ -144,7 +155,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`usersID`, `usersName`, `usersUID`, `usersPWD`, `securityQuestion1`, `securityQuestion2`, `securityQuestion3`, `pfp_img_dir`) VALUES
-(5, 'Zaharia', 'zsel', '$2y$10$uHWwOh20Yoz4du9yy24aR.pPxmlB2/ESDtgLTAhiZV4x2tV4p8rTC', 'Z', 'idk', 'idk', './uploads/5_pfp6265cc3d5ddd77.22501211.jpeg'),
+(5, 'Zaharia', 'zsel', '$2y$10$uHWwOh20Yoz4du9yy24aR.pPxmlB2/ESDtgLTAhiZV4x2tV4p8rTC', 'Z', 'idk', 'idk', './uploads/5_pfp6265ed289285a0.91647351.jpg'),
 (6, 'blake laczynski', 'blakelaz', '$2y$10$eS6qI8IQcNwaZAQtsWKEceHCIeJYLr37ueOkTO.t4HhC0pglPvB.W', 'laz', 'laz', 'laz', './images/DEFAULT.jpg'),
 (7, 'blake laczynski', 'blakeL', '$2y$10$mNc2M5Bu9UrVcwjT5JPw7.7O5JyPbv0dTzcnNbYX92H9AN3rOjvTW', 'LAKS', 'ksk', 'skk', './images/DEFAULT.jpg'),
 (8, 'tina', 'Tina', '$2y$10$XUhDtgHE4Ag/mYIrEseXj.QFZDTb2mou0847j/v3FxKa3SWSiuRj.', '123', '123', '123', './images/DEFAULT.jpg');
@@ -191,13 +202,13 @@ ALTER TABLE `fav`
 -- AUTO_INCREMENT for table `imgs`
 --
 ALTER TABLE `imgs`
-  MODIFY `imgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
+  MODIFY `imgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `users`
