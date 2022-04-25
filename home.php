@@ -44,7 +44,7 @@
         <!-- END of search bar code -->
      
 <section id="post-gallery" class="wrapper-post ">
-
+  
 </section>
 <div id="load_data_message"></div>
 <script>
