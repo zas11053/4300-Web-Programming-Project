@@ -16,13 +16,15 @@ Once you follow the instructions below on downloading the source code, importing
 
 2 - Import the SQL tables and data to MySQL using the mydatelist.sql file provided
 
-3 - Start Apache and MySQL in the XAMPP Control Panel
+3 - Go includes/dbh.inc.php and change the the database connection login to either your phpmyadmin account or use the default account root and empty string.
 
-4 - Go to your localhost url and click on this newly added folder; you should be taken to the homepage
+4 - Start Apache and MySQL in the XAMPP Control Panel
 
-5 - Sign Up and create your own username and password
+5 - Go to your localhost url and click on this newly added folder; you should be taken to the homepage
 
-6 - Explore our interactive website. Enjoy!
+6 - Sign Up and create your own username and password
+
+7 - Explore our interactive website. Enjoy!
 
 ### XAMPP
 
