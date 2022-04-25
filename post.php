@@ -82,7 +82,7 @@ if(!isset($_SESSION["usersUID"])){
                         
                         
                      ],
-                          height: 320,
+                         // height: 320,
                            resize_dir: 'none',
                            extraPlugins: 'editorplaceholder',
                            editorplaceholder: 'Start typing here...'
