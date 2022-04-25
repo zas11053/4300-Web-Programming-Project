@@ -11,6 +11,8 @@ if(isset($_POST['submit'])){
     $fileName= $_FILES['file']['name'];
     //temp location of the file
     $fileTmpName = $_FILES['file']['tmp_name'];
+    //remove all the spacing in the file name--- in some brower- img won't show if img name has space
+    $fileTmpName = str_replace(' ', '', $fileTmpName);
     $fileSize = $_FILES['file']['size'];
     $fileError = $_FILES['file']['error'];
     $fileType = $_FILES['file']['type'];

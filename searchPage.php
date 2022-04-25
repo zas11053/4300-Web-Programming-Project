@@ -29,15 +29,26 @@ if(isset($_GET["search"]) ){
         
         <!-- search bar code -->
         <div class="search-container">
-          <form action="./searchPage.php" method="get">
+          <form action="./searchPage.php" method="get" id="searchFilter">
             <div class="searchBar">
-            
                 <input type="text"  class ="searchBar_input" name="search" placeholder="Search..">
                 <button type="submit" class="searchBar_button"> <i class='material-icons'> search </i></button>
             </div>
+            <select name ="filter" id="filter">
+             <option value="recent"  <?php if( !empty(($_GET['filter'])) && ($_GET['filter']) == "recent") echo ' selected';?> >  Most Recent </option> 
+                <option value="fav" <?php if( !empty(($_GET['filter']))&& ($_GET['filter']) == "fav") echo ' selected';?>>Most Favorited</option>
+                <option value="oldest" <?php if( !empty(($_GET['filter']))&& ($_GET['filter']) == "oldest") echo ' selected';?>>Oldest to Newest</option>
+                <option value="casual" <?php if( !empty(($_GET['filter']))&& ($_GET['filter'])== "casual") echo ' selected';?>>Casual</option>
+                <option value="fancy" <?php if(!empty(($_GET['filter']))&& ($_GET['filter']) == "fancy") echo ' selected';?>>Fancy</option>
+                <option value="home" <?php if( !empty(($_GET['filter']))&& ($_GET['filter']) == "home") echo ' selected';?>>Home</option>
+        </select>
         </form>
         </div>
         <!-- END of search bar code -->
+        
+
+
+
 <section id="post-gallery" class="wrapper-post">
     
 
@@ -45,8 +56,9 @@ if(isset($_GET["search"]) ){
 <div id="load_data_message"></div>
 <script>
     const params = new URLSearchParams(window.location.search); //gets the current url
-    var search = params.get('search'); // gets the value of the 'user' key
-   // alert(search);
+    var search = params.get('search'); // gets the value of the 'search' key
+    var filter = params.get('filter'); // gets the value of the 'user' key
+    
     $(document).ready(function(){
     
     var limit = 18;
@@ -54,7 +66,7 @@ if(isset($_GET["search"]) ){
     var action = 'inactive';
     var none = false;
     var noPost = true;
-    function load_country_data(limit, start)
+    function load_post_data(limit, start)
     {
     $.ajax({
     url:"./includes/search.inc.php",
@@ -62,7 +74,8 @@ if(isset($_GET["search"]) ){
     data:{ 
         limit:limit, 
         start:start,
-        search:search
+        search:search,
+        filter:filter
     },
     cache:false,
     success:function(data)
@@ -97,7 +110,7 @@ if(isset($_GET["search"]) ){
     if(action == 'inactive')
     {
     action = 'active';
-    load_country_data(limit, start);
+    load_post_data(limit, start);
     }
     $(window).scroll(function(){
     if($(window).scrollTop() + $(window).height() > $("#post-gallery").height() && action == 'inactive')
@@ -105,7 +118,7 @@ if(isset($_GET["search"]) ){
     action = 'active';
     start = start + limit;
     setTimeout(function(){
-        load_country_data(limit, start);
+        load_post_data(limit, start);
     }, 1000);
     }
     });

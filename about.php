@@ -43,7 +43,93 @@ include_once 'header.php';
     </div>
 
 </div>
+  
+        <select name ="mySelect" id="mySelect">
+<option value="recent">Most Recent</option>
+                <option value="fav">Most Favorited</option>
+                <option value="oldest">Oldest to Newest</option>
+                <option value="casual">Casual</option>
+                <option value="fancy">Fancy</option>
+                <option value="home">Home</option>
+</select>
 
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#mySelect').on('change', function(){
+       
+
+            const filterDrop = document.getElementById("mySelect");
+            var filter = $(this).val();// the selction value
+            var limit = 18;
+            //alert(filter);
+            var start = 0;
+            var action = 'inactive';
+            var none = false;
+            var noPost = true;
+            const params = new URLSearchParams(window.location.search); //gets the current url
+             var search = params.get('search'); // gets the value of the 'user' key
+            
+            function load_post_data(limit, start){
+            $.ajax({
+            url:"./includes/search.inc.php",
+            method:"POST",
+            data:{ 
+                limit:limit, 
+                start:start,
+                search:search,
+                filter:filter
+            },
+            cache:false,
+            success:function(data)
+            {
+                if (data == "none"){
+                    none = true;
+                } else {
+                $('#post-gallery').append(data);
+                }
+                
+                if (none && noPost){ // if there absolutely no post for this query will print out an message
+                    $('#post-gallery').html("<div id='noPost'><p>No post queries. Try a different search! </p> </div>");
+                action = 'active';
+                }
+                else if(data == "none")
+                {
+                $('#load_data_message').html("<a href='#'> Back to Top </a>");
+                action = 'active';
+                }
+                else
+                {
+                $('#load_data_message').html("<a href='#'> Back to Top </a>");
+                noPost=false;
+
+                action = "inactive";
+                }
+                
+            }
+            });
+        }
+        
+    if(action == 'inactive')
+    {
+    action = 'active';
+    load_post_data(limit, start);
+    }
+    $(window).scroll(function(){
+    if($(window).scrollTop() + $(window).height() > $("#post-gallery").height() && action == 'inactive')
+    {
+    action = 'active';
+    start = start + limit;
+    setTimeout(function(){
+        load_post_data(limit, start);
+    }, 1000);
+    }
+    });
+
+        });
+     });
+        
+</script>
 <?php
 include_once 'footer.php';
 ?>

@@ -67,7 +67,7 @@ MyDateList has functions including:
 
 ## Libararies/Frameworks Used
 
-MyDateList was built using HTML, CSS, MySQL, PHP, and JavaScript.
+MyDateList was built using HTML, CSS, MySQL, PHP, and JavaScript. The framework that was used is CKeditor4. This allowed us to have a rich WYSIWYG Editor.
 
 ## Browsers
 

@@ -86,6 +86,8 @@ if(isset($_POST["submit"])) { // user has submit its signup thru sign-up page
 
                     //fileName = postID#_img#(i)_name
                     $fileName = $postID[0]['postID']."_".$i."_".$_FILES['imgFile']['name'][$i];
+                    //remove all the spacing in the file name--- in some brower- img won't show if img name has space
+                    $fileName = str_replace(' ', '', $fileName);
                     $fileDestination = '../uploads/'.$fileName;
                     echo " filename :". $fileName;
 

@@ -10,6 +10,13 @@ if(isset($_GET["user"])){
      
      $sql = "SELECT* FROM users WHERE usersUID='$username'";
      $result = mysqli_query($conn, $sql);
+     $userExists= mysqli_num_rows($result); //gets the amount of rows == if 1== user exist else user doesn't not exist
+     if ($userExists <1){ // mean there no such user in database -- will redirect 
+        header("Location: home.php?noSuchUser"); // can remove the ?uploadsuccess later if want
+                        
+        exit();
+
+     }
      $usersTable = mysqli_fetch_assoc($result);
 
      // their name (not their username)
@@ -65,7 +72,7 @@ if(isset($_GET["user"])){
     var limit = 18;
     var start = 0;
     var action = 'inactive';
-    function load_country_data(limit, start)
+    function load_post_data(limit, start)
     {
     $.ajax({
     url:"./includes/usersPagePostData.inc.php",
@@ -96,7 +103,7 @@ if(isset($_GET["user"])){
     if(action == 'inactive')
     {
     action = 'active';
-    load_country_data(limit, start);
+    load_post_data(limit, start);
     }
     $(window).scroll(function(){
     if($(window).scrollTop() + $(window).height() > $("#post-gallery").height() && action == 'inactive')
@@ -104,7 +111,7 @@ if(isset($_GET["user"])){
     action = 'active';
     start = start + limit;
     setTimeout(function(){
-        load_country_data(limit, start);
+        load_post_data(limit, start);
     }, 1000);
     }
     });

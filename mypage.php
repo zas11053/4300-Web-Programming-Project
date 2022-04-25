@@ -65,7 +65,7 @@ if(!isset($_SESSION["usersUID"])){
     var limit = 18;
     var start = 0;
     var action = 'inactive';
-    function load_country_data(limit, start)
+    function load_post_data(limit, start)
     {
     $.ajax({
     url:"./includes/myPagePostData.inc.php",
@@ -95,7 +95,7 @@ if(!isset($_SESSION["usersUID"])){
     if(action == 'inactive')
     {
     action = 'active';
-    load_country_data(limit, start);
+    load_post_data(limit, start);
     }
     $(window).scroll(function(){
     if($(window).scrollTop() + $(window).height() > $("#post-gallery").height() && action == 'inactive')
@@ -103,7 +103,7 @@ if(!isset($_SESSION["usersUID"])){
     action = 'active';
     start = start + limit;
     setTimeout(function(){
-        load_country_data(limit, start);
+        load_post_data(limit, start);
     }, 1000);
     }
     });

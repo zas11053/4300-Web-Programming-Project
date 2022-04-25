@@ -6,16 +6,35 @@ session_start();
     $start = $_POST['start']; //starting value for the SQL LIMIT 
     $limit = $_POST['limit']; // how many Post to load 
     $search = mysqli_real_escape_string($conn,$_POST['search']);
+    $filter = $_POST['filter']; // how many Post to load 
  
 
     
 
 
-
+if (empty($filter) || $filter == "recent"){
     //SQL: LIMIT #1, #2 == start from index[#1] and get #2 amount of rows 
     $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE users.usersUID LIKE '%{$search}%' OR posts.title LIKE '%{$search}%' 
     OR posts.location LIKE '%{$search}%' OR  posts.type LIKE '%{$search}%' OR posts.description LIKE '%{$search}%' ORDER BY `postID`  DESC LIMIT ".$start.",".$limit."";
-
+} else if ($filter == "fav"){
+    $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE users.usersUID LIKE '%{$search}%' OR posts.title LIKE '%{$search}%' 
+    OR posts.location LIKE '%{$search}%' OR  posts.type LIKE '%{$search}%' OR posts.description LIKE '%{$search}%' ORDER BY `savedAmount`  DESC LIMIT ".$start.",".$limit."";
+}else if ($filter == "oldest"){
+    $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE users.usersUID LIKE '%{$search}%' OR posts.title LIKE '%{$search}%' 
+    OR posts.location LIKE '%{$search}%' OR  posts.type LIKE '%{$search}%' OR posts.description LIKE '%{$search}%' ORDER BY `postID`  ASC LIMIT ".$start.",".$limit."";
+}else if ($filter == "casual"){
+    $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE( (users.usersUID LIKE '%{$search}%' OR posts.title LIKE '%{$search}%' 
+    OR posts.location LIKE '%{$search}%' OR  posts.type LIKE '%{$search}%' OR posts.description LIKE '%{$search}%') AND (posts.type ='casual')) ORDER BY `postID`  DESC LIMIT ".$start.",".$limit."";
+}else if ($filter == "fancy"){
+    $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE( (users.usersUID LIKE '%{$search}%' OR posts.title LIKE '%{$search}%' 
+    OR posts.location LIKE '%{$search}%' OR  posts.type LIKE '%{$search}%' OR posts.description LIKE '%{$search}%') AND (posts.type ='fancy')) ORDER BY `postID`  DESC LIMIT ".$start.",".$limit."";
+}else if ($filter == "home"){
+    $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE( (users.usersUID LIKE '%{$search}%' OR posts.title LIKE '%{$search}%' 
+    OR posts.location LIKE '%{$search}%' OR  posts.type LIKE '%{$search}%' OR posts.description LIKE '%{$search}%') AND (posts.type ='home')) ORDER BY `postID`  DESC LIMIT ".$start.",".$limit."";
+} else {
+    $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE users.usersUID LIKE '%{$search}%' OR posts.title LIKE '%{$search}%' 
+    OR posts.location LIKE '%{$search}%' OR  posts.type LIKE '%{$search}%' OR posts.description LIKE '%{$search}%' ORDER BY `postID`  DESC LIMIT ".$start.",".$limit."";
+}
     //make query & get result
     $result = mysqli_query($conn, $sql);
 

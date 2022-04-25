@@ -377,3 +377,18 @@ footer p {
   margin-right: 50px;
   margin-left: 50px;
 }
+
+/**the search page css -- the drop down filter**/
+select#filter {
+  text-align: center;
+  font-family: monospace;
+  border: solid 1px #d87f7ffc;
+  background-color: ghostwhite;
+}
+
+form#searchFilter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}

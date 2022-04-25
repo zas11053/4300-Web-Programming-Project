@@ -8,6 +8,13 @@ if(isset($_GET["ID"])){
    
     $sql = "SELECT * FROM posts INNER JOIN users ON posts.usersID = users.usersID WHERE posts.postID='$postID'";
             $result = mysqli_query($conn, $sql);
+            $postExists= mysqli_num_rows($result); //gets the amount of rows == if 1== user exist else user doesn't not exist
+            if ($postExists <1){ // mean there no such user in database -- will redirect 
+               header("Location: home.php?noSuchPost"); // can remove the ?uploadsuccess later if want
+                               
+               exit();
+       
+            }
             $post = mysqli_fetch_assoc($result);
             $usersID=$post['usersID'];
             $username=$post['usersUID'];
