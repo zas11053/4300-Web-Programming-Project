@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2022 at 05:44 AM
+-- Generation Time: Apr 25, 2022 at 04:55 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -127,7 +127,10 @@ INSERT INTO `imgs` (`imgID`, `usersID`, `postID`, `img_dir`) VALUES
 (181, 10, 83, './uploads/83_0_homedrink4.jpg'),
 (182, 10, 83, './uploads/83_1_homedrink2.jpg'),
 (183, 10, 83, './uploads/83_2_homedrink1.jpg'),
-(184, 10, 83, './uploads/83_3_homedrink.jpg');
+(184, 10, 83, './uploads/83_3_homedrink.jpg'),
+(185, 8, 84, './uploads/84_0_diorcafe3.jpg'),
+(186, 8, 84, './uploads/84_1_diorcafe2.jpg'),
+(187, 8, 84, './uploads/84_2_diorcafe1.jpg');
 
 -- --------------------------------------------------------
 
@@ -178,7 +181,8 @@ INSERT INTO `posts` (`postID`, `usersID`, `title`, `location`, `type`, `descript
 (80, 10, 'Picnic ', 'Piedmont, Atlanta ', 'casual', '<p>After class at Emory, met up with my boo at GSU and went to Piedmont Park for a relaxing afternoon.</p>\r\n\r\n<p>Had a picnic.</p>\r\n\r\n<p>Bought food at and wine at Kroger.</p>\r\n\r\n<p>Nice view and pretty me<img alt=\"cheeky\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /></p>\r\n', '2022-04-25 02:35:37', 0),
 (81, 10, 'Long Beach', 'Long Beach, LA', 'casual', '<p>Just got an convertible because we cool like that. Had to top it off with some Gentle Monster sunglasses.</p>\r\n\r\n<p>Had a cute picnic at the beach.&nbsp;</p>\r\n\r\n<ul>\r\n	<li>took a nap</li>\r\n	<li>ate some food. brought grapes, onigiri, strawberries, and some tiramisu</li>\r\n	<li>layed and scrolled on tiktok</li>\r\n	<li>bathe in the sun</li>\r\n	<li>watched the sunset</li>\r\n	<li>played tag on the beach like we 5</li>\r\n	<li>and took a scroll<img alt=\"heart\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/heart.png\" style=\"height:23px; width:23px\" title=\"heart\" /><img alt=\"blush\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/embarrassed_smile.png\" style=\"height:23px; width:23px\" title=\"blush\" /></li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n', '2022-04-25 02:41:00', 0),
 (82, 10, 'Drinking Party', 'Sunset Avenue, Los Angeles ', 'fancy', '<p>Last night in LA. Had to go partying. WHOP WHHOOOP. WOOOOOOOOOO<img alt=\"cheeky\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /></p>\r\n\r\n<p>Bought a 1k dress at a shopping center just for tonight.</p>\r\n\r\n<p>Had to go all out for the photo.:)</p>\r\n\r\n<ul>\r\n	<li>went to a bar recommended by a stranger friend met at Mcdonals</li>\r\n	<li>Drank some wine and beer and rum and others........&nbsp;don&#39;t know name of&nbsp;</li>\r\n	<li>drank and drank and drank</li>\r\n	<li>passed out on middle of road</li>\r\n	<li>puked</li>\r\n	<li>ended up in nearby hotel</li>\r\n	<li>woke up and didn&#39;t remember anything</li>\r\n	<li>based on phone gallery.LOOKS LIKE WE HAD FUN. !!!</li>\r\n	<li>drank too much... might need a 1 weeek break:(((((((</li>\r\n</ul>\r\n', '2022-04-25 02:56:58', 0),
-(83, 10, 'Drinking @ Home', 'Home', 'home', '<ul>\r\n	<li>Lazy to go out</li>\r\n	<li>Stayed home and did some netflix and chill with some alochol&nbsp;</li>\r\n	<li>popped open some Sangre deToro</li>\r\n	<li>Set up an Projector</li>\r\n	<li>did some karokee and watched some movies</li>\r\n	<li>watched :&nbsp;\r\n	<ul>\r\n		<li>High School Musical 1, 2, 3</li>\r\n		<li>made me cry<img alt=\"crying\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/cry_smile.png\" style=\"height:23px; width:23px\" title=\"crying\" /></li>\r\n	</ul>\r\n	</li>\r\n	<li>passed out on couch&nbsp;</li>\r\n	<li>woke up because of bird chirpping .</li>\r\n	<li>chirp chirp chirp&nbsp;</li>\r\n</ul>\r\n', '2022-04-25 03:00:55', 1);
+(83, 10, 'Drinking @ Home', 'Home', 'home', '<ul>\r\n	<li>Lazy to go out</li>\r\n	<li>Stayed home and did some netflix and chill with some alochol&nbsp;</li>\r\n	<li>popped open some Sangre deToro</li>\r\n	<li>Set up an Projector</li>\r\n	<li>did some karokee and watched some movies</li>\r\n	<li>watched :&nbsp;\r\n	<ul>\r\n		<li>High School Musical 1, 2, 3</li>\r\n		<li>made me cry<img alt=\"crying\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/cry_smile.png\" style=\"height:23px; width:23px\" title=\"crying\" /></li>\r\n	</ul>\r\n	</li>\r\n	<li>passed out on couch&nbsp;</li>\r\n	<li>woke up because of bird chirpping .</li>\r\n	<li>chirp chirp chirp&nbsp;</li>\r\n</ul>\r\n', '2022-04-25 03:00:55', 1),
+(84, 8, 'Dior Cafe', 'Miami, Florida', 'fancy', '<h1><span style=\"color:#6699ff\"><span style=\"background-color:#ffffff\">Spring Break ---- Miami Get-a-Way</span></span></h1>\r\n\r\n<ul>\r\n	<li>Location:&nbsp;162 NE 39th St, Miami, FL 33137</li>\r\n	<li>Had to stop by the Dior cafe while in Florida</li>\r\n	<li>Drove down just to visit</li>\r\n	<li>Tried a lot of their desserts</li>\r\n	<li>Stayed and ate a bunch and ordered an bunch</li>\r\n	<li>Also bought some Dior Perfume and bags along the way.<img alt=\"cheeky\" src=\"https://cdn.ckeditor.com/4.18.0/full/plugins/smiley/images/tongue_smile.png\" style=\"height:23px; width:23px\" title=\"cheeky\" /></li>\r\n</ul>\r\n', '2022-04-25 11:59:36', 0);
 
 -- --------------------------------------------------------
 
@@ -205,9 +209,10 @@ INSERT INTO `users` (`usersID`, `usersName`, `usersUID`, `usersPWD`, `securityQu
 (5, 'Zaharia', 'zsel', '$2y$10$uHWwOh20Yoz4du9yy24aR.pPxmlB2/ESDtgLTAhiZV4x2tV4p8rTC', 'Z', 'idk', 'idk', './uploads/5_pfp6265ed289285a0.91647351.jpg'),
 (6, 'blake laczynski', 'blakelaz', '$2y$10$eS6qI8IQcNwaZAQtsWKEceHCIeJYLr37ueOkTO.t4HhC0pglPvB.W', 'laz', 'laz', 'laz', './images/DEFAULT.jpg'),
 (7, 'blake laczynski', 'blakeL', '$2y$10$mNc2M5Bu9UrVcwjT5JPw7.7O5JyPbv0dTzcnNbYX92H9AN3rOjvTW', 'LAKS', 'ksk', 'skk', './images/DEFAULT.jpg'),
-(8, 'tina', 'Tina', '$2y$10$XUhDtgHE4Ag/mYIrEseXj.QFZDTb2mou0847j/v3FxKa3SWSiuRj.', '123', '123', '123', './images/DEFAULT.jpg'),
+(8, 'tina', 'Tina', '$2y$10$XUhDtgHE4Ag/mYIrEseXj.QFZDTb2mou0847j/v3FxKa3SWSiuRj.', '123', '123', '123', './uploads/8_pfp62668d4a15e0a0.67079366.jpg'),
 (9, 'Tina Liu', 'MochaBear', '$2y$10$0jXio1fD2AzZ0YFGEyuVeevkmy.XnWFBqbYUz68m.q7zYbrpzoq7G', '123', '123', '123', './images/DEFAULT.jpg'),
-(10, 'Melon Change', 'MelonMelonMelon', '$2y$10$bQwBxiEsB/Vha8Aea7XhxO6Yu/xukG87nf9GqMoA.FpjwFTlbmR8S', '123', '123', '123', './uploads/10_pfp6265fde83f6e18.58518833.jpg');
+(10, 'Melon Change', 'MelonMelonMelon', '$2y$10$bQwBxiEsB/Vha8Aea7XhxO6Yu/xukG87nf9GqMoA.FpjwFTlbmR8S', '123', '123', '123', './uploads/10_pfp6265fde83f6e18.58518833.jpg'),
+(11, 'Harry Dawg', 'HarryDawgs', '$2y$10$nv2YRmWvMXzas/MfiYaov.zMfB./UHvLmrCAby0hv76VM8i42NM5a', '123', '123', '123', './images/DEFAULT.jpg');
 
 --
 -- Indexes for dumped tables
@@ -251,19 +256,19 @@ ALTER TABLE `fav`
 -- AUTO_INCREMENT for table `imgs`
 --
 ALTER TABLE `imgs`
-  MODIFY `imgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
+  MODIFY `imgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `usersID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
