@@ -13,8 +13,14 @@ if(!isset($_SESSION["usersUID"])){
 
    //if there is a GET method of error 
    if(parameters.get("error") == "file" || parameters.get("error") == "empty"){
-      alert("You need to fill in all fields to post! Can only upload Images!");
+      alert("You need to fill in all fields to post!");
       window.history.go(-1); //go back to previous page === the page you clicked submit button on-therefore, have all ur input saved beside the photo part
+   } else if (parameters.get("error") == "notImg") {
+      alert("Can only upload Images! Gifs works too!");
+      const stateObj = { post: 'post' };
+      history.pushState(stateObj, '', 'post.php'); // goes to post.php -- basically a refresh!
+    
+
    }
 </script>
 
