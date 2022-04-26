@@ -1,3 +1,12 @@
+.settingBody {
+  overflow: auto;
+}
+
+/**hides the scroll bar */
+.settingBody::-webkit-scrollbar {
+  display: none;
+}
+
 .myAccount {
   display: flex;
   margin: auto;
@@ -74,6 +83,17 @@
   gap: 100px;
   margin-top: 35px;
 }
+.settingLinksIcons {
+  display: none;
+  font-size: 30px;
+}
+.settingLinksIcons ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 70px;
+  justify-items: center;
+}
+
 .settingLinks ul {
   padding: 0;
 }

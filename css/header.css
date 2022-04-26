@@ -42,7 +42,9 @@ a {
   background-color: rgb(255, 255, 255);
   margin: auto;
 }
-
+#login2 {
+  display: none;
+}
 .left {
   width: 100%;
   background-color: rgb(255 238 238);
@@ -78,13 +80,25 @@ i.fa-solid.fa-house-user {
   display: none;
   position: absolute;
 }
+/**
 .right ul li:hover ul {
   display: block;
+}
+*/
+.right ul li:hover ul {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /**makes it wide enough so all text can fit in one line*/
 .right ul li ul li {
   width: 100px;
+  min-width: fit-content;
+  white-space: nowrap;
   background-color: #f79e9e; /**bg for dropdown*/
   border-style: solid #dcdcdc;
 }
@@ -108,9 +122,15 @@ i.fa-solid.fa-house-user {
 .left2 ul li ul {
   display: none;
   position: absolute;
+  /* display: flex; */
 }
 .left2 ul li:hover ul {
-  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /**makes it wide enough so all text can fit in one line*/
@@ -182,7 +202,98 @@ footer p {
 /**===============================================*/
 /**MEDIA QUERIES TO MAKE RESPONSIVE===============================================*/
 
+/**img on top and text bottom below when screen is this small*/
+@media screen and (max-width: 760px) {
+  .aboutUs {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    height: 100%;
+    min-height: 500px;
+    max-height: 400px;
+    margin-right: 50px;
+    margin-left: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .postBox {
+    width: fit-content;
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .textBox {
+    margin-right: unset;
+    margin: auto;
+  }
+  .imgBox {
+    margin-bottom: 20px;
+  }
+  footer {
+    margin-top: 40px;
+  }
+  /******settings******/
+  .settingsBox {
+    display: flex;
+    gap: 00px !important;
+    margin-top: 35px;
+    flex-direction: column;
+  }
+  .settingLinksIcons {
+    display: unset !important;
+    font-size: 30px;
+  }
+  .settingLinks {
+    display: none;
+  }
+}
+
+/**at a max width of 1000px-- header changes to home icon on left and profile icon on right */
 @media screen and (max-width: 1000px) {
+  /**settings page */
+
+  #editProfileText {
+    display: none;
+  }
+  #myAccountText {
+    display: none;
+  }
+  .settingLinks ul {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 40px;
+    width: max-content;
+    margin: auto;
+  }
+
+  .settingLinks a {
+    font-size: 20px !important;
+  }
+  .settingsBox {
+    display: flex;
+    gap: 40px !important;
+    margin-top: 35px;
+  }
+  .myAccount {
+    display: flex;
+    margin: auto;
+    margin-top: 25px;
+    width: max-content;
+    gap: 0px !important;
+    padding: 15px;
+    flex-direction: column !important;
+  }
+  /**header stuff below **/
+
   .left2 {
     display: block;
   }
@@ -191,6 +302,15 @@ footer p {
     display: grid;
     background: white;
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  #login2 {
+    display: block;
+  }
+
+  #login {
+    display: none;
   }
 
   .left {
@@ -218,7 +338,15 @@ footer p {
   }
 
   .right ul {
-    display: block;
+    width: 100%;
+    display: grid;
+    background: white;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .right ul li ul li {
+    min-width: max-content;
+    white-space: normal;
   }
 } /*MAX WIDTH 999 IS WHERE IT SWITCH TO 2 POSR*/
 
@@ -226,6 +354,20 @@ footer p {
   .postBox {
     gap: 1%;
     align-items: center !important;
+  }
+  /**settings page*/
+  .myAccount {
+    display: flex;
+    margin: auto;
+    margin-top: 25px;
+    width: max-content;
+    gap: 10px;
+    padding: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
 

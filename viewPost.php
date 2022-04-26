@@ -210,10 +210,6 @@ if(isset($_GET["ID"])){
     
     });
 </script>
-</body>
-<footer style="position:relative">
-    <p style="position:relative">&copy; <?php echo date("Y"); ?> MyDateList, Inc.</p>
-</footer>
-
-
-</html>
+<?php
+include_once 'footer.php';
+?>

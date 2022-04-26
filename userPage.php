@@ -118,3 +118,7 @@ if(isset($_GET["user"])){
     
     });
 </script>
+
+<?php
+include_once 'footer.php';
+?>

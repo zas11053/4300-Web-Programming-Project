@@ -190,12 +190,8 @@ if(!isset($_SESSION["usersUID"])){
    </script>
   
    <script src="./js/postImgPreview.js" defer></script>
-   
-</body>
-<footer style="position:relative">
-    <p style="position:relative">&copy; <?php echo date("Y"); ?> MyDateList, Inc.</p>
-</footer>
-
-
-</html>
+  
+<?php
+include_once 'footer.php';
+?>
 

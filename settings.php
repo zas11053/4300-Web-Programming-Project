@@ -18,7 +18,7 @@
 <div class="settingBody">
     <div class="myAccount">
         <div class="settingLinks">
-            <h1> MY ACCOUNT </h1><br/> <!-- big title -->
+            <h1 id="myAccountText"> MY ACCOUNT </h1><br/> <!-- big title -->
             
             <!-- list of links -->
             <ul style="list-style: none; line-height: 300%;">
@@ -30,8 +30,18 @@
             </ul>
         </div>
 
+        <div class="settingLinksIcons">
+            <!-- list of links -->
+            <ul style="list-style: none;">
+            <li><a href =post.php><abbr title='My Post'> <i class='material-icons'>assignment_ind  </i></a></abbr></li>
+            <li><a href =post.php><abbr title='Post'> <i class='material-icons'> add_to_photos </i></a></abbr></li>
+            <li><a href =favorites.php><abbr title='Favorites'><i class="fa-solid fa-heart"></i></a></abbr></li>
+            <li><a href =includes/logout.inc.php><abbr title='Log Out'><i class="fa-solid fa-right-from-bracket"></i></a></abbr></li>
+            </ul>
+        </div>
+
         <div class="editProfile">
-            <h2 style ="font-weight: lighter;"> Edit Profile </h2><hr style="border-top: 3px solid #dcdcdc; margin-top: 10px; margin-bottom: 10px;">
+            <h2 style ="font-weight: lighter;" id="editProfileText"> Edit Profile </h2><hr style="border-top: 3px solid #dcdcdc; margin-top: 10px; margin-bottom: 10px;">
 
             <h2> CHANGE YOUR ACCOUNT DETAILS </h2>
             <p style ="font-size:10px;"> * denotes mandatory fields</p>

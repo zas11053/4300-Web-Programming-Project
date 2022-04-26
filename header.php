@@ -106,6 +106,7 @@ session_start();
                        // Links that a guest or someone not logged in will see
                      } else {
                         echo" <li id=login> <a href ='login.php'> Login </a></li>";
+                        echo "<li id=login2><a href ='login.php'> <abbr title='Login'><i class='fa-solid fa-circle-user'></i></abbr></a></li>";
 
                         echo" <li id=signup> <a href ='signup.php'> Sign Up </a></li>";
                           
