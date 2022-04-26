@@ -33,7 +33,7 @@
         <div class="settingLinksIcons">
             <!-- list of links -->
             <ul style="list-style: none;">
-            <li><a href =post.php><abbr title='My Post'> <i class='material-icons'>assignment_ind  </i></a></abbr></li>
+            <li><a href =mypage.php><abbr title='My Page'> <i class='material-icons'>assignment_ind  </i></a></abbr></li>
             <li><a href =post.php><abbr title='Post'> <i class='material-icons'> add_to_photos </i></a></abbr></li>
             <li><a href =favorites.php><abbr title='Favorites'><i class="fa-solid fa-heart"></i></a></abbr></li>
             <li><a href =includes/logout.inc.php><abbr title='Log Out'><i class="fa-solid fa-right-from-bracket"></i></a></abbr></li>
