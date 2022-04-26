@@ -78,11 +78,11 @@ if(!isset($_SESSION["usersUID"])){
                         '/',
                         { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
                         { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-                        { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+                        { name: 'tools', items: [ 'ShowBlocks' ] },
                         
                         
                      ],
-                         
+                           
                            resize_dir: 'none',
                            extraPlugins: 'editorplaceholder',
                            editorplaceholder: 'Start typing here...'

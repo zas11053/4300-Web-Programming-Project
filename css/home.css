@@ -5,6 +5,7 @@
 /* Slideshow container */
 .slideshow-container {
   width: 100%;
+  max-width: 1200px;
   position: relative;
   display: flex;
   justify-content: center;

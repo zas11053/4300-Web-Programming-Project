@@ -202,8 +202,17 @@ footer p {
 /**===============================================*/
 /**MEDIA QUERIES TO MAKE RESPONSIVE===============================================*/
 
+@media screen and (max-width: 680px) {
+  .mySlides img {
+    width: 650px !important;
+  }
+}
 /**img on top and text bottom below when screen is this small*/
 @media screen and (max-width: 760px) {
+  .mySlides img {
+    aspect-ratio: 4/2 !important;
+    max-width: 750px !important;
+  }
   .aboutUs {
     margin-top: 50px;
     display: flex;
@@ -254,6 +263,12 @@ footer p {
 
 /**at a max width of 1000px-- header changes to home icon on left and profile icon on right */
 @media screen and (max-width: 1000px) {
+  /**home page img*/
+
+  .mySlides img {
+    max-width: 850px;
+  }
+
   /**settings page */
 
   #editProfileText {
