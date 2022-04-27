@@ -74,7 +74,7 @@ MyDateList was built using HTML, CSS, MySQL, PHP, and JavaScript. The framework 
 ## Browsers
 
 Our website has been tested and works on Chrome and Windows Edge for Windows Operating Systems.
-For better viewing experience, best to view on an laptop at least 15". If on a smaller laptop, can optimze screen
+For better viewing experience, best to view on an laptop at least 15". If on a smaller laptop, can optimize screen
 display by zooming out:) ENJOY BROWSING!
 
 ## Folder Structure
