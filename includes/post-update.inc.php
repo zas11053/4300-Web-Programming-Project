@@ -20,6 +20,7 @@ if(isset($_POST["submit"])) { // user has submit its signup thru edit page
     echo "description:". $description . "\n";
     */
 
+    //updates the post information in the posts table 
     $sql="UPDATE `posts` SET `title`= '$postTitle',`location`= '$postLocation',`type`= '$type' ,`description`= '$description'  WHERE postID='$postID' ;";
     mysqli_query($conn, $sql);
     //go to the post view page

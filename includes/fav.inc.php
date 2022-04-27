@@ -8,6 +8,10 @@ session_start();
    
             
     $username=$_SESSION["usersUID"];
+
+    /**
+     * THE FOLLOWING IS TO GET THE USERID OF THE CERTAIN USERNAME
+     */
     $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
     $result = mysqli_query($conn, $sql);
     $usersID = mysqli_fetch_assoc($result);
@@ -30,13 +34,14 @@ session_start();
 
 
 
-    
-    switch($action) {
+    switch($action) { 
+        //IF THE ACTION IS TO SAVE => ADD INTO FAV TABLE ASSOCIATED WITH USERID AND INCREMENT TOTAL AMOUNT OF USERS THAT HAVE SAVED THIS POST 
         case 'save':
             $sql = "INSERT INTO `fav`( `postID`, `usersIDS`) VALUES ($postID,$usersIDNum)";
             $sql2 = "UPDATE `posts` SET `savedAmount`=savedAmount +1  WHERE postID=$postID"; //increment amount saved by 1
             break;
         case 'unsave':
+            //IF THE ACTION IS TO UNSAVE => DELETE FROM FAV TABLE ASSOCIATED WITH USERID AND DECREMENT TOTAL AMOUNT OF USERS THAT HAVE SAVED THIS POST 
             $sql = "DELETE FROM `fav` WHERE postID=$postID  AND usersIDS=$usersIDNum";
             $sql2 = "UPDATE `posts` SET `savedAmount`=savedAmount -1  WHERE postID=$postID"; //subtracted by 1 as the post is no longer saved 
             break;

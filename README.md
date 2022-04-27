@@ -135,8 +135,6 @@ C:.<br>
 │ post-upload.inc.php<br>
 │ search.inc.php<br>
 │ signup.inc.php<br>
-│ top-fav.inc.php<br>
-│ update.inc.php<br>
 │ updatePassword.inc.php<br>
 │ updateUsername.inc.php<br>
 │ usersPagePostData.inc.php<br>

@@ -82,7 +82,9 @@ function uidExists($conn, $username){
     
 } //UIDexists
 
-
+/**
+ * creates the user by adding the information to the database 
+ */
 function createUser($conn,$name, $username, $password, $question1, $question2, $question3){
     //1st ';' is to close off sql statement, 2nd ';' is for php code
     $sql = "INSERT INTO `users`( `usersName`, `usersUID`, `usersPWD`, `securityQuestion1`, `securityQuestion2`, `securityQuestion3`,`pfp_img_dir`) VALUES (?,?,?,?,?,?,?);"; //'?' ARE PLACEHOLDERS FOR DATA 
@@ -127,6 +129,7 @@ function emptyInputLogin( $username, $password ){
     return $result;
 } // emptyInputSignup
 
+//loggs in the user by checking the username and password matches the one in the database 
 function loginUser($conn, $username, $password){
     // can use username twice as param cuz itll either be username 
     $uidExists = uidExists($conn, $username, $username);
@@ -153,6 +156,7 @@ function loginUser($conn, $username, $password){
     }
 }
 
+// for the settings to check pwd in order to update password 
 function setting_checkPWD($conn, $username, $curpassword, $newpassword, $verifypassword) {
     // can use username twice as param cuz itll either be username
     $uidExists = uidExists($conn, $username);
@@ -197,6 +201,7 @@ function verifyAnswers($conn, $username, $question1,$question2, $question3){
     }
 }
 
+//check for any empty fields
 function emptyField($username){
     $result; // will return if it true or false
 
@@ -210,6 +215,7 @@ function emptyField($username){
     return $result;
 } // emptyInputSignup
 
+//set new password by updated the database 
 function newPassword ($conn,$username, $password){
     $sql = "UPDATE `users` SET usersPWD = ? WHERE usersUID= ?";
     $stmt = mysqli_stmt_init($conn);
@@ -227,6 +233,7 @@ function newPassword ($conn,$username, $password){
 
 }
 
+//new password update implement for the settings page -- same concept as previous 
 function settings_newPassword ($conn,$username, $password){
     $sql = "UPDATE `users` SET usersPWD = ? WHERE usersUID= ?";
     $stmt = mysqli_stmt_init($conn);
@@ -244,6 +251,7 @@ function settings_newPassword ($conn,$username, $password){
 
 }
 
+// updates(change) the username - setting page 
 function updateUsername($conn,$username, $usersID){
     $sql = "UPDATE `users` SET usersUID = ? WHERE usersID= ?";
     $stmt = mysqli_stmt_init($conn);

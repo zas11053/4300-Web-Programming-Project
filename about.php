@@ -6,13 +6,13 @@ include_once 'header.php';
 <h1 style="margin-left: 50px; margin-top: 10px;"> About Us! </h1><hr style="border-top: 3px solid #dcdcdc; margin-top: 10px; margin-bottom: 50px;">-->
 
 <div class="aboutUs", style="display: flex; gap: 20px;">
-        
+    
+    <!---contains the img for the about us- group pic--->
     <section id="post-gallery" class="wrapper-post ">
         
         <div class="card" style="position:relative;">
 
 
-        <!---Makes the entire post a link, so when you click, takes you to the page to view the post-->
                 <!---div where the img is at--img is set as an background img  -->
                 <div class="post-img"  style="background-image: url('./images/groupPhoto.jpeg');">
                 </div>

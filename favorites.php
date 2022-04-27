@@ -28,6 +28,8 @@ if(!isset($_SESSION["usersUID"])){
 
 </section>
 <div id="load_data_message"></div>
+
+<!--the following script it to implemetn lazy scrolling to view the posts by appending to the post-gallery -->
 <script>
 
     $(document).ready(function(){
@@ -37,6 +39,7 @@ if(!isset($_SESSION["usersUID"])){
     var action = 'inactive';
     function load_post_data(limit, start)
     {
+        //ajax command to ascyn load data into our div-- 
     $.ajax({
     url:"./includes/favPostData.inc.php",
     method:"POST",
@@ -68,6 +71,7 @@ if(!isset($_SESSION["usersUID"])){
     action = 'active';
     load_post_data(limit, start);
     }
+    // if window scroll bar reaches ned of page, then load more content
     $(window).scroll(function(){
     if($(window).scrollTop() + $(window).height() > $("#post-gallery").height() && action == 'inactive')
     {

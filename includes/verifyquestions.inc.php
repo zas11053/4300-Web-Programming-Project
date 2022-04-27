@@ -11,6 +11,8 @@ if(isset($_POST["submit"])) { //user had submitted thur login page
         header("location: ../answer.php?error=emptyInput&user=".$username); 
         exit(); //stops the script
     }
+
+    //checks if the answers matches with the answer in database 
     verifyAnswers($conn, $username, $question1,$question2, $question3);
 
    

@@ -54,6 +54,8 @@ if(isset($_GET["search"]) ){
 
 </section>
 <div id="load_data_message"></div>
+
+<!--the following script it to implemetn lazy scrolling to view the posts by appending to the post-gallery -->
 <script>
     const params = new URLSearchParams(window.location.search); //gets the current url
     var search = params.get('search'); // gets the value of the 'search' key

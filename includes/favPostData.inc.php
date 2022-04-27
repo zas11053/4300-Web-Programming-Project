@@ -6,7 +6,7 @@ session_start();
     $start = $_POST['start']; //starting value for the SQL LIMIT 
     $limit = $_POST['limit']; // how many Post to load 
 
-            
+      //THE FOLLOWING IS TO GET THE USERID FOR THE USERNAME       
     $username=$_SESSION["usersUID"];
     $sql = "SELECT usersID FROM users WHERE usersUID='$username'";
     $result = mysqli_query($conn, $sql);

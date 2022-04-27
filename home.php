@@ -47,6 +47,8 @@
   
 </section>
 <div id="load_data_message"></div>
+
+<!--the following script it to implemetn lazy scrolling to view the posts by appending to the post-gallery -->
 <script>
 
     $(document).ready(function(){
@@ -105,7 +107,7 @@
 
         
 
-       
+       <!--to make the automatic slide show in home page -->
         <script type="text/javascript">
             let slideIndex = 0;
             showSlides();

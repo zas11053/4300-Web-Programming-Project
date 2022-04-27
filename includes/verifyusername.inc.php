@@ -12,6 +12,7 @@ if(isset($_POST["submit"])) { //user had submitted thur login page
         exit(); //stops the script
         }
 
+        // user gotta exists in order to continue to answer security question to reset password 
     if( uidExists($conn, $username, $username) === false) {
         header("location: ../forgotPassword.php?error=nousername"); 
         exit(); //stops the script

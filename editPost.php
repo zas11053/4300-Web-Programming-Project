@@ -84,6 +84,7 @@ if(isset($_POST["postID"])) {
            
                <script>
 
+                        /**from the ckeditor framework, picked and choosed certain pluggins to be used in the text editor  */
                   CKEDITOR.replace( 'editor1', {
                   toolbar: [
                   
@@ -101,7 +102,7 @@ if(isset($_POST["postID"])) {
                   
                   
                ],
-               height: 306,
+                   height: 306,
                      resize_dir: 'none',
                      extraPlugins: 'editorplaceholder',
                      editorplaceholder: 'Start typing here...',

@@ -10,6 +10,7 @@ if(isset($_POST["postID"])) {
     //fetch the resulting rows as an array
     $images = mysqli_fetch_all($result, MYSQLI_ASSOC);
     
+    //GOES THROUGH EACH IMAGE ASSOCIATED WITH THE POST AND DELETING IT FROM THE UPLOADS FOLDER
      foreach ($images as $image){
          $img =  ".".$image['img_dir'];
          echo "THE IMG IS". $img;
